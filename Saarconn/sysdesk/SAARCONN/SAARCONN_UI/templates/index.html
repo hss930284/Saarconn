@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAARCONN</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to right, #f1f8e9, #ffecb3);
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #004d40, #00acc1);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        flex-wrap: nowrap;
+      }
+
+      header .logo {
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
+
+      header .logo img {
+        max-height: 100px;
+        transition: max-height 0.3s ease;
+      }
+
+      @media (min-width: 1024px) {
+        header .logo img {
+          max-height: 120px; /* Larger size for larger screens */
+        }
+      }
+
+      header .text {
+        flex-grow: 1;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        margin: 0;
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      header h2 {
+        font-size: 1.2rem;
+        margin-top: 5px;
+        opacity: 0.8;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        max-width: 480px;
+        margin: 50px auto;
+        padding: 40px;
+        text-align: center;
+        animation: fadeUp 1s ease-in-out;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #004d40;
+      }
+
+      .card button {
+        background: linear-gradient(to right, #00acc1, #004d40);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        width: 80%;
+        margin: 15px 0;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .card button:hover {
+        background: linear-gradient(to right, #004d40, #00acc1);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #004d40;
+        color: white;
+        margin-top: 30px;
+        font-size: 0.9rem;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      /* Loader Styles */
+      .loader {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #00acc1;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: 10px auto;
+        animation: spin 1s linear infinite;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        header {
+          flex-wrap: wrap;
+        }
+
+        header .logo {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+
+        header .text {
+          text-align: center;
+        }
+
+        header h1 {
+          font-size: 2.2rem;
+        }
+
+        header h2 {
+          font-size: 1rem;
+        }
+
+        .card {
+          margin: 30px 20px;
+          padding: 30px;
+        }
+
+        .card button {
+          width: 90%;
+          font-size: 0.9rem;
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="E:\sysdesk\SAARCONN\SAARCONN_UI\static\images\TTL_LOGO.png" alt="Tata Technologies" />
+      </div>
+      <div class="text">
+        <h1>SAARCONN</h1>
+        <h2>System Architecture to Autosar Connector</h2>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>Manage Your Projects</h2>
+
+      <!-- Button to Upload Excel File -->
+      <button id="uploadExcelBtn">
+        <i class="fas fa-plus-circle"></i>  Create New Project
+      </button>
+      <input
+        type="file"
+        id="excelFileInput"
+        accept=".xlsx,.xls"
+        style="display: none"
+      />
+
+      <!-- Button to Upload Excel and SDP Files -->
+      <button id="uploadFilesBtn">
+        <i class="fas fa-edit"></i>  Edit Existing Project
+      </button>
+      <input
+        type="file"
+        id="excelFileInput2"
+        accept=".xlsx,.xls"
+        style="display: none"
+      />
+      <input
+        type="file"
+        id="sdpFileInput"
+        accept=".sdp"
+        style="display: none"
+      />
+
+      <!-- Loader Element -->
+      <div class="loader" id="loader" style="display: none;"></div>
+    </div>
+
+    <footer>© 2024 SAARCONN - All Rights Reserved</footer>
+
+    <script>
+      // Handle uploading the Excel file
+      document
+        .getElementById("uploadExcelBtn")
+        .addEventListener("click", function () {
+          document.getElementById("excelFileInput").click();
+        });
+
+      document
+        .getElementById("excelFileInput")
+        .addEventListener("change", function (event) {
+          const formData = new FormData();
+          formData.append("file", event.target.files[0]);
+
+          document.getElementById("loader").style.display = "block"; // Show loader
+
+          fetch("/uploadExcelFile", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("loader").style.display = "none"; // Hide loader
+              alert(data.message);
+            })
+            .catch((error) => {
+              document.getElementById("loader").style.display = "none"; // Hide loader
+              console.error("Error:", error);
+            });
+        });
+
+      // Handle uploading both Excel and SDP files
+      document
+        .getElementById("uploadFilesBtn")
+        .addEventListener("click", function () {
+          document.getElementById("excelFileInput2").click();
+        });
+
+      document
+        .getElementById("excelFileInput2")
+        .addEventListener("change", function (event) {
+          const formData = new FormData();
+          formData.append("excel_file", event.target.files[0]);
+          document.getElementById("sdpFileInput").click(); // Trigger the selection of the SDP file
+        });
+
+      document
+        .getElementById("sdpFileInput")
+        .addEventListener("change", function (event) {
+          const formData = new FormData();
+          formData.append(
+            "excel_file",
+            document.getElementById("excelFileInput2").files[0]
+          ); // Ensure Excel file is included
+          formData.append("sdp_file", event.target.files[0]);
+
+          document.getElementById("loader").style.display = "block"; // Show loader
+
+          // Send both files (Excel and SDP) to the server
+          fetch("/uploadExcelAndSdpFiles", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("loader").style.display = "none"; // Hide loader
+              alert(data.message);
+            })
+            .catch((error) => {
+              document.getElementById("loader").style.display = "none"; // Hide loader
+              console.error("Error:", error);
+            });
+        });
+    </script>
+  </body>
+</html>

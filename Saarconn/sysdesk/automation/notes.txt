@@ -1,0 +1,8 @@
+# Create SWC "TurnSwitchSensors".
+    tssPackage = swComponentTypesPackage.ArPackages.AddNew("TurnSwitchSensor")
+    tssSwcType = tssPackage.Elements.AddNewSensorActuatorSwComponentType("TurnSwitchSensor")
+    tssOutPort = tssSwcType.Ports.AddNewPPortPrototype("out_tss")
+    tssIoPort = tssSwcType.Ports.AddNewRPortPrototype("io_tss") # pylint: disable=unused-variable
+
+
+    

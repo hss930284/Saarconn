@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created with SystemDesk Release 2023-B (23.1p1)-->
+<AUTOSAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-2.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SharedElements</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ApplicationDataTypes</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="035a8ab9-015a-426c-8766-e4b58e5c5a98">
+              <SHORT-NAME>Array</SHORT-NAME>
+           <ELEMENTS>
+                <APPLICATION-ARRAY-DATA-TYPE UUID="99540e2c-05ec-4a85-94bb-9a3999ac57fe">
+                  <SHORT-NAME>ApplicationArrayDataType_Fixed</SHORT-NAME>
+                  <CATEGORY>ARRAY</CATEGORY>
+                  <ELEMENT UUID="7391c5fe-50b6-4b88-bc63-ec1975221a4f">
+                    <SHORT-NAME>Element</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                    <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                    <MAX-NUMBER-OF-ELEMENTS>15</MAX-NUMBER-OF-ELEMENTS>
+                </ELEMENT>
+              <ELEMENTS>
+
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,87 @@
+import xml.etree.ElementTree as ET
+
+def convert_code(old_code):
+    # Parse the old code
+    lines = old_code.split('\n')
+
+    # Initialize the converted code
+    converted_code = []
+
+    # Iterate over the lines of the old code
+    for line in lines:
+        # Remove leading and trailing whitespaces
+        line = line.strip()
+
+        # Check if the line is an assignment
+        if '=' in line:
+            # Extract the variable name and the assigned value
+            var_name, assigned_value = line.split('=')
+
+            # Remove leading and trailing whitespaces
+            var_name = var_name.strip()
+            assigned_value = assigned_value.strip()
+
+            # Check if the assigned value is an ET.SubElement
+            if 'ET.SubElement' in assigned_value:
+                # Extract the parent element and the tag name
+                parent_element, tag_name = assigned_value.split('(')[1].split(')')[0].split(', ')
+
+                # Convert the line to the new format
+                converted_line = f'self.{var_name} = ET.SubElement(self.{parent_element}, {tag_name})'
+                converted_code.append(converted_line)
+                converted_code.append(f'self.variables[\'{var_name}\'] = self.{var_name}')
+                converted_code.append('')
+
+            # If the assigned value is not an ET.SubElement, add it as is
+            else:
+                if '.' in var_name:
+                    var_name_parts = var_name.split('.')
+                    if var_name_parts[1] == 'attrib':
+                        converted_line = f'self.{var_name_parts[0]}.{var_name_parts[1]} = {assigned_value}'
+                    elif var_name_parts[1] == 'text':
+                        converted_line = f'self.{var_name_parts[0]}.{var_name_parts[1]} = {assigned_value}'
+                        converted_code.append(f'self.variables[\'{var_name_parts[0]}\'] = self.{var_name_parts[0]}')
+                        converted_code.append('')
+                    else:
+                        converted_line = f'self.{var_name_parts[0]}.{var_name_parts[1]} = {assigned_value}'
+                else:
+                    converted_line = f'self.{var_name} = {assigned_value}'
+                    converted_code.append(f'self.variables[\'{var_name}\'] = self.{var_name}')
+                    converted_code.append('')
+                converted_code.append(converted_line)
+
+        # If the line is not an assignment, add it as is
+        else:
+            converted_code.append(line)
+
+    # Return the converted code
+    return '\n'.join(converted_code)
+
+
+def read_old_code(file_name):
+    try:
+        with open(file_name, 'r') as file:
+            return file.read()
+    except FileNotFoundError:
+        print(f"File '{file_name}' not found.")
+        return None
+
+def write_converted_code(file_name, converted_code):
+    try:
+        with open(file_name, 'w') as file:
+            file.write(converted_code)
+    except Exception as e:
+        print(f"Error writing to file '{file_name}': {e}")
+
+def main():
+    old_code_file = 'old_code.txt'
+    converted_code_file = 'converted_code.txt'
+
+    old_code = read_old_code(old_code_file)
+    if old_code is not None:
+        converted_code = convert_code(old_code)
+        write_converted_code(converted_code_file, converted_code)
+        print(f"Converted code written to '{converted_code_file}'")
+
+if __name__ == "__main__":
+    main()

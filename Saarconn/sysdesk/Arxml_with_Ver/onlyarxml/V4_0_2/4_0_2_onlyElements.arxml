@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created with SystemDesk Release 2023-B (23.1p1)-->
+<AUTOSAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-2.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SharedElements</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ApplicationDataTypes</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="035a8ab9-015a-426c-8766-e4b58e5c5a98">
+              <SHORT-NAME>Array</SHORT-NAME>
+              <ELEMENTS>
+                <APPLICATION-ARRAY-DATA-TYPE UUID="99540e2c-05ec-4a85-94bb-9a3999ac57fe">
+                  <SHORT-NAME>ApplicationArrayDataType_Fixed</SHORT-NAME>
+                  <CATEGORY>ARRAY</CATEGORY>
+                  <ELEMENT UUID="7391c5fe-50b6-4b88-bc63-ec1975221a4f">
+                    <SHORT-NAME>Element</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                    <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                    <MAX-NUMBER-OF-ELEMENTS>15</MAX-NUMBER-OF-ELEMENTS>
+                  </ELEMENT>
+                </APPLICATION-ARRAY-DATA-TYPE>
+                <APPLICATION-ARRAY-DATA-TYPE UUID="d5f3c7e9-dd94-4d37-888e-b6e44b01cc5a">
+                  <SHORT-NAME>ApplicationArrayDataType_Variable</SHORT-NAME>
+                  <CATEGORY>ARRAY</CATEGORY>
+                  <ELEMENT UUID="fef3f4b8-d9bd-4cb1-94b8-4403e665c4fa">
+                    <SHORT-NAME>Element</SHORT-NAME>
+                    <CATEGORY>VALUE</CATEGORY>
+                    <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                    <ARRAY-SIZE-SEMANTICS>VARIABLE-SIZE</ARRAY-SIZE-SEMANTICS>
+                    <MAX-NUMBER-OF-ELEMENTS>15</MAX-NUMBER-OF-ELEMENTS>
+                  </ELEMENT>
+                </APPLICATION-ARRAY-DATA-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="b142aaa0-2671-41cd-bbc6-78cc30cf22c4">
+              <SHORT-NAME>Primitive</SHORT-NAME>
+              <ELEMENTS>
+                <APPLICATION-PRIMITIVE-DATA-TYPE UUID="18357165-e774-4282-90db-fcb76c7c6727">
+                  <SHORT-NAME>ApplicationPrimitiveDataType</SHORT-NAME>
+                  <CATEGORY>VALUE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/SharedElements/CompuMethods/CompuMethod</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/SharedElements/DataConstr/DataConstr</DATA-CONSTR-REF>
+                        <INVALID-VALUE>
+                          <APPLICATION-VALUE-SPECIFICATION>
+                            <CATEGORY>VALUE</CATEGORY>
+                            <SW-VALUE-CONT>
+                              <SW-VALUES-PHYS>
+                                <V>8</V>
+                              </SW-VALUES-PHYS>
+                            </SW-VALUE-CONT>
+                          </APPLICATION-VALUE-SPECIFICATION>
+                        </INVALID-VALUE>
+                        <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </APPLICATION-PRIMITIVE-DATA-TYPE>
+                <APPLICATION-PRIMITIVE-DATA-TYPE UUID="14c56edb-9cf8-48cc-92d7-4cc1ca683a0f">
+                  <SHORT-NAME>Bool_ApplicationPrimitiveDataType</SHORT-NAME>
+                  <CATEGORY>BOOLEAN</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/SharedElements/CompuMethods/CompuMethod</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/SharedElements/DataConstr/DataConstr</DATA-CONSTR-REF>
+                        <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </APPLICATION-PRIMITIVE-DATA-TYPE>
+                <APPLICATION-PRIMITIVE-DATA-TYPE UUID="a799e394-8020-4e26-abaf-804ce312d6c0">
+                  <SHORT-NAME>Copy_ApplicationPrimitiveDataType</SHORT-NAME>
+                  <CATEGORY>VALUE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/SharedElements/CompuMethods/CompuMethod</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/SharedElements/DataConstr/DataConstr</DATA-CONSTR-REF>
+                        <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </APPLICATION-PRIMITIVE-DATA-TYPE>
+                <APPLICATION-PRIMITIVE-DATA-TYPE UUID="decc899e-e751-4907-998b-8769b6445a38">
+                  <SHORT-NAME>String_ApplicationPrimitiveDataType</SHORT-NAME>
+                  <CATEGORY>STRING</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                        <SW-TEXT-PROPS>
+                          <ARRAY-SIZE-SEMANTICS>VARIABLE-SIZE</ARRAY-SIZE-SEMANTICS>
+                          <SW-MAX-TEXT-SIZE>16</SW-MAX-TEXT-SIZE>
+                        </SW-TEXT-PROPS>
+                        <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </APPLICATION-PRIMITIVE-DATA-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="65217d8d-3662-4a20-a643-ec9ee94de7a0">
+              <SHORT-NAME>Record</SHORT-NAME>
+              <ELEMENTS>
+                <APPLICATION-RECORD-DATA-TYPE UUID="d20b1ec6-9940-43c7-beda-f773a805fab6">
+                  <SHORT-NAME>ApplicationRecordDataType</SHORT-NAME>
+                  <CATEGORY>STRUCTURE</CATEGORY>
+                  <ELEMENTS>
+                    <APPLICATION-RECORD-ELEMENT UUID="bd5079b0-6ac0-4d72-a63a-afd373f2bcc5">
+                      <SHORT-NAME>Element</SHORT-NAME>
+                      <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                    </APPLICATION-RECORD-ELEMENT>
+                    <APPLICATION-RECORD-ELEMENT UUID="12021f0e-9ad1-4df2-bffa-197611387a0a">
+                      <SHORT-NAME>Element1</SHORT-NAME>
+                      <TYPE-TREF DEST="APPLICATION-ARRAY-DATA-TYPE">/SharedElements/ApplicationDataTypes/Array/ApplicationArrayDataType_Fixed</TYPE-TREF>
+                    </APPLICATION-RECORD-ELEMENT>
+                  </ELEMENTS>
+                </APPLICATION-RECORD-DATA-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>CompuMethods</SHORT-NAME>
+          <ELEMENTS>
+            <COMPU-METHOD UUID="e51fd87b-fe38-48d5-b94a-c11851da3006">
+              <SHORT-NAME>BITFIELD_TEXTTABLE_CompuMethod</SHORT-NAME>
+              <CATEGORY>BITFIELD_TEXTTABLE</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <MASK>0</MASK>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>0</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>xyz</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <MASK>0</MASK>
+                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>xyz1</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <MASK>0</MASK>
+                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>xyz2</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <MASK>0</MASK>
+                    <LOWER-LIMIT>3</LOWER-LIMIT>
+                    <UPPER-LIMIT>3</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>xyz3</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <MASK>0</MASK>
+                    <LOWER-LIMIT>4</LOWER-LIMIT>
+                    <UPPER-LIMIT>4</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>xyz4</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="a65ae6b6-3eab-43ff-907b-2c8276c8528b">
+              <SHORT-NAME>CompuMethod</SHORT-NAME>
+              <CATEGORY>IDENTICAL</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="386978fd-a90f-4003-b63e-f9e35b6d76b8">
+              <SHORT-NAME>LINEAR_CompuMethod</SHORT-NAME>
+              <CATEGORY>LINEAR</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <COMPU-RATIONAL-COEFFS>
+                      <COMPU-NUMERATOR>
+                        <V>0</V>
+                        <V>1</V>
+                      </COMPU-NUMERATOR>
+                      <COMPU-DENOMINATOR>
+                        <V>1</V>
+                      </COMPU-DENOMINATOR>
+                    </COMPU-RATIONAL-COEFFS>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="74ea35c5-6b05-40a2-b22c-3c1a179a095b">
+              <SHORT-NAME>RAT_FUNC_CompuMethod</SHORT-NAME>
+              <CATEGORY>RAT_FUNC</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <COMPU-RATIONAL-COEFFS>
+                      <COMPU-NUMERATOR>
+                        <V>0</V>
+                        <V>1</V>
+                        <V>0</V>
+                      </COMPU-NUMERATOR>
+                      <COMPU-DENOMINATOR>
+                        <V>1</V>
+                        <V>0</V>
+                        <V>0</V>
+                      </COMPU-DENOMINATOR>
+                    </COMPU-RATIONAL-COEFFS>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="cb57246c-cf48-448f-b8a5-5f319b76ee49">
+              <SHORT-NAME>SCALE_RATIONAL_AND_TEXTTABLE_CompuMethod</SHORT-NAME>
+              <DESC>
+                <L-2 L="FOR-ALL">S</L-2>
+              </DESC>
+              <CATEGORY>SCALE_RATIONAL_AND_TEXTTABLE</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>15</UPPER-LIMIT>
+                    <COMPU-RATIONAL-COEFFS>
+                      <COMPU-NUMERATOR>
+                        <V>0</V>
+                        <V>1</V>
+                        <V>0</V>
+                      </COMPU-NUMERATOR>
+                      <COMPU-DENOMINATOR>
+                        <V>1</V>
+                        <V>0</V>
+                        <V>0</V>
+                      </COMPU-DENOMINATOR>
+                    </COMPU-RATIONAL-COEFFS>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>16</LOWER-LIMIT>
+                    <UPPER-LIMIT>16</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>sdcd</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>17</LOWER-LIMIT>
+                    <UPPER-LIMIT>17</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>sdcd1</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+                <COMPU-DEFAULT-VALUE>
+                  <V>17</V>
+                </COMPU-DEFAULT-VALUE>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="19ee54ef-4447-4987-bcbe-a9d2a743d569">
+              <SHORT-NAME>Scale_linear_And_texttable_CompuMethod</SHORT-NAME>
+              <DESC>
+                <L-2 L="FOR-ALL">Scale_linear _And_texttable_CompuMethod</L-2>
+              </DESC>
+              <CATEGORY>SCALE_LINEAR_AND_TEXTTABLE</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>7</UPPER-LIMIT>
+                    <COMPU-RATIONAL-COEFFS>
+                      <COMPU-NUMERATOR>
+                        <V>0</V>
+                        <V>1</V>
+                      </COMPU-NUMERATOR>
+                      <COMPU-DENOMINATOR>
+                        <V>1</V>
+                      </COMPU-DENOMINATOR>
+                    </COMPU-RATIONAL-COEFFS>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>8</LOWER-LIMIT>
+                    <UPPER-LIMIT>8</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>abcd</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>9</LOWER-LIMIT>
+                    <UPPER-LIMIT>9</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>abcd1</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+                <COMPU-DEFAULT-VALUE>
+                  <V>8</V>
+                </COMPU-DEFAULT-VALUE>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="d4a62613-2238-4523-b274-2677c5a2235a">
+              <SHORT-NAME>TAB_NOINTP_CompuMethod</SHORT-NAME>
+              <DESC />
+              <CATEGORY>TAB_NOINTP</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <DESC>
+                      <L-2 L="AA" />
+                    </DESC>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>0</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <V>10</V>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <V>9</V>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <V>8</V>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+                <COMPU-DEFAULT-VALUE>
+                  <VF>0</VF>
+                </COMPU-DEFAULT-VALUE>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="6ef51214-688c-4e48-a115-d80fcf62bffc">
+              <SHORT-NAME>TEXTTABLE_CompuMethod</SHORT-NAME>
+              <CATEGORY>TEXTTABLE</CATEGORY>
+              <UNIT-REF DEST="UNIT">/AUTOSAR/AUTOSAR_PhysicalUnits/Units/NoUnit</UNIT-REF>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>0</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>text1</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>1</LOWER-LIMIT>
+                    <UPPER-LIMIT>1</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>text2</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>2</LOWER-LIMIT>
+                    <UPPER-LIMIT>2</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>text3</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT>3</LOWER-LIMIT>
+                    <UPPER-LIMIT>3</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>text4</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+                <COMPU-DEFAULT-VALUE>
+                  <V>0</V>
+                </COMPU-DEFAULT-VALUE>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>ConstantSpecifications</SHORT-NAME>
+          <ELEMENTS>
+            <CONSTANT-SPECIFICATION UUID="5679b253-a22a-4532-8116-7ce8ac35a562">
+              <SHORT-NAME>ApplicationSwComponentType_ExplicitInterRunnableVariable</SHORT-NAME>
+              <VALUE-SPEC>
+                <NUMERICAL-VALUE-SPECIFICATION>
+                  <SHORT-LABEL>Value</SHORT-LABEL>
+                  <VALUE>0</VALUE>
+                </NUMERICAL-VALUE-SPECIFICATION>
+              </VALUE-SPEC>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="82a61fa2-2547-4ce8-a0d4-c583629db923">
+              <SHORT-NAME>ApplicationSwComponentType_SharedParameter</SHORT-NAME>
+              <VALUE-SPEC>
+                <NUMERICAL-VALUE-SPECIFICATION>
+                  <SHORT-LABEL>Value</SHORT-LABEL>
+                  <VALUE>5.5</VALUE>
+                </NUMERICAL-VALUE-SPECIFICATION>
+              </VALUE-SPEC>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="e3a2b67f-9cda-465d-8b6f-f31127e7b3a1">
+              <SHORT-NAME>ApplicationSwComponentType_StaticMemory</SHORT-NAME>
+              <VALUE-SPEC>
+                <NUMERICAL-VALUE-SPECIFICATION>
+                  <SHORT-LABEL>Value</SHORT-LABEL>
+                  <VALUE>9</VALUE>
+                </NUMERICAL-VALUE-SPECIFICATION>
+              </VALUE-SPEC>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="3c303401-cc30-49f7-a7cb-0cf2844a3f18">
+              <SHORT-NAME>ConstantSpecification</SHORT-NAME>
+            </CONSTANT-SPECIFICATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="6fcb326d-7f82-4cd3-9429-fa90f212d1e8">
+          <SHORT-NAME>ConstantTypeMappingSets</SHORT-NAME>
+          <ELEMENTS>
+            <CONSTANT-SPECIFICATION-MAPPING-SET UUID="4f3bdbd1-af02-46e6-a3ba-411118807380">
+              <SHORT-NAME>ConstantSpecificationMappingSet</SHORT-NAME>
+            </CONSTANT-SPECIFICATION-MAPPING-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="5b7c99d1-d4ef-481b-95e4-0d6975de4f3b">
+          <SHORT-NAME>DataConstr</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR UUID="78b9384e-7f45-4396-b617-a03a03aaf3ce">
+              <SHORT-NAME>DataConstr</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <PHYS-CONSTRS>
+                    <LOWER-LIMIT>0</LOWER-LIMIT>
+                    <UPPER-LIMIT>7</UPPER-LIMIT>
+                  </PHYS-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="463cbb86-4f8e-463e-8bb3-dafc528ccbdf">
+          <SHORT-NAME>DataTypemappingSets</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-TYPE-MAPPING-SET UUID="84bab728-8c47-495c-a5d4-5290c3551358">
+              <SHORT-NAME>DataTypeMappingSet</SHORT-NAME>
+              <DATA-TYPE-MAPS>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-ARRAY-DATA-TYPE">/SharedElements/ApplicationDataTypes/Array/ApplicationArrayDataType_Fixed</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/SharedElements/ImplementationDataTypes/ARRAY_ImplementationDataType</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-RECORD-DATA-TYPE">/SharedElements/ApplicationDataTypes/Record/ApplicationRecordDataType</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/SharedElements/ImplementationDataTypes/STRUCTURE_ImplementationDataType1</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-ARRAY-DATA-TYPE">/SharedElements/ApplicationDataTypes/Array/ApplicationArrayDataType_Variable</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/SharedElements/ImplementationDataTypes/Struct_Array_ImplementationDataType</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+                <DATA-TYPE-MAP>
+                  <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</APPLICATION-DATA-TYPE-REF>
+                  <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                </DATA-TYPE-MAP>
+              </DATA-TYPE-MAPS>
+            </DATA-TYPE-MAPPING-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+          <ELEMENTS>
+            <IMPLEMENTATION-DATA-TYPE UUID="21f9a013-317d-4a6a-8c1d-cdc72f7df8f5">
+              <SHORT-NAME>ARRAY_ImplementationDataType</SHORT-NAME>
+              <CATEGORY>ARRAY</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL />
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <SUB-ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="5512b8b7-a43f-436f-bb18-47a903ad1e17">
+                  <SHORT-NAME>SubElement</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <ARRAY-SIZE>15</ARRAY-SIZE>
+                  <ARRAY-SIZE-SEMANTICS>FIXED-SIZE</ARRAY-SIZE-SEMANTICS>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              </SUB-ELEMENTS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="f01098ff-1c78-439e-9476-11d641870637">
+              <SHORT-NAME>ARRAY_ImplementationDataType1</SHORT-NAME>
+              <CATEGORY>ARRAY</CATEGORY>
+              <SUB-ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="ee36cc86-25eb-4048-8698-d1ec326fda32">
+                  <SHORT-NAME>SubElement</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <ARRAY-SIZE>15</ARRAY-SIZE>
+                  <ARRAY-SIZE-SEMANTICS>VARIABLE-SIZE</ARRAY-SIZE-SEMANTICS>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/SharedElements/ImplementationDataTypes/STRUCTURE_ImplementationDataType1</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              </SUB-ELEMENTS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="77ef0bea-be4b-4dea-b5ea-114e5a3f3d26">
+              <SHORT-NAME>ImplementationDataType</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="53ec3bfc-5a92-4d42-b31b-8e29e99a2b46">
+              <SHORT-NAME>STRUCTURE_ImplementationDataType1</SHORT-NAME>
+              <CATEGORY>STRUCTURE</CATEGORY>
+              <SUB-ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="31f01782-3ce8-4dbe-81d1-0d5fb89bef99">
+                  <SHORT-NAME>SubElement</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="83bd06cb-a4ff-4d55-bd3d-1a691b582d46">
+                  <SHORT-NAME>SubElement1</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/SharedElements/ImplementationDataTypes/ARRAY_ImplementationDataType</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              </SUB-ELEMENTS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="ccd15817-26a8-424d-8c87-3f3d70b5ee9d">
+              <SHORT-NAME>Struct_Array_ImplementationDataType</SHORT-NAME>
+              <CATEGORY>STRUCTURE</CATEGORY>
+              <SUB-ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="3f61bc0d-d829-4ab0-9e22-7de6a25972e3">
+                  <SHORT-NAME>SubElement1</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="dc530c9c-3b65-4707-99c3-842e2d2b7788">
+                  <SHORT-NAME>SubElement</SHORT-NAME>
+                  <CATEGORY>ARRAY</CATEGORY>
+                  <SUB-ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="af21d788-9aea-4789-b7d0-8665f2d0c8c7">
+                      <SHORT-NAME>SubElement</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <ARRAY-SIZE>15</ARRAY-SIZE>
+                      <ARRAY-SIZE-SEMANTICS>VARIABLE-SIZE</ARRAY-SIZE-SEMANTICS>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                  </SUB-ELEMENTS>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL />
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              </SUB-ELEMENTS>
+            </IMPLEMENTATION-DATA-TYPE>
+            <IMPLEMENTATION-DATA-TYPE UUID="79fa9e8f-a805-43da-b4b5-ac42d2a23ff0">
+              <SHORT-NAME>TypeTref_ImplementationDataType</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/float32</IMPLEMENTATION-DATA-TYPE-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>PortInterfaces</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="a0d0a13a-15e8-47a3-8169-5f11ad6c7d3f">
+              <SHORT-NAME>ClientServer</SHORT-NAME>
+              <ELEMENTS>
+                <CLIENT-SERVER-INTERFACE UUID="de068aa3-6af8-4bad-a17f-893dbfa6d08d">
+                  <SHORT-NAME>ClientServerInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="f963f5c2-07f7-439d-be71-e8ffb77736cb">
+                      <SHORT-NAME>Operation</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="0757643f-ef26-4951-9974-c0ad09b5c8d0">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="9d946ffc-e827-4a3b-9217-80ae67bdce09">
+                      <SHORT-NAME>Operation1</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="fbd7c03a-e379-467c-9efb-5818113f5e64">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                </CLIENT-SERVER-INTERFACE>
+                <CLIENT-SERVER-INTERFACE UUID="68861440-758d-43f6-92a2-fed7438de313">
+                  <SHORT-NAME>Copy2_ClientServerInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="dd8cf435-bddb-45bb-a59d-cffcdd11cedd">
+                      <SHORT-NAME>Operation</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="474b5949-0760-4780-9d06-6d2b549c40e3">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="ceba0008-a280-4915-acc8-c4b28afc10c4">
+                      <SHORT-NAME>Operation1</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="48e7b87f-8674-441c-bc3e-b6143e20802e">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                </CLIENT-SERVER-INTERFACE>
+                <CLIENT-SERVER-INTERFACE UUID="9b8ada7b-e7a9-49d6-a945-db726b3bd1f9">
+                  <SHORT-NAME>Copy3_ClientServerInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="8b64e196-a577-4332-a8f2-8e907214f2ac">
+                      <SHORT-NAME>Operation</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="cf106dae-c79b-4cea-a011-2d5ff268ac3e">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="03f0b7d8-222c-465d-9663-185446b9f092">
+                      <SHORT-NAME>Operation1</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="9fe53cee-82db-4c74-887a-137d3260eae6">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                </CLIENT-SERVER-INTERFACE>
+                <CLIENT-SERVER-INTERFACE UUID="bc94762b-35e3-49e1-ae8b-70bc63394d9c">
+                  <SHORT-NAME>Copy4_ClientServerInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="4f953ec5-5e57-4a1c-bcf2-9eba8fde4ddd">
+                      <SHORT-NAME>Operation</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="573e55c4-304e-48a7-ae98-47c7744d4415">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="32dd33c4-e167-4858-93d3-bc02d325d12c">
+                      <SHORT-NAME>Operation1</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="28cc5664-0a70-4275-b1a3-3cb7a40597db">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                </CLIENT-SERVER-INTERFACE>
+                <CLIENT-SERVER-INTERFACE UUID="ad797ff8-41de-49b7-a6c3-c2dd864f60dd">
+                  <SHORT-NAME>Copy_ClientServerInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="5d536ac2-edd2-4788-b233-5b0ef32a2022">
+                      <SHORT-NAME>Operation</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="174674f0-498e-41bc-9667-2459277f62ea">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="be00c41e-3412-411d-ad74-a6a0feee0ecd">
+                      <SHORT-NAME>Operation1</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="8c68ce17-1680-4ec1-951d-9d9c871aca06">
+                          <SHORT-NAME>Argument</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                </CLIENT-SERVER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="3503a605-12c8-44be-96cf-4ad548d5d58f">
+              <SHORT-NAME>ModeSwitch</SHORT-NAME>
+              <ELEMENTS>
+                <MODE-DECLARATION-GROUP UUID="d1db93d0-7154-468f-b3bc-872d23a7385f">
+                  <SHORT-NAME>Copy_ModeDeclarationGroup</SHORT-NAME>
+                  <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+                  <INITIAL-MODE-REF DEST="MODE-DECLARATION">/SharedElements/PortInterfaces/ModeSwitch/Copy_ModeDeclarationGroup/ModeDeclaration</INITIAL-MODE-REF>
+                  <MODE-DECLARATIONS>
+                    <MODE-DECLARATION UUID="2608f59c-87b0-47b2-8cee-8e9c3ba94cac">
+                      <SHORT-NAME>ModeDeclaration</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION UUID="7cc2e588-342f-40a3-ad77-b3d49457e996">
+                      <SHORT-NAME>ModeDeclaration1</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION UUID="278335ee-b40e-4f50-9fc3-164297dafbfd">
+                      <SHORT-NAME>ModeDeclaration2</SHORT-NAME>
+                    </MODE-DECLARATION>
+                  </MODE-DECLARATIONS>
+                </MODE-DECLARATION-GROUP>
+                <MODE-SWITCH-INTERFACE UUID="359238c5-e830-44a4-b8a0-362c11b6864f">
+                  <SHORT-NAME>Copy_ModeSwitchInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <MODE-GROUP UUID="5de6bb25-e952-4b16-ad52-f4692d7da6d9">
+                    <SHORT-NAME>ModeGroup</SHORT-NAME>
+                    <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/SharedElements/PortInterfaces/ModeSwitch/Copy_ModeDeclarationGroup</TYPE-TREF>
+                  </MODE-GROUP>
+                </MODE-SWITCH-INTERFACE>
+                <MODE-DECLARATION-GROUP UUID="b9ed1cc5-6caf-43d0-b094-3c763b6cbb9a">
+                  <SHORT-NAME>ModeDeclarationGroup</SHORT-NAME>
+                  <CATEGORY>ALPHABETIC_ORDER</CATEGORY>
+                  <INITIAL-MODE-REF DEST="MODE-DECLARATION">/SharedElements/PortInterfaces/ModeSwitch/ModeDeclarationGroup/ModeDeclaration</INITIAL-MODE-REF>
+                  <MODE-DECLARATIONS>
+                    <MODE-DECLARATION UUID="c1fb19b0-d635-4deb-a718-37e3d20b8878">
+                      <SHORT-NAME>ModeDeclaration</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION UUID="a586eb27-c099-42ab-b553-a0fd227d1fe5">
+                      <SHORT-NAME>ModeDeclaration1</SHORT-NAME>
+                    </MODE-DECLARATION>
+                    <MODE-DECLARATION UUID="a891dd23-e1f6-41f0-b669-b383af7bd17e">
+                      <SHORT-NAME>ModeDeclaration2</SHORT-NAME>
+                    </MODE-DECLARATION>
+                  </MODE-DECLARATIONS>
+                </MODE-DECLARATION-GROUP>
+                <MODE-SWITCH-INTERFACE UUID="949dcf4f-08eb-4d99-8504-1c613d93f5e9">
+                  <SHORT-NAME>ModeSwitchInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <MODE-GROUP UUID="26ede937-ce36-4065-93e5-d8bca12d51cd">
+                    <SHORT-NAME>ModeGroup</SHORT-NAME>
+                    <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/SharedElements/PortInterfaces/ModeSwitch/ModeDeclarationGroup</TYPE-TREF>
+                  </MODE-GROUP>
+                </MODE-SWITCH-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="07677b4a-bc79-4c7b-afa1-581ad642a3dd">
+              <SHORT-NAME>NvData</SHORT-NAME>
+              <ELEMENTS>
+                <NV-DATA-INTERFACE UUID="8a4989b3-88e2-4e47-b98f-591e75c76b17">
+                  <SHORT-NAME>NvDataInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <NV-DATAS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="8a84bf2f-0e49-4923-bbc2-7a6606812ef4">
+                      <SHORT-NAME>NvData</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="4437f330-788c-4fb4-92e5-9545dfdbd9f0">
+                      <SHORT-NAME>NvData1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/float64</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </NV-DATAS>
+                </NV-DATA-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="9b48ec34-87aa-4f84-9080-1d3f919ca090">
+              <SHORT-NAME>Parameter</SHORT-NAME>
+              <ELEMENTS>
+                <PARAMETER-INTERFACE UUID="618ca0ee-adf8-43c1-b898-33ea5ca916d8">
+                  <SHORT-NAME>ParameterInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <PARAMETERS>
+                    <PARAMETER-DATA-PROTOTYPE UUID="d359a294-51b2-461a-b7fb-0de80cf2598a">
+                      <SHORT-NAME>Parameter</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/float32</TYPE-TREF>
+                    </PARAMETER-DATA-PROTOTYPE>
+                    <PARAMETER-DATA-PROTOTYPE UUID="a60e4821-63b4-4fa4-9f04-983264b2a55f">
+                      <SHORT-NAME>Parameter1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                    </PARAMETER-DATA-PROTOTYPE>
+                  </PARAMETERS>
+                </PARAMETER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="304f7bbd-15e6-4f85-b22f-4b02c9a5631c">
+              <SHORT-NAME>SenderReceiver</SHORT-NAME>
+              <ELEMENTS>
+                <SENDER-RECEIVER-INTERFACE UUID="5301b51c-ab80-4717-880a-f53963ebb47d">
+                  <SHORT-NAME>Copy2_SenderReceiverInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <DATA-ELEMENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="d071c034-64ed-44d0-81f0-a0735e373ce3">
+                      <SHORT-NAME>DataElement</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="3afe6629-f986-4006-9ecf-b2902644f64e">
+                      <SHORT-NAME>DataElement1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="b4591ad1-c21f-4706-8eac-55f6169b8c96">
+                  <SHORT-NAME>Copy3_SenderReceiverInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <DATA-ELEMENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="dd322790-2f29-43dc-93a0-10c5addc7871">
+                      <SHORT-NAME>DataElement</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="27292aab-8793-404f-b1d0-3128a4ab29bf">
+                      <SHORT-NAME>DataElement1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="e5b1f8fc-9e46-4d58-b278-cb3461917783">
+                  <SHORT-NAME>Copy4_SenderReceiverInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <DATA-ELEMENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="81fa7709-76a3-4e64-8ab6-0302340d9596">
+                      <SHORT-NAME>DataElement</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="4139b239-b260-44f9-a1b9-26592a9702b7">
+                      <SHORT-NAME>DataElement1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="67583438-372e-4f89-aad7-44d221ba987e">
+                  <SHORT-NAME>Copy5_SenderReceiverInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <DATA-ELEMENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="b67450ea-eee7-49cd-9e1b-696114cdc06b">
+                      <SHORT-NAME>DataElement</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="6616174f-78ab-48e5-b54f-f0ac623eefa6">
+                      <SHORT-NAME>DataElement1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="c0a51d5f-0a8c-4bdc-a77d-03a338508c6b">
+                  <SHORT-NAME>Copy_SenderReceiverInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <DATA-ELEMENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="b7a89eaf-844f-4e6d-b357-dc9976ba211e">
+                      <SHORT-NAME>DataElement</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="373c6d56-b664-4bba-b6bf-37630aed9fef">
+                      <SHORT-NAME>DataElement1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </DATA-ELEMENTS>
+                </SENDER-RECEIVER-INTERFACE>
+                <SENDER-RECEIVER-INTERFACE UUID="5f56a3f5-0f22-429f-a8b9-003d68bbc759">
+                  <SHORT-NAME>SenderReceiverInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <DATA-ELEMENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="c448fbc4-20d2-443d-bb7a-87585742cfcf">
+                      <SHORT-NAME>DataElement</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="6862a5ea-8794-4906-9f54-50624e9d6044">
+                      <SHORT-NAME>DataElement1</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint32</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </DATA-ELEMENTS>
+                  <INVALIDATION-POLICYS>
+                    <INVALIDATION-POLICY>
+                      <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement</DATA-ELEMENT-REF>
+                      <HANDLE-INVALID>KEEP</HANDLE-INVALID>
+                    </INVALIDATION-POLICY>
+                  </INVALIDATION-POLICYS>
+                </SENDER-RECEIVER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="00421379-584f-4dbb-8c9f-d70ad66b8e41">
+              <SHORT-NAME>Trigger</SHORT-NAME>
+              <ELEMENTS>
+                <TRIGGER-INTERFACE UUID="97d54491-56c6-49b9-9812-bb5eadaefa82">
+                  <SHORT-NAME>TriggerInterface</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <TRIGGERS>
+                    <TRIGGER UUID="06d545dc-664d-45fb-be23-8a076bded4b5">
+                      <SHORT-NAME>Trigger</SHORT-NAME>
+                      <TRIGGER-PERIOD>
+                        <CSE-CODE>6</CSE-CODE>
+                        <CSE-CODE-FACTOR>15</CSE-CODE-FACTOR>
+                      </TRIGGER-PERIOD>
+                    </TRIGGER>
+                  </TRIGGERS>
+                </TRIGGER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="a21c4095-c5dd-41b4-8a15-aa23a460a3e9">
+          <SHORT-NAME>SWCImpl</SHORT-NAME>
+          <ELEMENTS>
+            <SWC-IMPLEMENTATION UUID="a8e1b9bd-bc2d-4bba-8d84-7fb588da487b">
+              <SHORT-NAME>SwcImplementation</SHORT-NAME>
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <RESOURCE-CONSUMPTION UUID="664bf3d9-9efc-49d1-a4fd-9936922aa5f9">
+                <SHORT-NAME>ResourceConsumption</SHORT-NAME>
+              </RESOURCE-CONSUMPTION>
+              <SW-VERSION>1.0.0.0</SW-VERSION>
+              <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl</BEHAVIOR-REF>
+            </SWC-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="fc8b946c-31d4-49d6-8e0c-ff6847ede7f5">
+          <SHORT-NAME>SwAddrMethods</SHORT-NAME>
+          <ELEMENTS>
+            <SW-ADDR-METHOD UUID="8a973d95-6644-4157-ab41-c78f7ccbcb2c">
+              <SHORT-NAME>Copy2_SwAddrMethod</SHORT-NAME>
+              <MEMORY-ALLOCATION-KEYWORD-POLICY>ADDR-METHOD-SHORT-NAME</MEMORY-ALLOCATION-KEYWORD-POLICY>
+              <SECTION-TYPE>CODE</SECTION-TYPE>
+            </SW-ADDR-METHOD>
+            <SW-ADDR-METHOD UUID="73ccfb92-d7eb-4aee-b724-b520ed1a3e84">
+              <SHORT-NAME>Copy_SwAddrMethod</SHORT-NAME>
+              <MEMORY-ALLOCATION-KEYWORD-POLICY>ADDR-METHOD-SHORT-NAME-AND-ALIGNMENT</MEMORY-ALLOCATION-KEYWORD-POLICY>
+              <SECTION-TYPE>CALIBRATION-VARIABLES</SECTION-TYPE>
+            </SW-ADDR-METHOD>
+            <SW-ADDR-METHOD UUID="59a8a159-68d8-4804-8d3b-76f1a5d48b3c">
+              <SHORT-NAME>SwAddrMethod</SHORT-NAME>
+              <MEMORY-ALLOCATION-KEYWORD-POLICY>ADDR-METHOD-SHORT-NAME</MEMORY-ALLOCATION-KEYWORD-POLICY>
+              <SECTION-TYPE>CALIBRATION-VARIABLES</SECTION-TYPE>
+            </SW-ADDR-METHOD>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="7e1cfec7-fc85-4615-9df0-46ddc1fdaa09">
+          <SHORT-NAME>ApplSWC</SHORT-NAME>
+          <ELEMENTS>
+            <APPLICATION-SW-COMPONENT-TYPE UUID="e74b1e65-d39d-460c-8d4d-d95c8a9e12dd">
+              <SHORT-NAME>ApplicationSwComponentType</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE UUID="1ecadefd-df18-4c05-a2d5-803778e62ae1">
+                  <SHORT-NAME>RPort_SR</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="a3e8969f-1dde-4749-af9a-f337b0f053d8">
+                  <SHORT-NAME>PPort_SR</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="933a7736-19ea-4662-8301-3fe9991367bc">
+                  <SHORT-NAME>RPort_CS</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/SharedElements/PortInterfaces/ClientServer/ClientServerInterface</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="38b3145f-1dd8-4a0f-943b-2f6b2d0a4221">
+                  <SHORT-NAME>PPort_CS</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/SharedElements/PortInterfaces/ClientServer/ClientServerInterface</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="08e53a34-e89a-4c1c-a2d4-9536c0e123af">
+                  <SHORT-NAME>RPort_msi</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="8ed933c7-270b-45cf-8a3e-206782153f61">
+                  <SHORT-NAME>PPort_msi</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="MODE-SWITCH-INTERFACE">/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="52c8bb91-6599-4bdd-a556-e2b22ab9c73b">
+                  <SHORT-NAME>RPort_nvd</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="NV-DATA-INTERFACE">/SharedElements/PortInterfaces/NvData/NvDataInterface</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="a69f810c-0a9d-4729-9b49-5b4be2f55ffa">
+                  <SHORT-NAME>PPort_nvd</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="NV-DATA-INTERFACE">/SharedElements/PortInterfaces/NvData/NvDataInterface</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="7bee2832-df48-4712-a0cf-9b2f095db921">
+                  <SHORT-NAME>RPort_prm</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="PARAMETER-INTERFACE">/SharedElements/PortInterfaces/Parameter/ParameterInterface</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="9194fa9f-f535-4ef4-ad71-379f00251a5f">
+                  <SHORT-NAME>RPort_trigger</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="TRIGGER-INTERFACE">/SharedElements/PortInterfaces/Trigger/TriggerInterface</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+              <INTERNAL-BEHAVIORS>
+                <SWC-INTERNAL-BEHAVIOR UUID="d0c29733-8863-4bcd-af6a-1579e0a29746">
+                  <SHORT-NAME>IB_Appl</SHORT-NAME>
+                  <CONSTANT-MEMORYS>
+                    <PARAMETER-DATA-PROTOTYPE UUID="666c53b0-408c-4084-8002-71810ad2bea7">
+                      <SHORT-NAME>ConstantMemory</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint64</TYPE-TREF>
+                      <INIT-VALUE>
+                        <NUMERICAL-VALUE-SPECIFICATION>
+                          <SHORT-LABEL>Value</SHORT-LABEL>
+                          <VALUE>3</VALUE>
+                        </NUMERICAL-VALUE-SPECIFICATION>
+                      </INIT-VALUE>
+                    </PARAMETER-DATA-PROTOTYPE>
+                  </CONSTANT-MEMORYS>
+                  <DATA-TYPE-MAPPING-REFS>
+                    <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/SharedElements/DataTypemappingSets/DataTypeMappingSet</DATA-TYPE-MAPPING-REF>
+                  </DATA-TYPE-MAPPING-REFS>
+                  <STATIC-MEMORYS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="0a83fe83-959c-49d2-abf1-981ac4641b7d">
+                      <SHORT-NAME>StaticMemory</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                      <INIT-VALUE>
+                        <CONSTANT-REFERENCE>
+                          <SHORT-LABEL>ReferenceToConstant</SHORT-LABEL>
+                          <CONSTANT-REF DEST="CONSTANT-SPECIFICATION">/SharedElements/ConstantSpecifications/ApplicationSwComponentType_StaticMemory</CONSTANT-REF>
+                        </CONSTANT-REFERENCE>
+                      </INIT-VALUE>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </STATIC-MEMORYS>
+                  <AR-TYPED-PER-INSTANCE-MEMORYS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="c2401b62-709c-4a61-a9d7-5f540d144075">
+                      <SHORT-NAME>ArTypedPerInstanceMemory</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/sint16</TYPE-TREF>
+                      <INIT-VALUE>
+                        <NUMERICAL-VALUE-SPECIFICATION>
+                          <SHORT-LABEL>Value</SHORT-LABEL>
+                          <VALUE>-3</VALUE>
+                        </NUMERICAL-VALUE-SPECIFICATION>
+                      </INIT-VALUE>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </AR-TYPED-PER-INSTANCE-MEMORYS>
+                  <EVENTS>
+                    <ASYNCHRONOUS-SERVER-CALL-RETURNS-EVENT UUID="98e66756-7475-4549-94ba-bd68dca85e27">
+                      <SHORT-NAME>AsynchronousServerCallReturnsEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable</START-ON-EVENT-REF>
+                      <EVENT-SOURCE-REF DEST="ASYNCHRONOUS-SERVER-CALL-RESULT-POINT">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable/AsynchronousServerCallResultPoint</EVENT-SOURCE-REF>
+                    </ASYNCHRONOUS-SERVER-CALL-RETURNS-EVENT>
+                    <BACKGROUND-EVENT UUID="878975ea-f390-4f62-a34f-05ca7fd73896">
+                      <SHORT-NAME>BackgroundEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable1</START-ON-EVENT-REF>
+                    </BACKGROUND-EVENT>
+                    <DATA-RECEIVE-ERROR-EVENT UUID="733de305-2dc6-4ac2-be25-134d242372ad">
+                      <SHORT-NAME>DataReceiveErrorEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable2</START-ON-EVENT-REF>
+                      <DATA-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_SR</CONTEXT-R-PORT-REF>
+                        <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement</TARGET-DATA-ELEMENT-REF>
+                      </DATA-IREF>
+                    </DATA-RECEIVE-ERROR-EVENT>
+                    <DATA-RECEIVED-EVENT UUID="30fc9c83-5302-44fc-a25d-0d77e2b3d112">
+                      <SHORT-NAME>DataReceivedEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable3</START-ON-EVENT-REF>
+                      <DATA-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_SR</CONTEXT-R-PORT-REF>
+                        <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1</TARGET-DATA-ELEMENT-REF>
+                      </DATA-IREF>
+                    </DATA-RECEIVED-EVENT>
+                    <DATA-SEND-COMPLETED-EVENT UUID="aefde323-2cf9-4226-aedb-0a1a33876a55">
+                      <SHORT-NAME>DataSendCompletedEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable4</START-ON-EVENT-REF>
+                      <EVENT-SOURCE-REF DEST="VARIABLE-ACCESS">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable4/DSP_PPort_SR_DataElement</EVENT-SOURCE-REF>
+                    </DATA-SEND-COMPLETED-EVENT>
+                    <DATA-WRITE-COMPLETED-EVENT UUID="0da70404-5ab6-4651-ad56-e1c3adab06e5">
+                      <SHORT-NAME>DataWriteCompletedEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable5</START-ON-EVENT-REF>
+                      <EVENT-SOURCE-REF DEST="VARIABLE-ACCESS">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable5/DWA_PPort_SR_DataElement1</EVENT-SOURCE-REF>
+                    </DATA-WRITE-COMPLETED-EVENT>
+                    <EXTERNAL-TRIGGER-OCCURRED-EVENT UUID="7f122189-5a69-4e28-af84-b5a1e73c9206">
+                      <SHORT-NAME>ExternalTriggerOccurredEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable6</START-ON-EVENT-REF>
+                      <TRIGGER-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_trigger</CONTEXT-R-PORT-REF>
+                        <TARGET-TRIGGER-REF DEST="TRIGGER">/SharedElements/PortInterfaces/Trigger/TriggerInterface/Trigger</TARGET-TRIGGER-REF>
+                      </TRIGGER-IREF>
+                    </EXTERNAL-TRIGGER-OCCURRED-EVENT>
+                    <MODE-SWITCHED-ACK-EVENT UUID="2f5c24be-60cf-4249-bfde-ceabef6d00d4">
+                      <SHORT-NAME>ModeSwitchedAckEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable9</START-ON-EVENT-REF>
+                      <EVENT-SOURCE-REF DEST="MODE-SWITCH-POINT">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable9/MSP_PPort_msi_ModeGroup</EVENT-SOURCE-REF>
+                    </MODE-SWITCHED-ACK-EVENT>
+                    <OPERATION-INVOKED-EVENT UUID="02646a86-1109-43a4-8e09-cb8878e932a5">
+                      <SHORT-NAME>OperationInvokedEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable10</START-ON-EVENT-REF>
+                      <OPERATION-IREF>
+                        <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_CS</CONTEXT-P-PORT-REF>
+                        <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/SharedElements/PortInterfaces/ClientServer/ClientServerInterface/Operation1</TARGET-PROVIDED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </OPERATION-INVOKED-EVENT>
+                    <SWC-MODE-SWITCH-EVENT UUID="5bebf915-dc23-4d8d-ac15-4af9a83cb9f1">
+                      <SHORT-NAME>SwcModeSwitchEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable12</START-ON-EVENT-REF>
+                      <ACTIVATION>ON-TRANSITION</ACTIVATION>
+                      <MODE-IREFS>
+                        <MODE-IREF>
+                          <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_msi</CONTEXT-PORT-REF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/SharedElements/PortInterfaces/ModeSwitch/ModeDeclarationGroup/ModeDeclaration2</TARGET-MODE-DECLARATION-REF>
+                        </MODE-IREF>
+                        <MODE-IREF>
+                          <CONTEXT-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_msi</CONTEXT-PORT-REF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/SharedElements/PortInterfaces/ModeSwitch/ModeDeclarationGroup/ModeDeclaration</TARGET-MODE-DECLARATION-REF>
+                        </MODE-IREF>
+                      </MODE-IREFS>
+                    </SWC-MODE-SWITCH-EVENT>
+                    <TIMING-EVENT UUID="a761b6cb-cd31-4a99-b2f8-21c5a132097e">
+                      <SHORT-NAME>TimingEvent</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable13</START-ON-EVENT-REF>
+                      <PERIOD>0.01</PERIOD>
+                    </TIMING-EVENT>
+                    <TIMING-EVENT UUID="0faaa505-7947-4b84-b8ea-4086fa60a54c">
+                      <SHORT-NAME>TimingEvent1</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable15</START-ON-EVENT-REF>
+                      <PERIOD>0.01</PERIOD>
+                    </TIMING-EVENT>
+                  </EVENTS>
+                  <EXPLICIT-INTER-RUNNABLE-VARIABLES>
+                    <VARIABLE-DATA-PROTOTYPE UUID="46bf0c15-16f3-428f-92de-ce374a9faf1c">
+                      <SHORT-NAME>ExplicitInterRunnableVariable</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean</TYPE-TREF>
+                      <INIT-VALUE>
+                        <CONSTANT-REFERENCE>
+                          <SHORT-LABEL>ReferenceToConstant</SHORT-LABEL>
+                          <CONSTANT-REF DEST="CONSTANT-SPECIFICATION">/SharedElements/ConstantSpecifications/ApplicationSwComponentType_ExplicitInterRunnableVariable</CONSTANT-REF>
+                        </CONSTANT-REFERENCE>
+                      </INIT-VALUE>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </EXPLICIT-INTER-RUNNABLE-VARIABLES>
+                  <HANDLE-TERMINATION-AND-RESTART>NO-SUPPORT</HANDLE-TERMINATION-AND-RESTART>
+                  <IMPLICIT-INTER-RUNNABLE-VARIABLES>
+                    <VARIABLE-DATA-PROTOTYPE UUID="100df329-69ca-4527-945c-b23a59017964">
+                      <SHORT-NAME>ImplicitInterRunnableVariable</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/sint16</TYPE-TREF>
+                      <INIT-VALUE>
+                        <NUMERICAL-VALUE-SPECIFICATION>
+                          <SHORT-LABEL>Value</SHORT-LABEL>
+                          <VALUE>0</VALUE>
+                        </NUMERICAL-VALUE-SPECIFICATION>
+                      </INIT-VALUE>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </IMPLICIT-INTER-RUNNABLE-VARIABLES>
+                  <PER-INSTANCE-PARAMETERS>
+                    <PARAMETER-DATA-PROTOTYPE UUID="a2509010-a816-4ea4-b0ed-c5ba10c3ca78">
+                      <SHORT-NAME>PerInstanceParameter</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8</TYPE-TREF>
+                      <INIT-VALUE>
+                        <NUMERICAL-VALUE-SPECIFICATION>
+                          <SHORT-LABEL>Value</SHORT-LABEL>
+                          <VALUE>5</VALUE>
+                        </NUMERICAL-VALUE-SPECIFICATION>
+                      </INIT-VALUE>
+                    </PARAMETER-DATA-PROTOTYPE>
+                  </PER-INSTANCE-PARAMETERS>
+                  <RUNNABLES>
+                    <RUNNABLE-ENTITY UUID="bfb2d01b-9082-4a58-a929-6d7a860a2d9a">
+                      <SHORT-NAME>Runnable</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <SW-ADDR-METHOD-REF DEST="SW-ADDR-METHOD">/SharedElements/SwAddrMethods/Copy2_SwAddrMethod</SW-ADDR-METHOD-REF>
+                      <ASYNCHRONOUS-SERVER-CALL-RESULT-POINTS>
+                        <ASYNCHRONOUS-SERVER-CALL-RESULT-POINT UUID="f857d505-3c25-43b2-b929-36e0e40f1177">
+                          <SHORT-NAME>AsynchronousServerCallResultPoint</SHORT-NAME>
+                          <ASYNCHRONOUS-SERVER-CALL-POINT-REF DEST="ASYNCHRONOUS-SERVER-CALL-POINT">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable/ASCP_RPort_CS_Operation</ASYNCHRONOUS-SERVER-CALL-POINT-REF>
+                        </ASYNCHRONOUS-SERVER-CALL-RESULT-POINT>
+                      </ASYNCHRONOUS-SERVER-CALL-RESULT-POINTS>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SERVER-CALL-POINTS>
+                        <ASYNCHRONOUS-SERVER-CALL-POINT UUID="e7aacef3-56e7-4964-b0b6-5569dd4abc09">
+                          <SHORT-NAME>ASCP_RPort_CS_Operation</SHORT-NAME>
+                          <OPERATION-IREF>
+                            <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_CS</CONTEXT-R-PORT-REF>
+                            <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/SharedElements/PortInterfaces/ClientServer/ClientServerInterface/Operation</TARGET-REQUIRED-OPERATION-REF>
+                          </OPERATION-IREF>
+                          <TIMEOUT>0</TIMEOUT>
+                        </ASYNCHRONOUS-SERVER-CALL-POINT>
+                      </SERVER-CALL-POINTS>
+                      <SYMBOL>ApplicationSwComponentType_Runnable</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="4a40f3ec-f4dd-4ab0-8562-6a5174f2901e">
+                      <SHORT-NAME>Runnable1</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable1</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="83eca00a-85d5-4f04-9573-3d997cd29b67">
+                      <SHORT-NAME>Runnable2</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable2</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="20bfd5e2-a118-4324-97fd-dcd5bf5f0a46">
+                      <SHORT-NAME>Runnable3</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable3</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="ae315d13-a18a-4515-b02d-f1b207f85e47">
+                      <SHORT-NAME>Runnable4</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <DATA-SEND-POINTS>
+                        <VARIABLE-ACCESS UUID="2a04aecc-a1b6-494f-838e-29671adb5210">
+                          <SHORT-NAME>DSP_PPort_SR_DataElement</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-SEND-POINTS>
+                      <SYMBOL>ApplicationSwComponentType_Runnable4</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="3ea0641c-9d79-4f93-8287-e34956b5c134">
+                      <SHORT-NAME>Runnable5</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <DATA-WRITE-ACCESSS>
+                        <VARIABLE-ACCESS UUID="326a474d-8d28-41bc-bd9e-91de9802f682">
+                          <SHORT-NAME>DWA_PPort_SR_DataElement1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-WRITE-ACCESSS>
+                      <SYMBOL>ApplicationSwComponentType_Runnable5</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="d7adad0b-22d1-4b37-9691-0677036197aa">
+                      <SHORT-NAME>Runnable6</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable6</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="98d30ebd-bbcb-4780-bc4a-27e6fd798a5a">
+                      <SHORT-NAME>Runnable7</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable7</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="a6d9d7cb-1d57-45f2-b36a-1e1ab717fb1e">
+                      <SHORT-NAME>Runnable9</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <MODE-SWITCH-POINTS>
+                        <MODE-SWITCH-POINT UUID="dd700e44-3e29-4b21-901f-c2e36c719f6a">
+                          <SHORT-NAME>MSP_PPort_msi_ModeGroup</SHORT-NAME>
+                          <MODE-GROUP-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_msi</CONTEXT-P-PORT-REF>
+                            <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup</TARGET-MODE-GROUP-REF>
+                          </MODE-GROUP-IREF>
+                        </MODE-SWITCH-POINT>
+                      </MODE-SWITCH-POINTS>
+                      <SYMBOL>ApplicationSwComponentType_Runnable9</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="3d515ac9-9c51-4cb8-a6af-ea16d3afd01d">
+                      <SHORT-NAME>Runnable10</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable10</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="9bddd887-575d-463b-b09d-d1b63ec1352b">
+                      <SHORT-NAME>Runnable11</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable11</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="fa96688f-7ffe-4b3b-aa43-c124847e2efd">
+                      <SHORT-NAME>Runnable12</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable12</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="e967670f-46d8-4d91-b4b9-62c85a17843e">
+                      <SHORT-NAME>Runnable13</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <DATA-READ-ACCESSS>
+                        <VARIABLE-ACCESS UUID="9bf42611-5276-4ce4-92b5-36c024121479">
+                          <SHORT-NAME>DRA_RPort_SR_DataElement</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="9eef2638-b3d9-47c1-9e18-37822b089dd4">
+                          <SHORT-NAME>DRA_RPort_SR_DataElement1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="26ad84a0-bc71-4cae-92f7-69d3d1bc91ff">
+                          <SHORT-NAME>DRA_RPort_nvd_NvData</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="067aa426-f94d-4f7c-b471-a3631398a8a6">
+                          <SHORT-NAME>DRA_RPort_nvd_NvData1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-READ-ACCESSS>
+                      <DATA-WRITE-ACCESSS>
+                        <VARIABLE-ACCESS UUID="a0b4f337-7b3c-4ade-bc28-db75b0882305">
+                          <SHORT-NAME>DWA_PPort_SR_DataElement</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="839b63ac-ec02-4b70-aca8-f974d2ab728c">
+                          <SHORT-NAME>DWA_PPort_SR_DataElement1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="b68d4be0-8b3f-4259-9c8a-2901c17454d7">
+                          <SHORT-NAME>DWA_PPort_nvd_NvData</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="3e84de24-a491-4152-b344-8c5e44e9197e">
+                          <SHORT-NAME>DWA_PPort_nvd_NvData1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-WRITE-ACCESSS>
+                      <READ-LOCAL-VARIABLES>
+                        <VARIABLE-ACCESS UUID="c8972fdb-f78a-4e12-9a30-4faf0daa6c23">
+                          <SHORT-NAME>IRVRA_ExplicitInterRunnableVariable</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <LOCAL-VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ExplicitInterRunnableVariable</LOCAL-VARIABLE-REF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="bf16d1d1-6833-4572-8830-6e31aa069454">
+                          <SHORT-NAME>IRVRA_ImplicitInterRunnableVariable</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <LOCAL-VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ImplicitInterRunnableVariable</LOCAL-VARIABLE-REF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </READ-LOCAL-VARIABLES>
+                      <SYMBOL>ApplicationSwComponentType_Runnable13</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="1c2e8cb0-fdf5-45ee-9257-dee6f42d2ad4">
+                      <SHORT-NAME>Runnable14</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <SYMBOL>ApplicationSwComponentType_Runnable14</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                    <RUNNABLE-ENTITY UUID="6debf2b3-9c4c-455e-9cbc-0c7cfaca4d43">
+                      <SHORT-NAME>Runnable15</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                      <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                      <DATA-READ-ACCESSS>
+                        <VARIABLE-ACCESS UUID="5648b05b-23f8-4729-9fdd-25a617e2d17b">
+                          <SHORT-NAME>DRA_RPort_nvd_NvData</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="b355b0ac-1fa9-43f7-b5ab-240eae2c3694">
+                          <SHORT-NAME>DRA_RPort_nvd_NvData1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-READ-ACCESSS>
+                      <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                        <VARIABLE-ACCESS UUID="86796258-06a6-480e-8a39-e01411743a56">
+                          <SHORT-NAME>DRP_RPort_SR_DataElement</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="88c27605-b9a2-4db7-af10-2a0953c5110b">
+                          <SHORT-NAME>DRP_RPort_nvd_NvData</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="b69ad602-c226-42a5-9bbb-acbbc5c16743">
+                          <SHORT-NAME>DRP_RPort_nvd_NvData1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                      <DATA-RECEIVE-POINT-BY-VALUES>
+                        <VARIABLE-ACCESS UUID="38ed8447-65f1-48a9-b075-fa613c1267d2">
+                          <SHORT-NAME>DRPV_RPort_SR_DataElement1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="d07d7e6b-0d9c-4475-bbb9-2ccfc3e60c33">
+                          <SHORT-NAME>DRPV_RPort_nvd_NvData</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-RECEIVE-POINT-BY-VALUES>
+                      <DATA-SEND-POINTS>
+                        <VARIABLE-ACCESS UUID="2fc872c8-d598-4d11-8502-1a70e9104bc9">
+                          <SHORT-NAME>DSP_PPort_SR_DataElement</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="a2f22836-4cd0-4c2e-8040-1abdf8935ac0">
+                          <SHORT-NAME>DSP_PPort_SR_DataElement1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="c0c41eb1-b5bf-4e30-9569-24d7316b64c8">
+                          <SHORT-NAME>DSP_PPort_nvd_NvData</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="96f66382-5f86-4a47-bd5b-9f95f81fc3c9">
+                          <SHORT-NAME>DSP_PPort_nvd_NvData1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_nvd</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-SEND-POINTS>
+                      <DATA-WRITE-ACCESSS>
+                        <VARIABLE-ACCESS UUID="d40a6e94-d8e5-48e5-8a1a-c7debe02592f">
+                          <SHORT-NAME>DWA_PPort_SR_DataElement1</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <AUTOSAR-VARIABLE-IREF>
+                              <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-VARIABLE-IREF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </DATA-WRITE-ACCESSS>
+                      <MODE-SWITCH-POINTS>
+                        <MODE-SWITCH-POINT UUID="8f7d9801-a32d-4e5f-85cd-fbcf669d921a">
+                          <SHORT-NAME>MSP_PPort_msi_ModeGroup</SHORT-NAME>
+                          <MODE-GROUP-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_msi</CONTEXT-P-PORT-REF>
+                            <TARGET-MODE-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup</TARGET-MODE-GROUP-REF>
+                          </MODE-GROUP-IREF>
+                        </MODE-SWITCH-POINT>
+                      </MODE-SWITCH-POINTS>
+                      <PARAMETER-ACCESSS>
+                        <PARAMETER-ACCESS UUID="92d672aa-34ea-4fcb-a0a2-ab2431d59c0a">
+                          <SHORT-NAME>ParameterAccess</SHORT-NAME>
+                          <ACCESSED-PARAMETER>
+                            <LOCAL-PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ConstantMemory</LOCAL-PARAMETER-REF>
+                          </ACCESSED-PARAMETER>
+                        </PARAMETER-ACCESS>
+                        <PARAMETER-ACCESS UUID="391726ca-20e2-4c02-b063-65244a9e523a">
+                          <SHORT-NAME>PICPVA_PerInstanceParameter</SHORT-NAME>
+                          <ACCESSED-PARAMETER>
+                            <LOCAL-PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/PerInstanceParameter</LOCAL-PARAMETER-REF>
+                          </ACCESSED-PARAMETER>
+                        </PARAMETER-ACCESS>
+                        <PARAMETER-ACCESS UUID="19d7aee6-82b8-4233-a787-b84bdb562167">
+                          <SHORT-NAME>CPA_RPort_prm_Parameter</SHORT-NAME>
+                          <ACCESSED-PARAMETER>
+                            <AUTOSAR-PARAMETER-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_prm</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/SharedElements/PortInterfaces/Parameter/ParameterInterface/Parameter</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-PARAMETER-IREF>
+                          </ACCESSED-PARAMETER>
+                        </PARAMETER-ACCESS>
+                        <PARAMETER-ACCESS UUID="ab7c5c59-47f3-4fee-a310-f64cb2c00c48">
+                          <SHORT-NAME>CPA_RPort_prm_Parameter1</SHORT-NAME>
+                          <ACCESSED-PARAMETER>
+                            <AUTOSAR-PARAMETER-IREF>
+                              <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_prm</PORT-PROTOTYPE-REF>
+                              <TARGET-DATA-PROTOTYPE-REF DEST="PARAMETER-DATA-PROTOTYPE">/SharedElements/PortInterfaces/Parameter/ParameterInterface/Parameter1</TARGET-DATA-PROTOTYPE-REF>
+                            </AUTOSAR-PARAMETER-IREF>
+                          </ACCESSED-PARAMETER>
+                        </PARAMETER-ACCESS>
+                        <PARAMETER-ACCESS UUID="f7d2bfa9-92c5-4627-b238-86aadd05585b">
+                          <SHORT-NAME>SCPVA_SharedParameter</SHORT-NAME>
+                          <ACCESSED-PARAMETER>
+                            <LOCAL-PARAMETER-REF DEST="PARAMETER-DATA-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/SharedParameter</LOCAL-PARAMETER-REF>
+                          </ACCESSED-PARAMETER>
+                        </PARAMETER-ACCESS>
+                      </PARAMETER-ACCESSS>
+                      <SERVER-CALL-POINTS>
+                        <SYNCHRONOUS-SERVER-CALL-POINT UUID="d6a93f51-be57-4a77-bd8f-e25d3e0ba149">
+                          <SHORT-NAME>SSCP_RPort_CS_Operation1</SHORT-NAME>
+                          <OPERATION-IREF>
+                            <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_CS</CONTEXT-R-PORT-REF>
+                            <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/SharedElements/PortInterfaces/ClientServer/ClientServerInterface/Operation1</TARGET-REQUIRED-OPERATION-REF>
+                          </OPERATION-IREF>
+                          <TIMEOUT>0</TIMEOUT>
+                        </SYNCHRONOUS-SERVER-CALL-POINT>
+                      </SERVER-CALL-POINTS>
+                      <SYMBOL>ApplicationSwComponentType_Runnable15</SYMBOL>
+                      <WRITTEN-LOCAL-VARIABLES>
+                        <VARIABLE-ACCESS UUID="7e246e9c-b78a-47be-8798-02887c881e6e">
+                          <SHORT-NAME>IRVWA_ExplicitInterRunnableVariable</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <LOCAL-VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ExplicitInterRunnableVariable</LOCAL-VARIABLE-REF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                        <VARIABLE-ACCESS UUID="d976bba9-3132-4e15-ac45-88b85facf508">
+                          <SHORT-NAME>IRVWA_ImplicitInterRunnableVariable</SHORT-NAME>
+                          <ACCESSED-VARIABLE>
+                            <LOCAL-VARIABLE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ImplicitInterRunnableVariable</LOCAL-VARIABLE-REF>
+                          </ACCESSED-VARIABLE>
+                        </VARIABLE-ACCESS>
+                      </WRITTEN-LOCAL-VARIABLES>
+                    </RUNNABLE-ENTITY>
+                  </RUNNABLES>
+                  <SHARED-PARAMETERS>
+                    <PARAMETER-DATA-PROTOTYPE UUID="edf877b4-19ea-4e47-8180-a74099cfff0f">
+                      <SHORT-NAME>SharedParameter</SHORT-NAME>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                            <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                      <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/float32</TYPE-TREF>
+                      <INIT-VALUE>
+                        <CONSTANT-REFERENCE>
+                          <SHORT-LABEL>ReferenceToConstant</SHORT-LABEL>
+                          <CONSTANT-REF DEST="CONSTANT-SPECIFICATION">/SharedElements/ConstantSpecifications/ApplicationSwComponentType_SharedParameter</CONSTANT-REF>
+                        </CONSTANT-REFERENCE>
+                      </INIT-VALUE>
+                    </PARAMETER-DATA-PROTOTYPE>
+                  </SHARED-PARAMETERS>
+                  <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                </SWC-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="0f00b99f-27e3-434f-9d85-398fc7c29067">
+              <SHORT-NAME>ConstantSpecifications</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="7f0b665f-81ab-462f-aeab-1777b0f9dfd8">
+          <SHORT-NAME>CddSWC</SHORT-NAME>
+          <ELEMENTS>
+            <COMPLEX-DEVICE-DRIVER-SW-COMPONENT-TYPE UUID="27755bdf-1bfe-447f-bfdf-54402e4f4db3">
+              <SHORT-NAME>ComplexDeviceDriverSwComponentType</SHORT-NAME>
+            </COMPLEX-DEVICE-DRIVER-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="a9d129de-eda4-4cda-9025-70a56f38fb59">
+          <SHORT-NAME>CompSWC</SHORT-NAME>
+          <ELEMENTS>
+            <COMPOSITION-SW-COMPONENT-TYPE UUID="9e886193-6d1b-454f-98b2-d0347db57ace">
+              <SHORT-NAME>CompositionSwComponentType</SHORT-NAME>
+            </COMPOSITION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="28aa9cf2-4118-4878-8504-271a3ed4600b">
+          <SHORT-NAME>EcuAbSWC</SHORT-NAME>
+          <ELEMENTS>
+            <ECU-ABSTRACTION-SW-COMPONENT-TYPE UUID="0dc33c67-8b23-4896-b6a3-8a537f1cd166">
+              <SHORT-NAME>EcuAbstractionSwComponentType</SHORT-NAME>
+            </ECU-ABSTRACTION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="8562405a-26a1-4c3d-861f-eb0745310572">
+          <SHORT-NAME>NvDataSWC</SHORT-NAME>
+          <ELEMENTS>
+            <NV-BLOCK-SW-COMPONENT-TYPE UUID="9a2c1578-3f64-4af0-b953-7b81f28434cf">
+              <SHORT-NAME>NvBlockSwComponentType</SHORT-NAME>
+            </NV-BLOCK-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="0a54c44d-f71e-4ec3-bbf1-410c0b885915">
+          <SHORT-NAME>PrmSWC</SHORT-NAME>
+          <ELEMENTS>
+            <PARAMETER-SW-COMPONENT-TYPE UUID="c21a6d07-19ae-40ac-affe-f4aa3b5acb25">
+              <SHORT-NAME>ParameterSwComponentType</SHORT-NAME>
+            </PARAMETER-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="f142ef66-4dce-4750-8568-a7e836f462da">
+          <SHORT-NAME>SnsrActSWC</SHORT-NAME>
+          <ELEMENTS>
+            <SENSOR-ACTUATOR-SW-COMPONENT-TYPE UUID="e631e3e3-9a52-4bbe-a762-4311d8f45934">
+              <SHORT-NAME>SensorActuatorSwComponentType</SHORT-NAME>
+            </SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="60bb3f96-0a5c-4e30-bdda-5205f3a1cdb6">
+          <SHORT-NAME>SrvcPrxySWC</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-PROXY-SW-COMPONENT-TYPE UUID="7e09780f-aad2-4f70-8c22-e5e19f1a82e8">
+              <SHORT-NAME>ServiceProxySwComponentType</SHORT-NAME>
+            </SERVICE-PROXY-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2ed6bb1a-c9d6-46c0-ae8b-0743080405b6">
+          <SHORT-NAME>SrvcSWC</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-SW-COMPONENT-TYPE UUID="1da8de22-a6ec-4cab-829a-56300097c5ac">
+              <SHORT-NAME>ServiceSwComponentType</SHORT-NAME>
+            </SERVICE-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Systems</SHORT-NAME>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

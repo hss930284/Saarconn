@@ -1,0 +1,17 @@
+
+Key	Value
+ProjectName	TESTING_PROJECT
+SystemName	IndicatorSystem
+OpenExistingProject	False
+UseFrontIndicatorEcus	True
+CreateImplementations	True
+ImportNetworkCommunicationElements	True
+GenerateCode	True
+License_SYD_MOD	True
+BuildForVeos	True
+SaveProject	True
+RootDirectory	<InstallationDir>
+SyncJumpWidth	3
+TimeSeg1	13
+TimeSeg2	3
+MaxCount	50
