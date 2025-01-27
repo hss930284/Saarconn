@@ -2074,6 +2074,22 @@ def TimingEvent():
     global_elements['period'] = ET.SubElement(global_elements['timing-event'], 'period')
     global_elements['period'].text = '0.01'
 
+def TransformerHardErrorEvent():
+    transformer_hard_error_event1 = ET.SubElement(events1, 'TRANSFORMER-HARD-ERROR-EVENT')
+    transformer_hard_error_event1.attrib = {'UUID': '0cb20425-8704-4215-9df9-3cc6aa1d60c1'}
+    short_name158 = ET.SubElement(transformer_hard_error_event1, 'SHORT-NAME')
+    short_name158.text = 'TransformerHardErrorEvent'
+    start_on_event_ref14 = ET.SubElement(transformer_hard_error_event1, 'START-ON-EVENT-REF')
+    start_on_event_ref14.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable14'
+    start_on_event_ref14.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+    required_trigger_iref1 = ET.SubElement(transformer_hard_error_event1, 'REQUIRED-TRIGGER-IREF')
+    context_r_port_ref4 = ET.SubElement(required_trigger_iref1, 'CONTEXT-R-PORT-REF')
+    context_r_port_ref4.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_trigger'
+    context_r_port_ref4.attrib = {'DEST': 'R-PORT-PROTOTYPE'}
+    target_trigger_ref2 = ET.SubElement(required_trigger_iref1, 'TARGET-TRIGGER-REF')
+    target_trigger_ref2.text = '/SharedElements/PortInterfaces/Trigger/TriggerInterface/Trigger'
+    target_trigger_ref2.attrib = {'DEST': 'TRIGGER'}
+
 def TimingEvent1():
     global_elements['timing-event2'] = ET.SubElement(global_elements['events'], 'timing-event')
     global_elements['timing-event2'].attrib = {'UUID': '0faaa505-7947-4b84-b8ea-4086fa60a54c'}
