@@ -1,5 +1,0 @@
-BaseTypes_folder: [59, 4579]
-BaseTypes_folder_short_name: [60, 4580]
-BaseTypes_folder_elements: [64, 4584]
-CompuMethods_folder: [4740, 6077]
-CompuMethods_folder_short_name: [4741, 6078]
