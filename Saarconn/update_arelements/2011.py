@@ -784,6 +784,8 @@ def STRUCTURE_ImplementationDataType1():
     global_elements['category24'] = ET.SubElement(global_elements['implementation-data-type4'], 'category')
     global_elements['category24'].text = 'STRUCTURE'
     global_elements['sub-elements3'] = ET.SubElement(global_elements['implementation-data-type4'], 'sub-elements')
+
+def STRUCTURE_ImplementationDataType1_SubElement():
     global_elements['implementation-data-type-element3'] = ET.SubElement(global_elements['sub-elements3'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element3'].attrib = {'UUID': '31f01782-3ce8-4dbe-81d1-0d5fb89bef99'}
     global_elements['short-name44'] = ET.SubElement(global_elements['implementation-data-type-element3'], 'short-name')
@@ -796,6 +798,8 @@ def STRUCTURE_ImplementationDataType1():
     global_elements['implementation-data-type-ref7'] = ET.SubElement(global_elements['sw-data-def-props-conditional9'], 'implementation-data-type-ref')
     global_elements['implementation-data-type-ref7'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16'
     global_elements['implementation-data-type-ref7'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def STRUCTURE_ImplementationDataType1_SubElement1():
     global_elements['implementation-data-type-element4'] = ET.SubElement(global_elements['sub-elements3'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element4'].attrib = {'UUID': '83bd06cb-a4ff-4d55-bd3d-1a691b582d46'}
     global_elements['short-name45'] = ET.SubElement(global_elements['implementation-data-type-element4'], 'short-name')
@@ -816,7 +820,11 @@ def Struct_Array_ImplementationDataType():
     global_elements['short-name46'].text = 'Struct_Array_ImplementationDataType'
     global_elements['category27'] = ET.SubElement(global_elements['implementation-data-type5'], 'category')
     global_elements['category27'].text = 'STRUCTURE'
+    dynamic_array_size_profile2 = ET.SubElement(implementation_data_type5, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+    dynamic_array_size_profile2.text = 'VSA_LINEAR'     
     global_elements['sub-elements4'] = ET.SubElement(global_elements['implementation-data-type5'], 'sub-elements')
+
+def Struct_Array_ImplementationDataType_SubElement1():
     global_elements['implementation-data-type-element5'] = ET.SubElement(global_elements['sub-elements4'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element5'].attrib = {'UUID': '3f61bc0d-d829-4ab0-9e22-7de6a25972e3'}
     global_elements['short-name47'] = ET.SubElement(global_elements['implementation-data-type-element5'], 'short-name')
@@ -829,6 +837,8 @@ def Struct_Array_ImplementationDataType():
     global_elements['implementation-data-type-ref9'] = ET.SubElement(global_elements['sw-data-def-props-conditional11'], 'implementation-data-type-ref')
     global_elements['implementation-data-type-ref9'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8'
     global_elements['implementation-data-type-ref9'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Struct_Array_ImplementationDataType_SubElement():
     global_elements['implementation-data-type-element6'] = ET.SubElement(global_elements['sub-elements4'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element6'].attrib = {'UUID': 'dc530c9c-3b65-4707-99c3-842e2d2b7788'}
     global_elements['short-name48'] = ET.SubElement(global_elements['implementation-data-type-element6'], 'short-name')
@@ -836,6 +846,8 @@ def Struct_Array_ImplementationDataType():
     global_elements['category29'] = ET.SubElement(global_elements['implementation-data-type-element6'], 'category')
     global_elements['category29'].text = 'ARRAY'
     global_elements['sub-elements5'] = ET.SubElement(global_elements['implementation-data-type-element6'], 'sub-elements')
+
+def Struct_Array_ImplementationDataType_SubElement_TYPE_REFERENCE():
     global_elements['implementation-data-type-element7'] = ET.SubElement(global_elements['sub-elements5'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element7'].attrib = {'UUID': 'af21d788-9aea-4789-b7d0-8665f2d0c8c7'}
     global_elements['short-name49'] = ET.SubElement(global_elements['implementation-data-type-element7'], 'short-name')
@@ -844,6 +856,8 @@ def Struct_Array_ImplementationDataType():
     global_elements['category30'].text = 'TYPE_REFERENCE'
     global_elements['array-size3'] = ET.SubElement(global_elements['implementation-data-type-element7'], 'array-size')
     global_elements['array-size3'].text = '15'
+    array_size_handling2 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE-HANDLING')
+    array_size_handling2.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
     global_elements['array-size-semantics6'] = ET.SubElement(global_elements['implementation-data-type-element7'], 'array-size-semantics')
     global_elements['array-size-semantics6'].text = 'VARIABLE-SIZE'
     global_elements['sw-data-def-props12'] = ET.SubElement(global_elements['implementation-data-type-element7'], 'sw-data-def-props')
@@ -879,8 +893,7 @@ def TypeTref_ImplementationDataType():
 
 # def ClientServer():
 #     global_elements['ar-package13'].attrib = {'UUID': 'a0d0a13a-15e8-47a3-8169-5f11ad6c7d3f'}
-#     global_elements['short-name52'] = ET.SubElement(global_elements['ar-package13'], 'short-name')
-#     global_elements['short-name52'].text = 'ClientServer'
+#     global_elements['short-name52'] = ET.SubElement(global_elements['ar-package13'], 'short-name')#     global_elements['short-name52'].text = 'ClientServer'
 #     global_elements['elements11'] = ET.SubElement(global_elements['ar-package13'], 'elements')
 
 def ClientServerInterface():  
@@ -2066,6 +2079,22 @@ def TimingEvent():
     global_elements['period'] = ET.SubElement(global_elements['timing-event'], 'period')
     global_elements['period'].text = '0.01'
 
+def TransformerHardErrorEvent():
+    transformer_hard_error_event1 = ET.SubElement(events1, 'TRANSFORMER-HARD-ERROR-EVENT')
+    transformer_hard_error_event1.attrib = {'UUID': '0cb20425-8704-4215-9df9-3cc6aa1d60c1'}
+    short_name158 = ET.SubElement(transformer_hard_error_event1, 'SHORT-NAME')
+    short_name158.text = 'TransformerHardErrorEvent'
+    start_on_event_ref14 = ET.SubElement(transformer_hard_error_event1, 'START-ON-EVENT-REF')
+    start_on_event_ref14.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable14'
+    start_on_event_ref14.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+    required_trigger_iref1 = ET.SubElement(transformer_hard_error_event1, 'REQUIRED-TRIGGER-IREF')
+    context_r_port_ref4 = ET.SubElement(required_trigger_iref1, 'CONTEXT-R-PORT-REF')
+    context_r_port_ref4.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_trigger'
+    context_r_port_ref4.attrib = {'DEST': 'R-PORT-PROTOTYPE'}
+    target_trigger_ref2 = ET.SubElement(required_trigger_iref1, 'TARGET-TRIGGER-REF')
+    target_trigger_ref2.text = '/SharedElements/PortInterfaces/Trigger/TriggerInterface/Trigger'
+    target_trigger_ref2.attrib = {'DEST': 'TRIGGER'}
+
 def TimingEvent1():
     global_elements['timing-event2'] = ET.SubElement(global_elements['events'], 'timing-event')
     global_elements['timing-event2'].attrib = {'UUID': '0faaa505-7947-4b84-b8ea-4086fa60a54c'}
@@ -2171,7 +2200,7 @@ def AsynchronousServerCallResultPoint():
     global_elements['asynchronous-server-call-point-ref'].attrib = {'DEST': 'ASYNCHRONOUS-SERVER-CALL-POINT'}
 
 
-def ASCP_RPort_CS_Operation()
+def ASCP_RPort_CS_Operation():
     global_elements['asynchronous-server-call-point'] = ET.SubElement(global_elements['server-call-points'], 'asynchronous-server-call-point')
     global_elements['asynchronous-server-call-point'].attrib = {'UUID': 'e7aacef3-56e7-4964-b0b6-5569dd4abc09'}
     global_elements['short-name162'] = ET.SubElement(global_elements['asynchronous-server-call-point'], 'short-name')
