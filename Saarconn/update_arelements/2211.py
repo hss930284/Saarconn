@@ -784,6 +784,8 @@ def STRUCTURE_ImplementationDataType1():
     global_elements['category24'] = ET.SubElement(global_elements['implementation-data-type4'], 'category')
     global_elements['category24'].text = 'STRUCTURE'
     global_elements['sub-elements3'] = ET.SubElement(global_elements['implementation-data-type4'], 'sub-elements')
+
+def STRUCTURE_ImplementationDataType1_SubElement():
     global_elements['implementation-data-type-element3'] = ET.SubElement(global_elements['sub-elements3'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element3'].attrib = {'UUID': '31f01782-3ce8-4dbe-81d1-0d5fb89bef99'}
     global_elements['short-name44'] = ET.SubElement(global_elements['implementation-data-type-element3'], 'short-name')
@@ -796,6 +798,8 @@ def STRUCTURE_ImplementationDataType1():
     global_elements['implementation-data-type-ref7'] = ET.SubElement(global_elements['sw-data-def-props-conditional9'], 'implementation-data-type-ref')
     global_elements['implementation-data-type-ref7'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16'
     global_elements['implementation-data-type-ref7'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def STRUCTURE_ImplementationDataType1_SubElement1():
     global_elements['implementation-data-type-element4'] = ET.SubElement(global_elements['sub-elements3'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element4'].attrib = {'UUID': '83bd06cb-a4ff-4d55-bd3d-1a691b582d46'}
     global_elements['short-name45'] = ET.SubElement(global_elements['implementation-data-type-element4'], 'short-name')
