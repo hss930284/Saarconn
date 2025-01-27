@@ -27,7 +27,7 @@ def indent(elem, level=0):
 root = ET.Element('AUTOSAR', attrib={
     'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance",
     'xmlns': "http://autosar.org/schema/r4.0",
-    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd"
+    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-1-1.xsd"
 })
 
 global_elements = {
@@ -51,6 +51,8 @@ def ApplicationDataTypes():
     global_elements['short-name3'] = ET.SubElement(global_elements['ar-package3'], 'short-name')
     global_elements['short-name3'].text = 'Array'
     global_elements['elements'] = ET.SubElement(global_elements['ar-package3'], 'elements')
+
+def ApplicationArrayDataType_Fixed():
     global_elements['application-array-data-type'] = ET.SubElement(global_elements['elements'], 'application-array-data-type')
     global_elements['application-array-data-type'].attrib = {'UUID': '99540e2c-05ec-4a85-94bb-9a3999ac57fe'}
     global_elements['short-name4'] = ET.SubElement(global_elements['application-array-data-type'], 'short-name')
@@ -71,30 +73,30 @@ def ApplicationDataTypes():
     global_elements['max-number-of-elements'] = ET.SubElement(global_elements['element'], 'max-number-of-elements')
     global_elements['max-number-of-elements'].text = '15'
 
-    
-
-
 def ApplicationArrayDataType_Variable():
-    global global_elements
-    global_elements['application-array-data-type2'] = ET.SubElement(global_elements['elements'], 'application-array-data-type')
-    global_elements['application-array-data-type2'].attrib = {'UUID': 'd5f3c7e9-dd94-4d37-888e-b6e44b01cc5a'}
-    global_elements['short-name6'] = ET.SubElement(global_elements['application-array-data-type2'], 'short-name')
-    global_elements['short-name6'].text = 'ApplicationArrayDataType_Variable'
-    global_elements['category3'] = ET.SubElement(global_elements['application-array-data-type2'], 'category')
-    global_elements['category3'].text = 'ARRAY'
-    global_elements['element2'] = ET.SubElement(global_elements['application-array-data-type2'], 'element')
-    global_elements['element2'].attrib = {'UUID': 'fef3f4b8-d9bd-4cb1-94b8-4403e665c4fa'}
-    global_elements['short-name7'] = ET.SubElement(global_elements['element2'], 'short-name')
-    global_elements['short-name7'].text = 'Element'
-    global_elements['category4'] = ET.SubElement(global_elements['element2'], 'category')
-    global_elements['category4'].text = 'VALUE'
-    global_elements['type-tref2'] = ET.SubElement(global_elements['element2'], 'type-tref')
-    global_elements['type-tref2'].text = '/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType'
-    global_elements['type-tref2'].attrib = {'DEST': 'APPLICATION-PRIMITIVE-DATA-TYPE'}
-    global_elements['array-size-semantics2'] = ET.SubElement(global_elements['element2'], 'array-size-semantics')
-    global_elements['array-size-semantics2'].text = 'VARIABLE-SIZE'
-    global_elements['max-number-of-elements2'] = ET.SubElement(global_elements['element2'], 'max-number-of-elements')
-    global_elements['max-number-of-elements2'].text = '15'   
+    application_array_data_type2 = ET.SubElement(elements1, 'APPLICATION-ARRAY-DATA-TYPE')
+    application_array_data_type2.attrib = {'UUID': 'd5f3c7e9-dd94-4d37-888e-b6e44b01cc5a'}
+    short_name6 = ET.SubElement(application_array_data_type2, 'SHORT-NAME')
+    short_name6.text = 'ApplicationArrayDataType_Variable'
+    category3 = ET.SubElement(application_array_data_type2, 'CATEGORY')
+    category3.text = 'ARRAY'
+    dynamic_array_size_profile1 = ET.SubElement(application_array_data_type2, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+    dynamic_array_size_profile1.text = 'VSA_LINEAR'
+    element2 = ET.SubElement(application_array_data_type2, 'ELEMENT')
+    element2.attrib = {'UUID': 'fef3f4b8-d9bd-4cb1-94b8-4403e665c4fa'}
+    short_name7 = ET.SubElement(element2, 'SHORT-NAME')
+    short_name7.text = 'Element'
+    category4 = ET.SubElement(element2, 'CATEGORY')
+    category4.text = 'VALUE'
+    type_tref2 = ET.SubElement(element2, 'TYPE-TREF')
+    type_tref2.text = '/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType'
+    type_tref2.attrib = {'DEST': 'APPLICATION-PRIMITIVE-DATA-TYPE'}
+    array_size_handling1 = ET.SubElement(element2, 'ARRAY-SIZE-HANDLING')
+    array_size_handling1.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
+    array_size_semantics2 = ET.SubElement(element2, 'ARRAY-SIZE-SEMANTICS')
+    array_size_semantics2.text = 'VARIABLE-SIZE'
+    max_number_of_elements2 = ET.SubElement(element2, 'MAX-NUMBER-OF-ELEMENTS')
+    max_number_of_elements2.text = '15'  
 
 def ApplicationPrimitiveDataType():
     global global_elements
@@ -237,6 +239,8 @@ def CompuMethods():
     global_elements['short-name17'] = ET.SubElement(global_elements['ar-package6'], 'short-name')
     global_elements['short-name17'].text = 'CompuMethods'
     global_elements['elements5'] = ET.SubElement(global_elements['ar-package6'], 'elements')
+
+def BITFIELD_TEXTTABLE_CompuMethod():
     global_elements['compu-method'] = ET.SubElement(global_elements['elements5'], 'compu-method')
     global_elements['compu-method'].attrib = {'UUID': 'e51fd87b-fe38-48d5-b94a-c11851da3006'}
     global_elements['short-name18'] = ET.SubElement(global_elements['compu-method'], 'short-name')
@@ -580,10 +584,10 @@ def TEXTTABLE_CompuMethod():
     global_elements['v25'].text = '0'
 
 def ApplicationSwComponentType_ExplicitInterRunnableVariable():
-    global_elements['ar-package7'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['short-name26'] = ET.SubElement(global_elements['ar-package7'], 'short-name')
-    global_elements['short-name26'].text = 'ConstantSpecifications'
-    global_elements['elements6'] = ET.SubElement(global_elements['ar-package7'], 'elements')
+    # global_elements['ar-package7'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+    # global_elements['short-name26'] = ET.SubElement(global_elements['ar-package7'], 'short-name')
+    # global_elements['short-name26'].text = 'ConstantSpecifications'
+    # global_elements['elements6'] = ET.SubElement(global_elements['ar-package7'], 'elements')
     global_elements['constant-specification'] = ET.SubElement(global_elements['elements6'], 'constant-specification')
     global_elements['constant-specification'].attrib = {'UUID': '5679b253-a22a-4532-8116-7ce8ac35a562'}
     global_elements['short-name27'] = ET.SubElement(global_elements['constant-specification'], 'short-name')
@@ -629,23 +633,23 @@ def ConstantSpecification():
     global_elements['short-name30'].text = 'ConstantSpecification'
 
 
-def ConstantTypeMappingSets():
-    global_elements['ar-package8'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['ar-package8'].attrib = {'UUID': '6fcb326d-7f82-4cd3-9429-fa90f212d1e8'}
-    global_elements['short-name31'] = ET.SubElement(global_elements['ar-package8'], 'short-name')
-    global_elements['short-name31'].text = 'ConstantTypeMappingSets'
-    global_elements['elements7'] = ET.SubElement(global_elements['ar-package8'], 'elements')
+def ConstantSpecificationMappingSet():
+    # global_elements['ar-package8'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+    # global_elements['ar-package8'].attrib = {'UUID': '6fcb326d-7f82-4cd3-9429-fa90f212d1e8'}
+    # global_elements['short-name31'] = ET.SubElement(global_elements['ar-package8'], 'short-name')
+    # global_elements['short-name31'].text = 'ConstantTypeMappingSets'
+    # global_elements['elements7'] = ET.SubElement(global_elements['ar-package8'], 'elements')
     global_elements['constant-specification-mapping-set'] = ET.SubElement(global_elements['elements7'], 'constant-specification-mapping-set')
     global_elements['constant-specification-mapping-set'].attrib = {'UUID': '4f3bdbd1-af02-46e6-a3ba-411118807380'}
     global_elements['short-name32'] = ET.SubElement(global_elements['constant-specification-mapping-set'], 'short-name')
     global_elements['short-name32'].text = 'ConstantSpecificationMappingSet'
 
 def DataConstr():
-    global_elements['ar-package9'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['ar-package9'].attrib = {'UUID': '5b7c99d1-d4ef-481b-95e4-0d6975de4f3b'}
-    global_elements['short-name33'] = ET.SubElement(global_elements['ar-package9'], 'short-name')
-    global_elements['short-name33'].text = 'DataConstr'
-    global_elements['elements8'] = ET.SubElement(global_elements['ar-package9'], 'elements')
+    # global_elements['ar-package9'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+    # global_elements['ar-package9'].attrib = {'UUID': '5b7c99d1-d4ef-481b-95e4-0d6975de4f3b'}
+    # global_elements['short-name33'] = ET.SubElement(global_elements['ar-package9'], 'short-name')
+    # global_elements['short-name33'].text = 'DataConstr'
+    # global_elements['elements8'] = ET.SubElement(global_elements['ar-package9'], 'elements')
     global_elements['data-constr'] = ET.SubElement(global_elements['elements8'], 'data-constr')
     global_elements['data-constr'].attrib = {'UUID': '78b9384e-7f45-4396-b617-a03a03aaf3ce'}
     global_elements['short-name34'] = ET.SubElement(global_elements['data-constr'], 'short-name')
@@ -661,11 +665,11 @@ def DataConstr():
     global_elements['upper-limit19'].text = '7'
 
 def DataTypemappingSets():
-    global_elements['ar-package10'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['ar-package10'].attrib = {'UUID': '463cbb86-4f8e-463e-8bb3-dafc528ccbdf'}
-    global_elements['short-name35'] = ET.SubElement(global_elements['ar-package10'], 'short-name')
-    global_elements['short-name35'].text = 'DataTypemappingSets'
-    global_elements['elements9'] = ET.SubElement(global_elements['ar-package10'], 'elements')
+    # global_elements['ar-package10'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+    # global_elements['ar-package10'].attrib = {'UUID': '463cbb86-4f8e-463e-8bb3-dafc528ccbdf'}
+    # global_elements['short-name35'] = ET.SubElement(global_elements['ar-package10'], 'short-name')
+    # global_elements['short-name35'].text = 'DataTypemappingSets'
+    # global_elements['elements9'] = ET.SubElement(global_elements['ar-package10'], 'elements')
     global_elements['data-type-mapping-set'] = ET.SubElement(global_elements['elements9'], 'data-type-mapping-set')
     global_elements['data-type-mapping-set'].attrib = {'UUID': '84bab728-8c47-495c-a5d4-5290c3551358'}
     global_elements['short-name36'] = ET.SubElement(global_elements['data-type-mapping-set'], 'short-name')
@@ -702,10 +706,10 @@ def DataTypemappingSets():
 
 
 def ImplementationDataTypes():
-    global_elements['ar-package11'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['short-name37'] = ET.SubElement(global_elements['ar-package11'], 'short-name')
-    global_elements['short-name37'].text = 'ImplementationDataTypes'
-    global_elements['elements10'] = ET.SubElement(global_elements['ar-package11'], 'elements')
+    # global_elements['ar-package11'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+    # global_elements['short-name37'] = ET.SubElement(global_elements['ar-package11'], 'short-name')
+    # global_elements['short-name37'].text = 'ImplementationDataTypes'
+    # global_elements['elements10'] = ET.SubElement(global_elements['ar-package11'], 'elements')
     global_elements['implementation-data-type'] = ET.SubElement(global_elements['elements10'], 'implementation-data-type')
     global_elements['implementation-data-type'].attrib = {'UUID': '21f9a013-317d-4a6a-8c1d-cdc72f7df8f5'}
     global_elements['short-name38'] = ET.SubElement(global_elements['implementation-data-type'], 'short-name')
@@ -732,6 +736,8 @@ def ImplementationDataTypes():
     global_elements['implementation-data-type-ref5'] = ET.SubElement(global_elements['sw-data-def-props-conditional6'], 'implementation-data-type-ref')
     global_elements['implementation-data-type-ref5'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16'
     global_elements['implementation-data-type-ref5'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def ARRAY_ImplementationDataType1():
     global_elements['implementation-data-type2'] = ET.SubElement(global_elements['elements10'], 'implementation-data-type')
     global_elements['implementation-data-type2'].attrib = {'UUID': 'f01098ff-1c78-439e-9476-11d641870637'}
     global_elements['short-name40'] = ET.SubElement(global_elements['implementation-data-type2'], 'short-name')
@@ -755,6 +761,8 @@ def ImplementationDataTypes():
     global_elements['implementation-data-type-ref6'] = ET.SubElement(global_elements['sw-data-def-props-conditional7'], 'implementation-data-type-ref')
     global_elements['implementation-data-type-ref6'].text = '/SharedElements/ImplementationDataTypes/STRUCTURE_ImplementationDataType1'
     global_elements['implementation-data-type-ref6'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def ImplementationDataType():
     global_elements['implementation-data-type3'] = ET.SubElement(global_elements['elements10'], 'implementation-data-type')
     global_elements['implementation-data-type3'].attrib = {'UUID': '77ef0bea-be4b-4dea-b5ea-114e5a3f3d26'}
     global_elements['short-name42'] = ET.SubElement(global_elements['implementation-data-type3'], 'short-name')
@@ -767,6 +775,8 @@ def ImplementationDataTypes():
     global_elements['base-type-ref'] = ET.SubElement(global_elements['sw-data-def-props-conditional8'], 'base-type-ref')
     global_elements['base-type-ref'].text = '/AUTOSAR/AUTOSAR_Platform/BaseTypes/uint8'
     global_elements['base-type-ref'].attrib = {'DEST': 'SW-BASE-TYPE'}
+
+def STRUCTURE_ImplementationDataType1():
     global_elements['implementation-data-type4'] = ET.SubElement(global_elements['elements10'], 'implementation-data-type')
     global_elements['implementation-data-type4'].attrib = {'UUID': '53ec3bfc-5a92-4d42-b31b-8e29e99a2b46'}
     global_elements['short-name43'] = ET.SubElement(global_elements['implementation-data-type4'], 'short-name')
@@ -798,6 +808,8 @@ def ImplementationDataTypes():
     global_elements['implementation-data-type-ref8'] = ET.SubElement(global_elements['sw-data-def-props-conditional10'], 'implementation-data-type-ref')
     global_elements['implementation-data-type-ref8'].text = '/SharedElements/ImplementationDataTypes/ARRAY_ImplementationDataType'
     global_elements['implementation-data-type-ref8'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Struct_Array_ImplementationDataType():
     global_elements['implementation-data-type5'] = ET.SubElement(global_elements['elements10'], 'implementation-data-type')
     global_elements['implementation-data-type5'].attrib = {'UUID': 'ccd15817-26a8-424d-8c87-3f3d70b5ee9d'}
     global_elements['short-name46'] = ET.SubElement(global_elements['implementation-data-type5'], 'short-name')
@@ -843,6 +855,8 @@ def ImplementationDataTypes():
     global_elements['sw-data-def-props13'] = ET.SubElement(global_elements['implementation-data-type-element6'], 'sw-data-def-props')
     global_elements['sw-data-def-props-variants13'] = ET.SubElement(global_elements['sw-data-def-props13'], 'sw-data-def-props-variants')
     global_elements['sw-data-def-props-conditional13'] = ET.SubElement(global_elements['sw-data-def-props-variants13'], 'sw-data-def-props-conditional')
+
+def TypeTref_ImplementationDataType():
     global_elements['implementation-data-type6'] = ET.SubElement(global_elements['elements10'], 'implementation-data-type')
     global_elements['implementation-data-type6'].attrib = {'UUID': '79fa9e8f-a805-43da-b4b5-ac42d2a23ff0'}
     global_elements['short-name50'] = ET.SubElement(global_elements['implementation-data-type6'], 'short-name')
@@ -856,26 +870,28 @@ def ImplementationDataTypes():
     global_elements['implementation-data-type-ref11'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/float32'
     global_elements['implementation-data-type-ref11'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
 
-def PortInterfaces():
-    global_elements['ar-package12'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['short-name51'] = ET.SubElement(global_elements['ar-package12'], 'short-name')
-    global_elements['short-name51'].text = 'PortInterfaces'
-    global_elements['ar-packages4'] = ET.SubElement(global_elements['ar-package12'], 'ar-packages')
-    global_elements['ar-package13'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
+# def PortInterfaces():
+#     global_elements['ar-package12'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+#     global_elements['short-name51'] = ET.SubElement(global_elements['ar-package12'], 'short-name')
+#     global_elements['short-name51'].text = 'PortInterfaces'
+#     global_elements['ar-packages4'] = ET.SubElement(global_elements['ar-package12'], 'ar-packages')
+#     global_elements['ar-package13'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
 
-def ClientServer():
-    global_elements['ar-package13'].attrib = {'UUID': 'a0d0a13a-15e8-47a3-8169-5f11ad6c7d3f'}
-    global_elements['short-name52'] = ET.SubElement(global_elements['ar-package13'], 'short-name')
-    global_elements['short-name52'].text = 'ClientServer'
-    global_elements['elements11'] = ET.SubElement(global_elements['ar-package13'], 'elements')
-    global_elements['client-server-interface'] = ET.SubElement(global_elements['elements11'], 'client-server-interface')
+# def ClientServer():
+#     global_elements['ar-package13'].attrib = {'UUID': 'a0d0a13a-15e8-47a3-8169-5f11ad6c7d3f'}
+#     global_elements['short-name52'] = ET.SubElement(global_elements['ar-package13'], 'short-name')
+#     global_elements['short-name52'].text = 'ClientServer'
+#     global_elements['elements11'] = ET.SubElement(global_elements['ar-package13'], 'elements')
 
 def ClientServerInterface():  
+    global_elements['client-server-interface'] = ET.SubElement(global_elements['elements11'], 'client-server-interface')
     global_elements['client-server-interface'].attrib = {'UUID': 'de068aa3-6af8-4bad-a17f-893dbfa6d08d'}
     global_elements['short-name53'] = ET.SubElement(global_elements['client-server-interface'], 'short-name')
     global_elements['short-name53'].text = 'ClientServerInterface'
     global_elements['is-service'] = ET.SubElement(global_elements['client-server-interface'], 'is-service')
     global_elements['is-service'].text = 'false'
+
+def ClientServerInterface_ClientServereOperation():
     global_elements['operations'] = ET.SubElement(global_elements['client-server-interface'], 'operations')
     global_elements['client-server-operation'] = ET.SubElement(global_elements['operations'], 'client-server-operation')
     global_elements['client-server-operation'].attrib = {'UUID': 'f963f5c2-07f7-439d-be71-e8ffb77736cb'}
@@ -899,7 +915,7 @@ def ClientServerInterface():
     global_elements['server-argument-impl-policy'] = ET.SubElement(global_elements['argument-data-prototype'], 'server-argument-impl-policy')
     global_elements['server-argument-impl-policy'].text = 'USE-ARGUMENT-TYPE'
   
-def ClientServerOperation():
+def ClientServerInterface_ClientServereOperation1():
     global_elements['client-server-operation2'] = ET.SubElement(global_elements['operations'], 'client-server-operation')
     global_elements['client-server-operation2'].attrib = {'UUID': '9d946ffc-e827-4a3b-9217-80ae67bdce09'}
     global_elements['short-name56'] = ET.SubElement(global_elements['client-server-operation2'], 'short-name')
@@ -929,6 +945,8 @@ def Copy2_ClientServerInterface():
     global_elements['short-name58'].text = 'Copy2_ClientServerInterface'
     global_elements['is-service2'] = ET.SubElement(global_elements['client-server-interface2'], 'is-service')
     global_elements['is-service2'].text = 'false'
+
+def Copy2_ClientServerInterface_ClientServereOperation():
     global_elements['operations2'] = ET.SubElement(global_elements['client-server-interface2'], 'operations')
     global_elements['client-server-operation3'] = ET.SubElement(global_elements['operations2'], 'client-server-operation')
     global_elements['client-server-operation3'].attrib = {'UUID': 'dd8cf435-bddb-45bb-a59d-cffcdd11cedd'}
@@ -951,6 +969,8 @@ def Copy2_ClientServerInterface():
     global_elements['direction3'].text = 'IN'
     global_elements['server-argument-impl-policy3'] = ET.SubElement(global_elements['argument-data-prototype3'], 'server-argument-impl-policy')
     global_elements['server-argument-impl-policy3'].text = 'USE-ARGUMENT-TYPE'
+
+def Copy2_ClientServerInterface_ClientServereOperation1():
     global_elements['client-server-operation4'] = ET.SubElement(global_elements['operations2'], 'client-server-operation')
     global_elements['client-server-operation4'].attrib = {'UUID': 'ceba0008-a280-4915-acc8-c4b28afc10c4'}
     global_elements['short-name61'] = ET.SubElement(global_elements['client-server-operation4'], 'short-name')
@@ -980,6 +1000,8 @@ def Copy3_ClientServerInterface():
     global_elements['short-name63'].text = 'Copy3_ClientServerInterface'
     global_elements['is-service3'] = ET.SubElement(global_elements['client-server-interface3'], 'is-service')
     global_elements['is-service3'].text = 'false'
+
+def Copy3_ClientServerInterface_ClientServereOperation():
     global_elements['operations3'] = ET.SubElement(global_elements['client-server-interface3'], 'operations')
     global_elements['client-server-operation5'] = ET.SubElement(global_elements['operations3'], 'client-server-operation')
     global_elements['client-server-operation5'].attrib = {'UUID': '8b64e196-a577-4332-a8f2-8e907214f2ac'}
@@ -1002,6 +1024,8 @@ def Copy3_ClientServerInterface():
     global_elements['direction5'].text = 'IN'
     global_elements['server-argument-impl-policy5'] = ET.SubElement(global_elements['argument-data-prototype5'], 'server-argument-impl-policy')
     global_elements['server-argument-impl-policy5'].text = 'USE-ARGUMENT-TYPE'
+
+def Copy3_ClientServerInterface_ClientServereOperation1():
     global_elements['client-server-operation6'] = ET.SubElement(global_elements['operations3'], 'client-server-operation')
     global_elements['client-server-operation6'].attrib = {'UUID': '03f0b7d8-222c-465d-9663-185446b9f092'}
     global_elements['short-name66'] = ET.SubElement(global_elements['client-server-operation6'], 'short-name')
@@ -1031,6 +1055,8 @@ def Copy4_ClientServerInterface():
     global_elements['short-name68'].text = 'Copy4_ClientServerInterface'
     global_elements['is-service4'] = ET.SubElement(global_elements['client-server-interface4'], 'is-service')
     global_elements['is-service4'].text = 'false'
+
+def Copy4_ClientServerInterface_ClientServereOperation():
     global_elements['operations4'] = ET.SubElement(global_elements['client-server-interface4'], 'operations')
     global_elements['client-server-operation7'] = ET.SubElement(global_elements['operations4'], 'client-server-operation')
     global_elements['client-server-operation7'].attrib = {'UUID': '4f953ec5-5e57-4a1c-bcf2-9eba8fde4ddd'}
@@ -1053,6 +1079,8 @@ def Copy4_ClientServerInterface():
     global_elements['direction7'].text = 'IN'
     global_elements['server-argument-impl-policy7'] = ET.SubElement(global_elements['argument-data-prototype7'], 'server-argument-impl-policy')
     global_elements['server-argument-impl-policy7'].text = 'USE-ARGUMENT-TYPE'
+
+def Copy4_ClientServerInterface_ClientServereOperation1():
     global_elements['client-server-operation8'] = ET.SubElement(global_elements['operations4'], 'client-server-operation')
     global_elements['client-server-operation8'].attrib = {'UUID': '32dd33c4-e167-4858-93d3-bc02d325d12c'}
     global_elements['short-name71'] = ET.SubElement(global_elements['client-server-operation8'], 'short-name')
@@ -1082,6 +1110,8 @@ def Copy_ClientServerInterface():
     global_elements['short-name73'].text = 'Copy_ClientServerInterface'
     global_elements['is-service5'] = ET.SubElement(global_elements['client-server-interface5'], 'is-service')
     global_elements['is-service5'].text = 'false'
+
+def Copy_ClientServerInterface_ClientServereOperation():
     global_elements['operations5'] = ET.SubElement(global_elements['client-server-interface5'], 'operations')
     global_elements['client-server-operation9'] = ET.SubElement(global_elements['operations5'], 'client-server-operation')
     global_elements['client-server-operation9'].attrib = {'UUID': '5d536ac2-edd2-4788-b233-5b0ef32a2022'}
@@ -1104,6 +1134,8 @@ def Copy_ClientServerInterface():
     global_elements['direction9'].text = 'IN'
     global_elements['server-argument-impl-policy9'] = ET.SubElement(global_elements['argument-data-prototype9'], 'server-argument-impl-policy')
     global_elements['server-argument-impl-policy9'].text = 'USE-ARGUMENT-TYPE'
+
+def Copy_ClientServerInterface_ClientServereOperation1():
     global_elements['client-server-operation10'] = ET.SubElement(global_elements['operations5'], 'client-server-operation')
     global_elements['client-server-operation10'].attrib = {'UUID': 'be00c41e-3412-411d-ad74-a6a0feee0ecd'}
     global_elements['short-name76'] = ET.SubElement(global_elements['client-server-operation10'], 'short-name')
@@ -1128,11 +1160,11 @@ def Copy_ClientServerInterface():
 
 
 def Copy_ModeDeclarationGroup():
-    global_elements['ar-package14'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
-    global_elements['ar-package14'].attrib = {'UUID': '3503a605-12c8-44be-96cf-4ad548d5d58f'}
-    global_elements['short-name78'] = ET.SubElement(global_elements['ar-package14'], 'short-name')
-    global_elements['short-name78'].text = 'ModeSwitch'
-    global_elements['elements12'] = ET.SubElement(global_elements['ar-package14'], 'elements')
+    # global_elements['ar-package14'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
+    # global_elements['ar-package14'].attrib = {'UUID': '3503a605-12c8-44be-96cf-4ad548d5d58f'}
+    # global_elements['short-name78'] = ET.SubElement(global_elements['ar-package14'], 'short-name')
+    # global_elements['short-name78'].text = 'ModeSwitch'
+    # global_elements['elements12'] = ET.SubElement(global_elements['ar-package14'], 'elements')
     global_elements['mode-declaration-group'] = ET.SubElement(global_elements['elements12'], 'mode-declaration-group')
     global_elements['mode-declaration-group'].attrib = {'UUID': 'd1db93d0-7154-468f-b3bc-872d23a7385f'}
     global_elements['short-name79'] = ET.SubElement(global_elements['mode-declaration-group'], 'short-name')
@@ -1142,6 +1174,8 @@ def Copy_ModeDeclarationGroup():
     global_elements['initial-mode-ref'] = ET.SubElement(global_elements['mode-declaration-group'], 'initial-mode-ref')
     global_elements['initial-mode-ref'].text = '/SharedElements/PortInterfaces/ModeSwitch/Copy_ModeDeclarationGroup/ModeDeclaration'
     global_elements['initial-mode-ref'].attrib = {'DEST': 'MODE-DECLARATION'}
+
+def Copy_ModeDeclarationGroup_ModeDeclaration():
     global_elements['mode-declarations'] = ET.SubElement(global_elements['mode-declaration-group'], 'mode-declarations')
     global_elements['mode-declaration'] = ET.SubElement(global_elements['mode-declarations'], 'mode-declaration')
     global_elements['mode-declaration'].attrib = {'UUID': '2608f59c-87b0-47b2-8cee-8e9c3ba94cac'}
@@ -1149,12 +1183,16 @@ def Copy_ModeDeclarationGroup():
     global_elements['short-name80'].text = 'ModeDeclaration'
     global_elements['value4'] = ET.SubElement(global_elements['mode-declaration'], 'value')
     global_elements['value4'].text = '0'
+
+def Copy_ModeDeclarationGroup_ModeDeclaration1():
     global_elements['mode-declaration2'] = ET.SubElement(global_elements['mode-declarations'], 'mode-declaration')
     global_elements['mode-declaration2'].attrib = {'UUID': '7cc2e588-342f-40a3-ad77-b3d49457e996'}
     global_elements['short-name81'] = ET.SubElement(global_elements['mode-declaration2'], 'short-name')
     global_elements['short-name81'].text = 'ModeDeclaration1'
     global_elements['value5'] = ET.SubElement(global_elements['mode-declaration2'], 'value')
     global_elements['value5'].text = '1'
+
+def Copy_ModeDeclarationGroup_ModeDeclaration2():
     global_elements['mode-declaration3'] = ET.SubElement(global_elements['mode-declarations'], 'mode-declaration')
     global_elements['mode-declaration3'].attrib = {'UUID': '278335ee-b40e-4f50-9fc3-164297dafbfd'}
     global_elements['short-name82'] = ET.SubElement(global_elements['mode-declaration3'], 'short-name')
@@ -1190,14 +1228,20 @@ def ModeDeclarationGroup():
     global_elements['initial-mode-ref2'].text = '/SharedElements/PortInterfaces/ModeSwitch/ModeDeclarationGroup/ModeDeclaration'
     global_elements['initial-mode-ref2'].attrib = {'DEST': 'MODE-DECLARATION'}
     global_elements['mode-declarations2'] = ET.SubElement(global_elements['mode-declaration-group2'], 'mode-declarations')
+
+def ModeDeclarationGroup_ModeDeclaration():
     global_elements['mode-declaration4'] = ET.SubElement(global_elements['mode-declarations2'], 'mode-declaration')
     global_elements['mode-declaration4'].attrib = {'UUID': 'c1fb19b0-d635-4deb-a718-37e3d20b8878'}
     global_elements['short-name86'] = ET.SubElement(global_elements['mode-declaration4'], 'short-name')
     global_elements['short-name86'].text = 'ModeDeclaration'
+
+def ModeDeclarationGroup_ModeDeclaration1():
     global_elements['mode-declaration5'] = ET.SubElement(global_elements['mode-declarations2'], 'mode-declaration')
     global_elements['mode-declaration5'].attrib = {'UUID': 'a586eb27-c099-42ab-b553-a0fd227d1fe5'}
     global_elements['short-name87'] = ET.SubElement(global_elements['mode-declaration5'], 'short-name')
     global_elements['short-name87'].text = 'ModeDeclaration1'
+
+def ModeDeclarationGroup_ModeDeclaration2():
     global_elements['mode-declaration6'] = ET.SubElement(global_elements['mode-declarations2'], 'mode-declaration')
     global_elements['mode-declaration6'].attrib = {'UUID': 'a891dd23-e1f6-41f0-b669-b383af7bd17e'}
     global_elements['short-name88'] = ET.SubElement(global_elements['mode-declaration6'], 'short-name')
@@ -1219,18 +1263,21 @@ def ModeSwitchInterface():
     global_elements['type-tref16'].text = '/SharedElements/PortInterfaces/ModeSwitch/ModeDeclarationGroup'
     global_elements['type-tref16'].attrib = {'DEST': 'MODE-DECLARATION-GROUP'}
 
-def NvData():
-    global_elements['ar-package15'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
-    global_elements['ar-package15'].attrib = {'UUID': '07677b4a-bc79-4c7b-afa1-581ad642a3dd'}
-    global_elements['short-name91'] = ET.SubElement(global_elements['ar-package15'], 'short-name')
-    global_elements['short-name91'].text = 'NvData'
-    global_elements['elements13'] = ET.SubElement(global_elements['ar-package15'], 'elements')
+def NvDataInterface():
+    # global_elements['ar-package15'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
+    # global_elements['ar-package15'].attrib = {'UUID': '07677b4a-bc79-4c7b-afa1-581ad642a3dd'}
+    # global_elements['short-name91'] = ET.SubElement(global_elements['ar-package15'], 'short-name')
+    # global_elements['short-name91'].text = 'NvData'
+    # global_elements['elements13'] = ET.SubElement(global_elements['ar-package15'], 'elements')
+
     global_elements['nv-data-interface'] = ET.SubElement(global_elements['elements13'], 'nv-data-interface')
     global_elements['nv-data-interface'].attrib = {'UUID': '8a4989b3-88e2-4e47-b98f-591e75c76b17'}
     global_elements['short-name92'] = ET.SubElement(global_elements['nv-data-interface'], 'short-name')
     global_elements['short-name92'].text = 'NvDataInterface'
     global_elements['is-service8'] = ET.SubElement(global_elements['nv-data-interface'], 'is-service')
     global_elements['is-service8'].text = 'false'
+
+def VariableDataPrototype_NvData():
     global_elements['nv-datas'] = ET.SubElement(global_elements['nv-data-interface'], 'nv-datas')
     global_elements['variable-data-prototype'] = ET.SubElement(global_elements['nv-datas'], 'variable-data-prototype')
     global_elements['variable-data-prototype'].attrib = {'UUID': '8a84bf2f-0e49-4923-bbc2-7a6606812ef4'}
@@ -1244,6 +1291,8 @@ def NvData():
     global_elements['type-tref17'] = ET.SubElement(global_elements['variable-data-prototype'], 'type-tref')
     global_elements['type-tref17'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8'
     global_elements['type-tref17'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def VariableDataPrototype_NvData1():
     global_elements['variable-data-prototype2'] = ET.SubElement(global_elements['nv-datas'], 'variable-data-prototype')
     global_elements['variable-data-prototype2'].attrib = {'UUID': '4437f330-788c-4fb4-92e5-9545dfdbd9f0'}
     global_elements['short-name94'] = ET.SubElement(global_elements['variable-data-prototype2'], 'short-name')
@@ -1258,12 +1307,12 @@ def NvData():
     global_elements['type-tref18'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
 
 
-def Parameter():
-    global_elements['ar-package16'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
-    global_elements['ar-package16'].attrib = {'UUID': '9b48ec34-87aa-4f84-9080-1d3f919ca090'}
-    global_elements['short-name95'] = ET.SubElement(global_elements['ar-package16'], 'short-name')
-    global_elements['short-name95'].text = 'Parameter'
-    global_elements['elements14'] = ET.SubElement(global_elements['ar-package16'], 'elements')
+def ParameterInterface():
+    # global_elements['ar-package16'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
+    # global_elements['ar-package16'].attrib = {'UUID': '9b48ec34-87aa-4f84-9080-1d3f919ca090'}
+    # global_elements['short-name95'] = ET.SubElement(global_elements['ar-package16'], 'short-name')
+    # global_elements['short-name95'].text = 'Parameter'
+    # global_elements['elements14'] = ET.SubElement(global_elements['ar-package16'], 'elements')
     global_elements['parameter-interface'] = ET.SubElement(global_elements['elements14'], 'parameter-interface')
     global_elements['parameter-interface'].attrib = {'UUID': '618ca0ee-adf8-43c1-b898-33ea5ca916d8'}
     global_elements['short-name96'] = ET.SubElement(global_elements['parameter-interface'], 'short-name')
@@ -1271,6 +1320,8 @@ def Parameter():
     global_elements['is-service9'] = ET.SubElement(global_elements['parameter-interface'], 'is-service')
     global_elements['is-service9'].text = 'false'
     global_elements['parameters'] = ET.SubElement(global_elements['parameter-interface'], 'parameters')
+
+def ParameterDataPrototype_Parameter():
     global_elements['parameter-data-prototype'] = ET.SubElement(global_elements['parameters'], 'parameter-data-prototype')
     global_elements['parameter-data-prototype'].attrib = {'UUID': 'd359a294-51b2-461a-b7fb-0de80cf2598a'}
     global_elements['short-name97'] = ET.SubElement(global_elements['parameter-data-prototype'], 'short-name')
@@ -1285,6 +1336,8 @@ def Parameter():
     global_elements['type-tref19'] = ET.SubElement(global_elements['parameter-data-prototype'], 'type-tref')
     global_elements['type-tref19'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/float32'
     global_elements['type-tref19'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def ParameterDataPrototype_Parameter1():
     global_elements['parameter-data-prototype2'] = ET.SubElement(global_elements['parameters'], 'parameter-data-prototype')
     global_elements['parameter-data-prototype2'].attrib = {'UUID': 'a60e4821-63b4-4fa4-9f04-983264b2a55f'}
     global_elements['short-name98'] = ET.SubElement(global_elements['parameter-data-prototype2'], 'short-name')
@@ -1301,11 +1354,11 @@ def Parameter():
     global_elements['type-tref20'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
 
 def Copy2_SenderReceiverInterface():
-    global_elements['ar-package17'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
-    global_elements['ar-package17'].attrib = {'UUID': '304f7bbd-15e6-4f85-b22f-4b02c9a5631c'}
-    global_elements['short-name99'] = ET.SubElement(global_elements['ar-package17'], 'short-name')
-    global_elements['short-name99'].text = 'SenderReceiver'
-    global_elements['elements15'] = ET.SubElement(global_elements['ar-package17'], 'elements')
+    # global_elements['ar-package17'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
+    # global_elements['ar-package17'].attrib = {'UUID': '304f7bbd-15e6-4f85-b22f-4b02c9a5631c'}
+    # global_elements['short-name99'] = ET.SubElement(global_elements['ar-package17'], 'short-name')
+    # global_elements['short-name99'].text = 'SenderReceiver'
+    # global_elements['elements15'] = ET.SubElement(global_elements['ar-package17'], 'elements')
     global_elements['sender-receiver-interface'] = ET.SubElement(global_elements['elements15'], 'sender-receiver-interface')
     global_elements['sender-receiver-interface'].attrib = {'UUID': '5301b51c-ab80-4717-880a-f53963ebb47d'}
     global_elements['short-name100'] = ET.SubElement(global_elements['sender-receiver-interface'], 'short-name')
@@ -1313,6 +1366,8 @@ def Copy2_SenderReceiverInterface():
     global_elements['is-service10'] = ET.SubElement(global_elements['sender-receiver-interface'], 'is-service')
     global_elements['is-service10'].text = 'false'
     global_elements['data-elements'] = ET.SubElement(global_elements['sender-receiver-interface'], 'data-elements')
+
+def Copy2_SenderReceiverInterface_VariableDataPrototype_DataElement():
     global_elements['variable-data-prototype3'] = ET.SubElement(global_elements['data-elements'], 'variable-data-prototype')
     global_elements['variable-data-prototype3'].attrib = {'UUID': 'd071c034-64ed-44d0-81f0-a0735e373ce3'}
     global_elements['short-name101'] = ET.SubElement(global_elements['variable-data-prototype3'], 'short-name')
@@ -1327,6 +1382,8 @@ def Copy2_SenderReceiverInterface():
     global_elements['type-tref21'] = ET.SubElement(global_elements['variable-data-prototype3'], 'type-tref')
     global_elements['type-tref21'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean'
     global_elements['type-tref21'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Copy2_SenderReceiverInterface_VariableDataPrototype_DataElement1():
     global_elements['variable-data-prototype4'] = ET.SubElement(global_elements['data-elements'], 'variable-data-prototype')
     global_elements['variable-data-prototype4'].attrib = {'UUID': '3afe6629-f986-4006-9ecf-b2902644f64e'}
     global_elements['short-name102'] = ET.SubElement(global_elements['variable-data-prototype4'], 'short-name')
@@ -1340,7 +1397,6 @@ def Copy2_SenderReceiverInterface():
     global_elements['type-tref22'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint32'
     global_elements['type-tref22'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
 
-
 def Copy3_SenderReceiverInterface():
     global_elements['sender-receiver-interface2'] = ET.SubElement(global_elements['elements15'], 'sender-receiver-interface')
     global_elements['sender-receiver-interface2'].attrib = {'UUID': 'b4591ad1-c21f-4706-8eac-55f6169b8c96'}
@@ -1349,6 +1405,8 @@ def Copy3_SenderReceiverInterface():
     global_elements['is-service11'] = ET.SubElement(global_elements['sender-receiver-interface2'], 'is-service')
     global_elements['is-service11'].text = 'false'
     global_elements['data-elements2'] = ET.SubElement(global_elements['sender-receiver-interface2'], 'data-elements')
+
+def Copy3_SenderReceiverInterface_VariableDataPrototype_DataElement():
     global_elements['variable-data-prototype5'] = ET.SubElement(global_elements['data-elements2'], 'variable-data-prototype')
     global_elements['variable-data-prototype5'].attrib = {'UUID': 'dd322790-2f29-43dc-93a0-10c5addc7871'}
     global_elements['short-name104'] = ET.SubElement(global_elements['variable-data-prototype5'], 'short-name')
@@ -1363,6 +1421,8 @@ def Copy3_SenderReceiverInterface():
     global_elements['type-tref23'] = ET.SubElement(global_elements['variable-data-prototype5'], 'type-tref')
     global_elements['type-tref23'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean'
     global_elements['type-tref23'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Copy3_SenderReceiverInterface_VariableDataPrototype_DataElement1():
     global_elements['variable-data-prototype6'] = ET.SubElement(global_elements['data-elements2'], 'variable-data-prototype')
     global_elements['variable-data-prototype6'].attrib = {'UUID': '27292aab-8793-404f-b1d0-3128a4ab29bf'}
     global_elements['short-name105'] = ET.SubElement(global_elements['variable-data-prototype6'], 'short-name')
@@ -1385,6 +1445,8 @@ def Copy4_SenderReceiverInterface():
     global_elements['is-service12'] = ET.SubElement(global_elements['sender-receiver-interface3'], 'is-service')
     global_elements['is-service12'].text = 'false'
     global_elements['data-elements3'] = ET.SubElement(global_elements['sender-receiver-interface3'], 'data-elements')
+
+def Copy4_SenderReceiverInterface_VariableDataPrototype_DataElement():
     global_elements['variable-data-prototype7'] = ET.SubElement(global_elements['data-elements3'], 'variable-data-prototype')
     global_elements['variable-data-prototype7'].attrib = {'UUID': '81fa7709-76a3-4e64-8ab6-0302340d9596'}
     global_elements['short-name107'] = ET.SubElement(global_elements['variable-data-prototype7'], 'short-name')
@@ -1399,6 +1461,8 @@ def Copy4_SenderReceiverInterface():
     global_elements['type-tref25'] = ET.SubElement(global_elements['variable-data-prototype7'], 'type-tref')
     global_elements['type-tref25'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean'
     global_elements['type-tref25'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Copy4_SenderReceiverInterface_VariableDataPrototype_DataElement1():
     global_elements['variable-data-prototype8'] = ET.SubElement(global_elements['data-elements3'], 'variable-data-prototype')
     global_elements['variable-data-prototype8'].attrib = {'UUID': '4139b239-b260-44f9-a1b9-26592a9702b7'}
     global_elements['short-name108'] = ET.SubElement(global_elements['variable-data-prototype8'], 'short-name')
@@ -1421,6 +1485,8 @@ def Copy5_SenderReceiverInterface():
     global_elements['is-service13'] = ET.SubElement(global_elements['sender-receiver-interface4'], 'is-service')
     global_elements['is-service13'].text = 'false'
     global_elements['data-elements4'] = ET.SubElement(global_elements['sender-receiver-interface4'], 'data-elements')
+
+def Copy5_SenderReceiverInterface_VariableDataPrototype_DataElement():
     global_elements['variable-data-prototype9'] = ET.SubElement(global_elements['data-elements4'], 'variable-data-prototype')
     global_elements['variable-data-prototype9'].attrib = {'UUID': 'b67450ea-eee7-49cd-9e1b-696114cdc06b'}
     global_elements['short-name110'] = ET.SubElement(global_elements['variable-data-prototype9'], 'short-name')
@@ -1435,6 +1501,8 @@ def Copy5_SenderReceiverInterface():
     global_elements['type-tref27'] = ET.SubElement(global_elements['variable-data-prototype9'], 'type-tref')
     global_elements['type-tref27'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean'
     global_elements['type-tref27'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Copy5_SenderReceiverInterface_VariableDataPrototype_DataElement1():
     global_elements['variable-data-prototype10'] = ET.SubElement(global_elements['data-elements4'], 'variable-data-prototype')
     global_elements['variable-data-prototype10'].attrib = {'UUID': '6616174f-78ab-48e5-b54f-f0ac623eefa6'}
     global_elements['short-name111'] = ET.SubElement(global_elements['variable-data-prototype10'], 'short-name')
@@ -1456,6 +1524,8 @@ def Copy_SenderReceiverInterface():
     global_elements['is-service14'] = ET.SubElement(global_elements['sender-receiver-interface5'], 'is-service')
     global_elements['is-service14'].text = 'false'
     global_elements['data-elements5'] = ET.SubElement(global_elements['sender-receiver-interface5'], 'data-elements')
+
+def Copy_SenderReceiverInterface_VariableDataPrototype_DataElement():
     global_elements['variable-data-prototype11'] = ET.SubElement(global_elements['data-elements5'], 'variable-data-prototype')
     global_elements['variable-data-prototype11'].attrib = {'UUID': 'b7a89eaf-844f-4e6d-b357-dc9976ba211e'}
     global_elements['short-name113'] = ET.SubElement(global_elements['variable-data-prototype11'], 'short-name')
@@ -1470,6 +1540,8 @@ def Copy_SenderReceiverInterface():
     global_elements['type-tref29'] = ET.SubElement(global_elements['variable-data-prototype11'], 'type-tref')
     global_elements['type-tref29'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/boolean'
     global_elements['type-tref29'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Copy_SenderReceiverInterface_VariableDataPrototype_DataElement1():
     global_elements['variable-data-prototype12'] = ET.SubElement(global_elements['data-elements5'], 'variable-data-prototype')
     global_elements['variable-data-prototype12'].attrib = {'UUID': '373c6d56-b664-4bba-b6bf-37630aed9fef'}
     global_elements['short-name114'] = ET.SubElement(global_elements['variable-data-prototype12'], 'short-name')
@@ -1492,6 +1564,8 @@ def SenderReceiverInterface():
     global_elements['is-service15'] = ET.SubElement(global_elements['sender-receiver-interface6'], 'is-service')
     global_elements['is-service15'].text = 'false'
     global_elements['data-elements6'] = ET.SubElement(global_elements['sender-receiver-interface6'], 'data-elements')
+
+def SenderReceiverInterface_VariableDataPrototype_DataElement():
     global_elements['variable-data-prototype13'] = ET.SubElement(global_elements['data-elements6'], 'variable-data-prototype')
     global_elements['variable-data-prototype13'].attrib = {'UUID': 'c448fbc4-20d2-443d-bb7a-87585742cfcf'}
     global_elements['short-name116'] = ET.SubElement(global_elements['variable-data-prototype13'], 'short-name')
@@ -1506,6 +1580,8 @@ def SenderReceiverInterface():
     global_elements['type-tref31'] = ET.SubElement(global_elements['variable-data-prototype13'], 'type-tref')
     global_elements['type-tref31'].text = '/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType'
     global_elements['type-tref31'].attrib = {'DEST': 'APPLICATION-PRIMITIVE-DATA-TYPE'}
+
+def SenderReceiverInterface_VariableDataPrototype_DataElement1():
     global_elements['variable-data-prototype14'] = ET.SubElement(global_elements['data-elements6'], 'variable-data-prototype')
     global_elements['variable-data-prototype14'].attrib = {'UUID': '6862a5ea-8794-4906-9f54-50624e9d6044'}
     global_elements['short-name117'] = ET.SubElement(global_elements['variable-data-prototype14'], 'short-name')
@@ -1526,14 +1602,12 @@ def SenderReceiverInterface():
     global_elements['handle-invalid'] = ET.SubElement(global_elements['invalidation-policy'], 'handle-invalid')
     global_elements['handle-invalid'].text = 'KEEP'
 
-
-
 def Trigger():
-    global_elements['ar-package18'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
-    global_elements['ar-package18'].attrib = {'UUID': '00421379-584f-4dbb-8c9f-d70ad66b8e41'}
-    global_elements['short-name118'] = ET.SubElement(global_elements['ar-package18'], 'short-name')
-    global_elements['short-name118'].text = 'Trigger'
-    global_elements['elements16'] = ET.SubElement(global_elements['ar-package18'], 'elements')
+    # global_elements['ar-package18'] = ET.SubElement(global_elements['ar-packages4'], 'ar-package')
+    # global_elements['ar-package18'].attrib = {'UUID': '00421379-584f-4dbb-8c9f-d70ad66b8e41'}
+    # global_elements['short-name118'] = ET.SubElement(global_elements['ar-package18'], 'short-name')
+    # global_elements['short-name118'].text = 'Trigger'
+    # global_elements['elements16'] = ET.SubElement(global_elements['ar-package18'], 'elements')
     global_elements['trigger-interface'] = ET.SubElement(global_elements['elements16'], 'trigger-interface')
     global_elements['trigger-interface'].attrib = {'UUID': '97d54491-56c6-49b9-9812-bb5eadaefa82'}
     global_elements['short-name119'] = ET.SubElement(global_elements['trigger-interface'], 'short-name')
@@ -1553,35 +1627,36 @@ def Trigger():
     global_elements['cse-code-factor'] = ET.SubElement(global_elements['trigger-period'], 'cse-code-factor')
     global_elements['cse-code-factor'].text = '15'
     
-def SWCImpl():
-    global_elements['ar-package19'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['ar-package19'].attrib = {'UUID': 'a21c4095-c5dd-41b4-8a15-aa23a460a3e9'}
-    global_elements['short-name121'] = ET.SubElement(global_elements['ar-package19'], 'short-name')
-    global_elements['short-name121'].text = 'SWCImpl'
-    global_elements['elements17'] = ET.SubElement(global_elements['ar-package19'], 'elements')
+def SwcImplementation():
+    # global_elements['ar-package19'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+    # global_elements['ar-package19'].attrib = {'UUID': 'a21c4095-c5dd-41b4-8a15-aa23a460a3e9'}
+    # global_elements['short-name121'] = ET.SubElement(global_elements['ar-package19'], 'short-name')
+    # global_elements['short-name121'].text = 'SWCImpl'
+    # global_elements['elements17'] = ET.SubElement(global_elements['ar-package19'], 'elements')
     global_elements['swc-implementation'] = ET.SubElement(global_elements['elements17'], 'swc-implementation')
     global_elements['swc-implementation'].attrib = {'UUID': 'a8e1b9bd-bc2d-4bba-8d84-7fb588da487b'}
     global_elements['short-name122'] = ET.SubElement(global_elements['swc-implementation'], 'short-name')
     global_elements['short-name122'].text = 'SwcImplementation'
     global_elements['programming-language'] = ET.SubElement(global_elements['swc-implementation'], 'programming-language')
     global_elements['programming-language'].text = 'C'
-    global_elements['resource-consumption'] = ET.SubElement(global_elements['swc-implementation'], 'resource-consumption')
-    global_elements['resource-consumption'].attrib = {'UUID': '664bf3d9-9efc-49d1-a4fd-9936922aa5f9'}
-    global_elements['short-name123'] = ET.SubElement(global_elements['resource-consumption'], 'short-name')
-    global_elements['short-name123'].text = 'ResourceConsumption'
     global_elements['sw-version'] = ET.SubElement(global_elements['swc-implementation'], 'sw-version')
     global_elements['sw-version'].text = '1.0.0.0'
     global_elements['behavior-ref'] = ET.SubElement(global_elements['swc-implementation'], 'behavior-ref')
     global_elements['behavior-ref'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl'
     global_elements['behavior-ref'].attrib = {'DEST': 'SWC-INTERNAL-BEHAVIOR'}
 
+def ResourceConsumption():
+    global_elements['resource-consumption'] = ET.SubElement(global_elements['swc-implementation'], 'resource-consumption')
+    global_elements['resource-consumption'].attrib = {'UUID': '664bf3d9-9efc-49d1-a4fd-9936922aa5f9'}
+    global_elements['short-name123'] = ET.SubElement(global_elements['resource-consumption'], 'short-name')
+    global_elements['short-name123'].text = 'ResourceConsumption'
 
-def SwAddrMethods():
-    global_elements['ar-package20'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
-    global_elements['ar-package20'].attrib = {'UUID': 'fc8b946c-31d4-49d6-8e0c-ff6847ede7f5'}
-    global_elements['short-name124'] = ET.SubElement(global_elements['ar-package20'], 'short-name')
-    global_elements['short-name124'].text = 'SwAddrMethods'
-    global_elements['elements18'] = ET.SubElement(global_elements['ar-package20'], 'elements')
+def SwAddrMethods_Copy2_SwAddrMethod():
+    # global_elements['ar-package20'] = ET.SubElement(global_elements['ar-packages2'], 'ar-package')
+    # global_elements['ar-package20'].attrib = {'UUID': 'fc8b946c-31d4-49d6-8e0c-ff6847ede7f5'}
+    # global_elements['short-name124'] = ET.SubElement(global_elements['ar-package20'], 'short-name')
+    # global_elements['short-name124'].text = 'SwAddrMethods'
+    # global_elements['elements18'] = ET.SubElement(global_elements['ar-package20'], 'elements')
     global_elements['sw-addr-method'] = ET.SubElement(global_elements['elements18'], 'sw-addr-method')
     global_elements['sw-addr-method'].attrib = {'UUID': '8a973d95-6644-4157-ab41-c78f7ccbcb2c'}
     global_elements['short-name125'] = ET.SubElement(global_elements['sw-addr-method'], 'short-name')
@@ -1590,6 +1665,8 @@ def SwAddrMethods():
     global_elements['memory-allocation-keyword-policy'].text = 'ADDR-METHOD-SHORT-NAME'
     global_elements['section-type'] = ET.SubElement(global_elements['sw-addr-method'], 'section-type')
     global_elements['section-type'].text = 'CODE'
+
+def SwAddrMethods_Copy_SwAddrMethod():
     global_elements['sw-addr-method2'] = ET.SubElement(global_elements['elements18'], 'sw-addr-method')
     global_elements['sw-addr-method2'].attrib = {'UUID': '73ccfb92-d7eb-4aee-b724-b520ed1a3e84'}
     global_elements['short-name126'] = ET.SubElement(global_elements['sw-addr-method2'], 'short-name')
@@ -1598,6 +1675,8 @@ def SwAddrMethods():
     global_elements['memory-allocation-keyword-policy2'].text = 'ADDR-METHOD-SHORT-NAME-AND-ALIGNMENT'
     global_elements['section-type2'] = ET.SubElement(global_elements['sw-addr-method2'], 'section-type')
     global_elements['section-type2'].text = 'CALIBRATION-VARIABLES'
+
+def SwAddrMethods_SwAddrMethod():
     global_elements['sw-addr-method3'] = ET.SubElement(global_elements['elements18'], 'sw-addr-method')
     global_elements['sw-addr-method3'].attrib = {'UUID': '59a8a159-68d8-4804-8d3b-76f1a5d48b3c'}
     global_elements['short-name127'] = ET.SubElement(global_elements['sw-addr-method3'], 'short-name')
@@ -1607,21 +1686,27 @@ def SwAddrMethods():
     global_elements['section-type3'] = ET.SubElement(global_elements['sw-addr-method3'], 'section-type')
     global_elements['section-type3'].text = 'CALIBRATION-VARIABLES'
 
-def SwComponentTypes():
-    global_elements['ar-package21'] = ET.SubElement(global_elements['ar-packages'], 'ar-package')
-    global_elements['short-name128'] = ET.SubElement(global_elements['ar-package21'], 'short-name')
-    global_elements['short-name128'].text = 'SwComponentTypes'
-    global_elements['ar-packages5'] = ET.SubElement(global_elements['ar-package21'], 'ar-packages')
+def ApplSWC():
+#     global_elements['ar-package21'] = ET.SubElement(global_elements['ar-packages'], 'ar-package')
+#     global_elements['short-name128'] = ET.SubElement(global_elements['ar-package21'], 'short-name')
+#     global_elements['short-name128'].text = 'SwComponentTypes'
+#     global_elements['ar-packages5'] = ET.SubElement(global_elements['ar-package21'], 'ar-packages')
+
+    
     global_elements['ar-package22'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
     global_elements['ar-package22'].attrib = {'UUID': '7e1cfec7-fc85-4615-9df0-46ddc1fdaa09'}
     global_elements['short-name129'] = ET.SubElement(global_elements['ar-package22'], 'short-name')
     global_elements['short-name129'].text = 'ApplSWC'
     global_elements['elements19'] = ET.SubElement(global_elements['ar-package22'], 'elements')
+
+def ApplicationSwComponentType():
     global_elements['application-sw-component-type'] = ET.SubElement(global_elements['elements19'], 'application-sw-component-type')
     global_elements['application-sw-component-type'].attrib = {'UUID': 'e74b1e65-d39d-460c-8d4d-d95c8a9e12dd'}
     global_elements['short-name130'] = ET.SubElement(global_elements['application-sw-component-type'], 'short-name')
     global_elements['short-name130'].text = 'ApplicationSwComponentType'
     global_elements['ports'] = ET.SubElement(global_elements['application-sw-component-type'], 'ports')
+
+def RPort_SR():
     global_elements['r-port-prototype'] = ET.SubElement(global_elements['ports'], 'r-port-prototype')
     global_elements['r-port-prototype'].attrib = {'UUID': '1ecadefd-df18-4c05-a2d5-803778e62ae1'}
     global_elements['short-name131'] = ET.SubElement(global_elements['r-port-prototype'], 'short-name')
@@ -1629,6 +1714,8 @@ def SwComponentTypes():
     global_elements['required-interface-tref'] = ET.SubElement(global_elements['r-port-prototype'], 'required-interface-tref')
     global_elements['required-interface-tref'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface'
     global_elements['required-interface-tref'].attrib = {'DEST': 'SENDER-RECEIVER-INTERFACE'}
+
+def PPort_SR():
     global_elements['p-port-prototype'] = ET.SubElement(global_elements['ports'], 'p-port-prototype')
     global_elements['p-port-prototype'].attrib = {'UUID': 'a3e8969f-1dde-4749-af9a-f337b0f053d8'}
     global_elements['short-name132'] = ET.SubElement(global_elements['p-port-prototype'], 'short-name')
@@ -1636,6 +1723,8 @@ def SwComponentTypes():
     global_elements['provided-interface-tref'] = ET.SubElement(global_elements['p-port-prototype'], 'provided-interface-tref')
     global_elements['provided-interface-tref'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface'
     global_elements['provided-interface-tref'].attrib = {'DEST': 'SENDER-RECEIVER-INTERFACE'}
+
+def RPort_CS():
     global_elements['r-port-prototype2'] = ET.SubElement(global_elements['ports'], 'r-port-prototype')
     global_elements['r-port-prototype2'].attrib = {'UUID': '933a7736-19ea-4662-8301-3fe9991367bc'}
     global_elements['short-name133'] = ET.SubElement(global_elements['r-port-prototype2'], 'short-name')
@@ -1643,6 +1732,8 @@ def SwComponentTypes():
     global_elements['required-interface-tref2'] = ET.SubElement(global_elements['r-port-prototype2'], 'required-interface-tref')
     global_elements['required-interface-tref2'].text = '/SharedElements/PortInterfaces/ClientServer/ClientServerInterface'
     global_elements['required-interface-tref2'].attrib = {'DEST': 'CLIENT-SERVER-INTERFACE'}
+
+def PPort_CS():
     global_elements['p-port-prototype2'] = ET.SubElement(global_elements['ports'], 'p-port-prototype')
     global_elements['p-port-prototype2'].attrib = {'UUID': '38b3145f-1dd8-4a0f-943b-2f6b2d0a4221'}
     global_elements['short-name134'] = ET.SubElement(global_elements['p-port-prototype2'], 'short-name')
@@ -1650,6 +1741,8 @@ def SwComponentTypes():
     global_elements['provided-interface-tref2'] = ET.SubElement(global_elements['p-port-prototype2'], 'provided-interface-tref')
     global_elements['provided-interface-tref2'].text = '/SharedElements/PortInterfaces/ClientServer/ClientServerInterface'
     global_elements['provided-interface-tref2'].attrib = {'DEST': 'CLIENT-SERVER-INTERFACE'}
+
+def RPort_msi():
     global_elements['r-port-prototype3'] = ET.SubElement(global_elements['ports'], 'r-port-prototype')
     global_elements['r-port-prototype3'].attrib = {'UUID': '08e53a34-e89a-4c1c-a2d4-9536c0e123af'}
     global_elements['short-name135'] = ET.SubElement(global_elements['r-port-prototype3'], 'short-name')
@@ -1657,6 +1750,8 @@ def SwComponentTypes():
     global_elements['required-interface-tref3'] = ET.SubElement(global_elements['r-port-prototype3'], 'required-interface-tref')
     global_elements['required-interface-tref3'].text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface'
     global_elements['required-interface-tref3'].attrib = {'DEST': 'MODE-SWITCH-INTERFACE'}
+
+def PPort_msi():
     global_elements['p-port-prototype3'] = ET.SubElement(global_elements['ports'], 'p-port-prototype')
     global_elements['p-port-prototype3'].attrib = {'UUID': '8ed933c7-270b-45cf-8a3e-206782153f61'}
     global_elements['short-name136'] = ET.SubElement(global_elements['p-port-prototype3'], 'short-name')
@@ -1664,6 +1759,8 @@ def SwComponentTypes():
     global_elements['provided-interface-tref3'] = ET.SubElement(global_elements['p-port-prototype3'], 'provided-interface-tref')
     global_elements['provided-interface-tref3'].text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface'
     global_elements['provided-interface-tref3'].attrib = {'DEST': 'MODE-SWITCH-INTERFACE'}
+
+def RPort_nvd():
     global_elements['r-port-prototype4'] = ET.SubElement(global_elements['ports'], 'r-port-prototype')
     global_elements['r-port-prototype4'].attrib = {'UUID': '52c8bb91-6599-4bdd-a556-e2b22ab9c73b'}
     global_elements['short-name137'] = ET.SubElement(global_elements['r-port-prototype4'], 'short-name')
@@ -1671,6 +1768,8 @@ def SwComponentTypes():
     global_elements['required-interface-tref4'] = ET.SubElement(global_elements['r-port-prototype4'], 'required-interface-tref')
     global_elements['required-interface-tref4'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface'
     global_elements['required-interface-tref4'].attrib = {'DEST': 'NV-DATA-INTERFACE'}
+
+def PPort_nvd():
     global_elements['p-port-prototype4'] = ET.SubElement(global_elements['ports'], 'p-port-prototype')
     global_elements['p-port-prototype4'].attrib = {'UUID': 'a69f810c-0a9d-4729-9b49-5b4be2f55ffa'}
     global_elements['short-name138'] = ET.SubElement(global_elements['p-port-prototype4'], 'short-name')
@@ -1678,6 +1777,8 @@ def SwComponentTypes():
     global_elements['provided-interface-tref4'] = ET.SubElement(global_elements['p-port-prototype4'], 'provided-interface-tref')
     global_elements['provided-interface-tref4'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface'
     global_elements['provided-interface-tref4'].attrib = {'DEST': 'NV-DATA-INTERFACE'}
+
+def RPort_prm():
     global_elements['r-port-prototype5'] = ET.SubElement(global_elements['ports'], 'r-port-prototype')
     global_elements['r-port-prototype5'].attrib = {'UUID': '7bee2832-df48-4712-a0cf-9b2f095db921'}
     global_elements['short-name139'] = ET.SubElement(global_elements['r-port-prototype5'], 'short-name')
@@ -1685,6 +1786,8 @@ def SwComponentTypes():
     global_elements['required-interface-tref5'] = ET.SubElement(global_elements['r-port-prototype5'], 'required-interface-tref')
     global_elements['required-interface-tref5'].text = '/SharedElements/PortInterfaces/Parameter/ParameterInterface'
     global_elements['required-interface-tref5'].attrib = {'DEST': 'PARAMETER-INTERFACE'}
+
+def RPort_trigger():
     global_elements['r-port-prototype6'] = ET.SubElement(global_elements['ports'], 'r-port-prototype')
     global_elements['r-port-prototype6'].attrib = {'UUID': '9194fa9f-f535-4ef4-ad71-379f00251a5f'}
     global_elements['short-name140'] = ET.SubElement(global_elements['r-port-prototype6'], 'short-name')
@@ -1693,14 +1796,15 @@ def SwComponentTypes():
     global_elements['required-interface-tref6'].text = '/SharedElements/PortInterfaces/Trigger/TriggerInterface'
     global_elements['required-interface-tref6'].attrib = {'DEST': 'TRIGGER-INTERFACE'}
 
-
-def ConstantMemory():
-    global_elements['internal-behaviors'] = ET.SubElement(global_elements['application-sw-component-type'], 'internal-behaviors')
+def IB_Appl():
+    # global_elements['internal-behaviors'] = ET.SubElement(global_elements['application-sw-component-type'], 'internal-behaviors')
     global_elements['swc-internal-behavior'] = ET.SubElement(global_elements['internal-behaviors'], 'swc-internal-behavior')
     global_elements['swc-internal-behavior'].attrib = {'UUID': 'd0c29733-8863-4bcd-af6a-1579e0a29746'}
     global_elements['short-name141'] = ET.SubElement(global_elements['swc-internal-behavior'], 'short-name')
     global_elements['short-name141'].text = 'IB_Appl'
     global_elements['constant-memorys'] = ET.SubElement(global_elements['swc-internal-behavior'], 'constant-memorys')
+
+def ConstantMemory_PDP():
     global_elements['parameter-data-prototype3'] = ET.SubElement(global_elements['constant-memorys'], 'parameter-data-prototype')
     global_elements['parameter-data-prototype3'].attrib = {'UUID': '666c53b0-408c-4084-8002-71810ad2bea7'}
     global_elements['short-name142'] = ET.SubElement(global_elements['parameter-data-prototype3'], 'short-name')
@@ -1784,6 +1888,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['event-source-ref'] = ET.SubElement(global_elements['asynchronous-server-call-returns-event'], 'event-source-ref')
     global_elements['event-source-ref'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable/AsynchronousServerCallResultPoint'
     global_elements['event-source-ref'].attrib = {'DEST': 'ASYNCHRONOUS-SERVER-CALL-RESULT-POINT'}
+
+def BackgroundEvent():
     global_elements['background-event'] = ET.SubElement(global_elements['events'], 'background-event')
     global_elements['background-event'].attrib = {'UUID': '878975ea-f390-4f62-a34f-05ca7fd73896'}
     global_elements['short-name146'] = ET.SubElement(global_elements['background-event'], 'short-name')
@@ -1791,6 +1897,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['start-on-event-ref2'] = ET.SubElement(global_elements['background-event'], 'start-on-event-ref')
     global_elements['start-on-event-ref2'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable1'
     global_elements['start-on-event-ref2'].attrib = {'DEST': 'RUNNABLE-ENTITY'}
+
+def DataReceiveErrorEvent():
     global_elements['data-receive-error-event'] = ET.SubElement(global_elements['events'], 'data-receive-error-event')
     global_elements['data-receive-error-event'].attrib = {'UUID': '733de305-2dc6-4ac2-be25-134d242372ad'}
     global_elements['short-name147'] = ET.SubElement(global_elements['data-receive-error-event'], 'short-name')
@@ -1805,6 +1913,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['target-data-element-ref'] = ET.SubElement(global_elements['data-iref'], 'target-data-element-ref')
     global_elements['target-data-element-ref'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement'
     global_elements['target-data-element-ref'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def DataReceivedEvent():
     global_elements['data-received-event'] = ET.SubElement(global_elements['events'], 'data-received-event')
     global_elements['data-received-event'].attrib = {'UUID': '30fc9c83-5302-44fc-a25d-0d77e2b3d112'}
     global_elements['short-name148'] = ET.SubElement(global_elements['data-received-event'], 'short-name')
@@ -1819,6 +1929,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['target-data-element-ref2'] = ET.SubElement(global_elements['data-iref2'], 'target-data-element-ref')
     global_elements['target-data-element-ref2'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1'
     global_elements['target-data-element-ref2'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def DataSendCompletedEvent():
     global_elements['data-send-completed-event'] = ET.SubElement(global_elements['events'], 'data-send-completed-event')
     global_elements['data-send-completed-event'].attrib = {'UUID': 'aefde323-2cf9-4226-aedb-0a1a33876a55'}
     global_elements['short-name149'] = ET.SubElement(global_elements['data-send-completed-event'], 'short-name')
@@ -1829,6 +1941,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['event-source-ref2'] = ET.SubElement(global_elements['data-send-completed-event'], 'event-source-ref')
     global_elements['event-source-ref2'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable4/DSP_PPort_SR_DataElement'
     global_elements['event-source-ref2'].attrib = {'DEST': 'VARIABLE-ACCESS'}
+
+def DataWriteCompletedEvent():
     global_elements['data-write-completed-event'] = ET.SubElement(global_elements['events'], 'data-write-completed-event')
     global_elements['data-write-completed-event'].attrib = {'UUID': '0da70404-5ab6-4651-ad56-e1c3adab06e5'}
     global_elements['short-name150'] = ET.SubElement(global_elements['data-write-completed-event'], 'short-name')
@@ -1839,6 +1953,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['event-source-ref3'] = ET.SubElement(global_elements['data-write-completed-event'], 'event-source-ref')
     global_elements['event-source-ref3'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable5/DWA_PPort_SR_DataElement1'
     global_elements['event-source-ref3'].attrib = {'DEST': 'VARIABLE-ACCESS'}
+
+def ExternalTriggerOccurredEvent():
     global_elements['external-trigger-occurred-event'] = ET.SubElement(global_elements['events'], 'external-trigger-occurred-event')
     global_elements['external-trigger-occurred-event'].attrib = {'UUID': '7f122189-5a69-4e28-af84-b5a1e73c9206'}
     global_elements['short-name151'] = ET.SubElement(global_elements['external-trigger-occurred-event'], 'short-name')
@@ -1853,6 +1969,17 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['target-trigger-ref'] = ET.SubElement(global_elements['trigger-iref'], 'target-trigger-ref')
     global_elements['target-trigger-ref'].text = '/SharedElements/PortInterfaces/Trigger/TriggerInterface/Trigger'
     global_elements['target-trigger-ref'].attrib = {'DEST': 'TRIGGER'}
+
+def InitEvent():
+    global_elements['init-event'] = ET.SubElement(global_elements['events'], 'init-event')
+    global_elements['init-event'].attrib = {'UUID': '6febdb10-eefc-44b9-adad-fdef91bbef72'}
+    global_elements['short-name498'] = ET.SubElement(global_elements['init-event'], 'short-name')
+    global_elements['short-name498'].text = 'InitEvent'
+    global_elements['start-on-event-ref8'] = ET.SubElement(global_elements['init-event'], 'start-on-event-ref')
+    global_elements['start-on-event-ref8'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable7'
+    global_elements['start-on-event-ref8'].attrib = {'DEST': 'RUNNABLE-ENTITY'}
+
+def ModeSwitchedAckEvent():
     global_elements['mode-switched-ack-event'] = ET.SubElement(global_elements['events'], 'mode-switched-ack-event')
     global_elements['mode-switched-ack-event'].attrib = {'UUID': '2f5c24be-60cf-4249-bfde-ceabef6d00d4'}
     global_elements['short-name152'] = ET.SubElement(global_elements['mode-switched-ack-event'], 'short-name')
@@ -1863,6 +1990,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['event-source-ref4'] = ET.SubElement(global_elements['mode-switched-ack-event'], 'event-source-ref')
     global_elements['event-source-ref4'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable9/MSP_PPort_msi_ModeGroup'
     global_elements['event-source-ref4'].attrib = {'DEST': 'MODE-SWITCH-POINT'}
+
+def OperationInvokedEvent():
     global_elements['operation-invoked-event'] = ET.SubElement(global_elements['events'], 'operation-invoked-event')
     global_elements['operation-invoked-event'].attrib = {'UUID': '02646a86-1109-43a4-8e09-cb8878e932a5'}
     global_elements['short-name153'] = ET.SubElement(global_elements['operation-invoked-event'], 'short-name')
@@ -1877,6 +2006,24 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['target-provided-operation-ref'] = ET.SubElement(global_elements['operation-iref'], 'target-provided-operation-ref')
     global_elements['target-provided-operation-ref'].text = '/SharedElements/PortInterfaces/ClientServer/ClientServerInterface/Operation1'
     global_elements['target-provided-operation-ref'].attrib = {'DEST': 'CLIENT-SERVER-OPERATION'}
+
+def SwcModeManagerErrorEvent():
+    global_elements['swc-mode-manager-error-event'] = ET.SubElement(global_elements['events'], 'swc-mode-manager-error-event')
+    global_elements['swc-mode-manager-error-event'].attrib = {'UUID': '2e3337be-0df8-4dce-a65a-ca8bb234754a'}
+    global_elements['short-name501'] = ET.SubElement(global_elements['swc-mode-manager-error-event'], 'short-name')
+    global_elements['short-name501'].text = 'SwcModeManagerErrorEvent'
+    global_elements['start-on-event-ref11'] = ET.SubElement(global_elements['swc-mode-manager-error-event'], 'start-on-event-ref')
+    global_elements['start-on-event-ref11'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable11'
+    global_elements['start-on-event-ref11'].attrib = {'DEST': 'RUNNABLE-ENTITY'}
+    global_elements['mode-group-iref'] = ET.SubElement(global_elements['swc-mode-manager-error-event'], 'mode-group-iref')
+    global_elements['context-p-port-ref2'] = ET.SubElement(global_elements['mode-group-iref'], 'context-p-port-ref')
+    global_elements['context-p-port-ref2'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_msi'
+    global_elements['context-p-port-ref2'].attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+    global_elements['target-mode-group-ref'] = ET.SubElement(global_elements['mode-group-iref'], 'target-mode-group-ref')
+    global_elements['target-mode-group-ref'].text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup'
+    global_elements['target-mode-group-ref'].attrib = {'DEST': 'MODE-DECLARATION-GROUP-PROTOTYPE'}
+
+def SwcModeSwitchEvent():
     global_elements['swc-mode-switch-event'] = ET.SubElement(global_elements['events'], 'swc-mode-switch-event')
     global_elements['swc-mode-switch-event'].attrib = {'UUID': '5bebf915-dc23-4d8d-ac15-4af9a83cb9f1'}
     global_elements['short-name154'] = ET.SubElement(global_elements['swc-mode-switch-event'], 'short-name')
@@ -1907,6 +2054,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['target-mode-declaration-ref2'] = ET.SubElement(global_elements['mode-iref2'], 'target-mode-declaration-ref')
     global_elements['target-mode-declaration-ref2'].text = '/SharedElements/PortInterfaces/ModeSwitch/ModeDeclarationGroup/ModeDeclaration'
     global_elements['target-mode-declaration-ref2'].attrib = {'DEST': 'MODE-DECLARATION'}
+
+def TimingEvent():
     global_elements['timing-event'] = ET.SubElement(global_elements['events'], 'timing-event')
     global_elements['timing-event'].attrib = {'UUID': 'a761b6cb-cd31-4a99-b2f8-21c5a132097e'}
     global_elements['short-name155'] = ET.SubElement(global_elements['timing-event'], 'short-name')
@@ -1916,6 +2065,8 @@ def AsynchronousServerCallReturnsEvent():
     global_elements['start-on-event-ref11'].attrib = {'DEST': 'RUNNABLE-ENTITY'}
     global_elements['period'] = ET.SubElement(global_elements['timing-event'], 'period')
     global_elements['period'].text = '0.01'
+
+def TimingEvent1():
     global_elements['timing-event2'] = ET.SubElement(global_elements['events'], 'timing-event')
     global_elements['timing-event2'].attrib = {'UUID': '0faaa505-7947-4b84-b8ea-4086fa60a54c'}
     global_elements['short-name156'] = ET.SubElement(global_elements['timing-event2'], 'short-name')
@@ -1948,9 +2099,9 @@ def ExplicitInterRunnableVariable():
     global_elements['constant-ref2'].text = '/SharedElements/ConstantSpecifications/ApplicationSwComponentType_ExplicitInterRunnableVariable'
     global_elements['constant-ref2'].attrib = {'DEST': 'CONSTANT-SPECIFICATION'}
 
-def NoSupport():
-    global_elements['handle-termination-and-restart'] = ET.SubElement(global_elements['swc-internal-behavior'], 'handle-termination-and-restart')
-    global_elements['handle-termination-and-restart'].text = 'NO-SUPPORT'
+# def NoSupport():
+#     global_elements['handle-termination-and-restart'] = ET.SubElement(global_elements['swc-internal-behavior'], 'handle-termination-and-restart')
+#     global_elements['handle-termination-and-restart'].text = 'NO-SUPPORT'
 
 
 def ImplicitInterRunnableVariable():
@@ -1997,7 +2148,6 @@ def PerInstanceParameter():
     global_elements['value10'] = ET.SubElement(global_elements['numerical-value-specification7'], 'value')
     global_elements['value10'].text = '5'
   
-
 def Runnable():
     global_elements['runnables'] = ET.SubElement(global_elements['swc-internal-behavior'], 'runnables')
     global_elements['runnable-entity'] = ET.SubElement(global_elements['runnables'], 'runnable-entity')
@@ -2009,6 +2159,8 @@ def Runnable():
     global_elements['sw-addr-method-ref'] = ET.SubElement(global_elements['runnable-entity'], 'sw-addr-method-ref')
     global_elements['sw-addr-method-ref'].text = '/SharedElements/SwAddrMethods/Copy2_SwAddrMethod'
     global_elements['sw-addr-method-ref'].attrib = {'DEST': 'SW-ADDR-METHOD'}
+
+def AsynchronousServerCallResultPoint():
     global_elements['asynchronous-server-call-result-points'] = ET.SubElement(global_elements['runnable-entity'], 'asynchronous-server-call-result-points')
     global_elements['asynchronous-server-call-result-point'] = ET.SubElement(global_elements['asynchronous-server-call-result-points'], 'asynchronous-server-call-result-point')
     global_elements['asynchronous-server-call-result-point'].attrib = {'UUID': 'f857d505-3c25-43b2-b929-36e0e40f1177'}
@@ -2017,9 +2169,9 @@ def Runnable():
     global_elements['asynchronous-server-call-point-ref'] = ET.SubElement(global_elements['asynchronous-server-call-result-point'], 'asynchronous-server-call-point-ref')
     global_elements['asynchronous-server-call-point-ref'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable/ASCP_RPort_CS_Operation'
     global_elements['asynchronous-server-call-point-ref'].attrib = {'DEST': 'ASYNCHRONOUS-SERVER-CALL-POINT'}
-    global_elements['can-be-invoked-concurrently'] = ET.SubElement(global_elements['runnable-entity'], 'can-be-invoked-concurrently')
-    global_elements['can-be-invoked-concurrently'].text = 'false'
-    global_elements['server-call-points'] = ET.SubElement(global_elements['runnable-entity'], 'server-call-points')
+
+
+def ASCP_RPort_CS_Operation()
     global_elements['asynchronous-server-call-point'] = ET.SubElement(global_elements['server-call-points'], 'asynchronous-server-call-point')
     global_elements['asynchronous-server-call-point'].attrib = {'UUID': 'e7aacef3-56e7-4964-b0b6-5569dd4abc09'}
     global_elements['short-name162'] = ET.SubElement(global_elements['asynchronous-server-call-point'], 'short-name')
@@ -2082,6 +2234,8 @@ def ApplicationSwComponentType_Runnable4():
     global_elements['minimum-start-interval5'].text = '0'
     global_elements['can-be-invoked-concurrently5'] = ET.SubElement(global_elements['runnable-entity5'], 'can-be-invoked-concurrently')
     global_elements['can-be-invoked-concurrently5'].text = 'false'
+
+def DSP_PPort_SR_DataElement():
     global_elements['data-send-points'] = ET.SubElement(global_elements['runnable-entity5'], 'data-send-points')
     global_elements['variable-access'] = ET.SubElement(global_elements['data-send-points'], 'variable-access')
     global_elements['variable-access'].attrib = {'UUID': '2a04aecc-a1b6-494f-838e-29671adb5210'}
@@ -2107,6 +2261,8 @@ def ApplicationSwComponentType_Runnable5():
     global_elements['minimum-start-interval6'].text = '0'
     global_elements['can-be-invoked-concurrently6'] = ET.SubElement(global_elements['runnable-entity6'], 'can-be-invoked-concurrently')
     global_elements['can-be-invoked-concurrently6'].text = 'false'
+
+def DWA_PPort_SR_DataElement1():
     global_elements['data-write-accesss'] = ET.SubElement(global_elements['runnable-entity6'], 'data-write-accesss')
     global_elements['variable-access2'] = ET.SubElement(global_elements['data-write-accesss'], 'variable-access')
     global_elements['variable-access2'].attrib = {'UUID': '326a474d-8d28-41bc-bd9e-91de9802f682'}
@@ -2156,6 +2312,8 @@ def ApplicationSwComponentType_Runnable9():
     global_elements['minimum-start-interval9'].text = '0'
     global_elements['can-be-invoked-concurrently9'] = ET.SubElement(global_elements['runnable-entity9'], 'can-be-invoked-concurrently')
     global_elements['can-be-invoked-concurrently9'].text = 'false'
+
+def MSP_PPort_msi_ModeGroup():
     global_elements['mode-switch-points'] = ET.SubElement(global_elements['runnable-entity9'], 'mode-switch-points')
     global_elements['mode-switch-point'] = ET.SubElement(global_elements['mode-switch-points'], 'mode-switch-point')
     global_elements['mode-switch-point'].attrib = {'UUID': 'dd700e44-3e29-4b21-901f-c2e36c719f6a'}
@@ -2216,6 +2374,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['minimum-start-interval13'].text = '0'
     global_elements['can-be-invoked-concurrently13'] = ET.SubElement(global_elements['runnable-entity13'], 'can-be-invoked-concurrently')
     global_elements['can-be-invoked-concurrently13'].text = 'false'
+
+def ApplicationSwComponentType_Runnable13_DRA_RPort_SR_DataElement():
     global_elements['data-read-accesss'] = ET.SubElement(global_elements['runnable-entity13'], 'data-read-accesss')
     global_elements['variable-access3'] = ET.SubElement(global_elements['data-read-accesss'], 'variable-access')
     global_elements['variable-access3'].attrib = {'UUID': '9bf42611-5276-4ce4-92b5-36c024121479'}
@@ -2226,6 +2386,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['port-prototype-ref3'] = ET.SubElement(global_elements['autosar-variable-iref3'], 'port-prototype-ref')
     global_elements['port-prototype-ref3'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_SR'
     global_elements['port-prototype-ref3'].attrib = {'DEST': 'R-PORT-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable13_DRA_RPort_SR_DataElement1():
     global_elements['target-data-prototype-ref3'] = ET.SubElement(global_elements['autosar-variable-iref3'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref3'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement'
     global_elements['target-data-prototype-ref3'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
@@ -2241,6 +2403,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['target-data-prototype-ref4'] = ET.SubElement(global_elements['autosar-variable-iref4'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref4'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1'
     global_elements['target-data-prototype-ref4'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable13_DRA_RPort_nvd_NvData():
     global_elements['variable-access5'] = ET.SubElement(global_elements['data-read-accesss'], 'variable-access')
     global_elements['variable-access5'].attrib = {'UUID': '26ad84a0-bc71-4cae-92f7-69d3d1bc91ff'}
     global_elements['short-name180'] = ET.SubElement(global_elements['variable-access5'], 'short-name')
@@ -2250,6 +2414,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['port-prototype-ref5'] = ET.SubElement(global_elements['autosar-variable-iref5'], 'port-prototype-ref')
     global_elements['port-prototype-ref5'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd'
     global_elements['port-prototype-ref5'].attrib = {'DEST': 'R-PORT-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable13_DRA_RPort_nvd_NvData1():
     global_elements['target-data-prototype-ref5'] = ET.SubElement(global_elements['autosar-variable-iref5'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref5'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData'
     global_elements['target-data-prototype-ref5'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
@@ -2262,6 +2428,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['port-prototype-ref6'] = ET.SubElement(global_elements['autosar-variable-iref6'], 'port-prototype-ref')
     global_elements['port-prototype-ref6'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/RPort_nvd'
     global_elements['port-prototype-ref6'].attrib = {'DEST': 'R-PORT-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable13_DWA_PPort_SR_DataElement():
     global_elements['target-data-prototype-ref6'] = ET.SubElement(global_elements['autosar-variable-iref6'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref6'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1'
     global_elements['target-data-prototype-ref6'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
@@ -2275,6 +2443,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['port-prototype-ref7'] = ET.SubElement(global_elements['autosar-variable-iref7'], 'port-prototype-ref')
     global_elements['port-prototype-ref7'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR'
     global_elements['port-prototype-ref7'].attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable13_DWA_PPort_SR_DataElement1():
     global_elements['target-data-prototype-ref7'] = ET.SubElement(global_elements['autosar-variable-iref7'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref7'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement'
     global_elements['target-data-prototype-ref7'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
@@ -2287,6 +2457,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['port-prototype-ref8'] = ET.SubElement(global_elements['autosar-variable-iref8'], 'port-prototype-ref')
     global_elements['port-prototype-ref8'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_SR'
     global_elements['port-prototype-ref8'].attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable13_DWA_PPort_nvd_NvData():
     global_elements['target-data-prototype-ref8'] = ET.SubElement(global_elements['autosar-variable-iref8'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref8'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1'
     global_elements['target-data-prototype-ref8'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
@@ -2302,6 +2474,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['target-data-prototype-ref9'] = ET.SubElement(global_elements['autosar-variable-iref9'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref9'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData'
     global_elements['target-data-prototype-ref9'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable13_DWA_PPort_nvd_NvData1():
     global_elements['variable-access10'] = ET.SubElement(global_elements['data-write-accesss2'], 'variable-access')
     global_elements['variable-access10'].attrib = {'UUID': '3e84de24-a491-4152-b344-8c5e44e9197e'}
     global_elements['short-name185'] = ET.SubElement(global_elements['variable-access10'], 'short-name')
@@ -2311,6 +2485,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['port-prototype-ref10'] = ET.SubElement(global_elements['autosar-variable-iref10'], 'port-prototype-ref')
     global_elements['port-prototype-ref10'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_nvd'
     global_elements['port-prototype-ref10'].attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+
+def IRVRA_ExplicitInterRunnableVariable():
     global_elements['target-data-prototype-ref10'] = ET.SubElement(global_elements['autosar-variable-iref10'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref10'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1'
     global_elements['target-data-prototype-ref10'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
@@ -2323,6 +2499,8 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['local-variable-ref'] = ET.SubElement(global_elements['accessed-variable11'], 'local-variable-ref')
     global_elements['local-variable-ref'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ExplicitInterRunnableVariable'
     global_elements['local-variable-ref'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def IRVRA_ImplicitInterRunnableVariable():
     global_elements['variable-access12'] = ET.SubElement(global_elements['read-local-variables'], 'variable-access')
     global_elements['variable-access12'].attrib = {'UUID': 'bf16d1d1-6833-4572-8830-6e31aa069454'}
     global_elements['short-name187'] = ET.SubElement(global_elements['variable-access12'], 'short-name')
@@ -2335,17 +2513,16 @@ def ApplicationSwComponentType_Runnable13():
     global_elements['symbol21'].text = 'ApplicationSwComponentType_Runnable13'
 
 def ApplicationSwComponentType_Runnable14():
-  global_elements['runnable-entity14'] = ET.SubElement(global_elements['runnables'], 'runnable-entity')
-  global_elements['runnable-entity14'].attrib = {'UUID': '1c2e8cb0-fdf5-45ee-9257-dee6f42d2ad4'}
-  global_elements['short-name188'] = ET.SubElement(global_elements['runnable-entity14'], 'short-name')
-  global_elements['short-name188'].text = 'Runnable14'
-  global_elements['minimum-start-interval14'] = ET.SubElement(global_elements['runnable-entity14'], 'minimum-start-interval')
-  global_elements['minimum-start-interval14'].text = '0'
-  global_elements['can-be-invoked-concurrently14'] = ET.SubElement(global_elements['runnable-entity14'], 'can-be-invoked-concurrently')
-  global_elements['can-be-invoked-concurrently14'].text = 'false'
-  global_elements['symbol22'] = ET.SubElement(global_elements['runnable-entity14'], 'symbol')
-  global_elements['symbol22'].text = 'ApplicationSwComponentType_Runnable14'
-  
+    global_elements['runnable-entity14'] = ET.SubElement(global_elements['runnables'], 'runnable-entity')
+    global_elements['runnable-entity14'].attrib = {'UUID': '1c2e8cb0-fdf5-45ee-9257-dee6f42d2ad4'}
+    global_elements['short-name188'] = ET.SubElement(global_elements['runnable-entity14'], 'short-name')
+    global_elements['short-name188'].text = 'Runnable14'
+    global_elements['minimum-start-interval14'] = ET.SubElement(global_elements['runnable-entity14'], 'minimum-start-interval')
+    global_elements['minimum-start-interval14'].text = '0'
+    global_elements['can-be-invoked-concurrently14'] = ET.SubElement(global_elements['runnable-entity14'], 'can-be-invoked-concurrently')
+    global_elements['can-be-invoked-concurrently14'].text = 'false'
+    global_elements['symbol22'] = ET.SubElement(global_elements['runnable-entity14'], 'symbol')
+    global_elements['symbol22'].text = 'ApplicationSwComponentType_Runnable14'
   
 def ApplicationSwComponentType_Runnable15():
     global_elements['runnable-entity15'] = ET.SubElement(global_elements['runnables'], 'runnable-entity')
@@ -2356,6 +2533,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['minimum-start-interval15'].text = '0'
     global_elements['can-be-invoked-concurrently15'] = ET.SubElement(global_elements['runnable-entity15'], 'can-be-invoked-concurrently')
     global_elements['can-be-invoked-concurrently15'].text = 'false'
+
+def ApplicationSwComponentType_Runnable15_DRA_RPort_nvd_NvData():
     global_elements['data-read-accesss2'] = ET.SubElement(global_elements['runnable-entity15'], 'data-read-accesss')
     global_elements['variable-access13'] = ET.SubElement(global_elements['data-read-accesss2'], 'variable-access')
     global_elements['variable-access13'].attrib = {'UUID': '5648b05b-23f8-4729-9fdd-25a617e2d17b'}
@@ -2369,6 +2548,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref11'] = ET.SubElement(global_elements['autosar-variable-iref11'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref11'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData'
     global_elements['target-data-prototype-ref11'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DRA_RPort_nvd_NvData1():
     global_elements['variable-access14'] = ET.SubElement(global_elements['data-read-accesss2'], 'variable-access')
     global_elements['variable-access14'].attrib = {'UUID': 'b355b0ac-1fa9-43f7-b5ab-240eae2c3694'}
     global_elements['short-name191'] = ET.SubElement(global_elements['variable-access14'], 'short-name')
@@ -2381,6 +2562,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref12'] = ET.SubElement(global_elements['autosar-variable-iref12'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref12'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1'
     global_elements['target-data-prototype-ref12'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DRP_RPort_SR_DataElement():
     global_elements['data-receive-point-by-arguments'] = ET.SubElement(global_elements['runnable-entity15'], 'data-receive-point-by-arguments')
     global_elements['variable-access15'] = ET.SubElement(global_elements['data-receive-point-by-arguments'], 'variable-access')
     global_elements['variable-access15'].attrib = {'UUID': '86796258-06a6-480e-8a39-e01411743a56'}
@@ -2394,6 +2577,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref13'] = ET.SubElement(global_elements['autosar-variable-iref13'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref13'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement'
     global_elements['target-data-prototype-ref13'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DRP_RPort_nvd_NvData():
     global_elements['variable-access16'] = ET.SubElement(global_elements['data-receive-point-by-arguments'], 'variable-access')
     global_elements['variable-access16'].attrib = {'UUID': '88c27605-b9a2-4db7-af10-2a0953c5110b'}
     global_elements['short-name193'] = ET.SubElement(global_elements['variable-access16'], 'short-name')
@@ -2406,6 +2591,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref14'] = ET.SubElement(global_elements['autosar-variable-iref14'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref14'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData'
     global_elements['target-data-prototype-ref14'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DRP_RPort_nvd_NvData1():
     global_elements['variable-access17'] = ET.SubElement(global_elements['data-receive-point-by-arguments'], 'variable-access')
     global_elements['variable-access17'].attrib = {'UUID': 'b69ad602-c226-42a5-9bbb-acbbc5c16743'}
     global_elements['short-name194'] = ET.SubElement(global_elements['variable-access17'], 'short-name')
@@ -2418,6 +2605,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref15'] = ET.SubElement(global_elements['autosar-variable-iref15'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref15'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1'
     global_elements['target-data-prototype-ref15'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DRPV_RPort_SR_DataElement1():
     global_elements['data-receive-point-by-values'] = ET.SubElement(global_elements['runnable-entity15'], 'data-receive-point-by-values')
     global_elements['variable-access18'] = ET.SubElement(global_elements['data-receive-point-by-values'], 'variable-access')
     global_elements['variable-access18'].attrib = {'UUID': '38ed8447-65f1-48a9-b075-fa613c1267d2'}
@@ -2431,6 +2620,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref16'] = ET.SubElement(global_elements['autosar-variable-iref16'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref16'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1'
     global_elements['target-data-prototype-ref16'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DRPV_RPort_nvd_NvData():
     global_elements['variable-access19'] = ET.SubElement(global_elements['data-receive-point-by-values'], 'variable-access')
     global_elements['variable-access19'].attrib = {'UUID': 'd07d7e6b-0d9c-4475-bbb9-2ccfc3e60c33'}
     global_elements['short-name196'] = ET.SubElement(global_elements['variable-access19'], 'short-name')
@@ -2443,6 +2634,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref17'] = ET.SubElement(global_elements['autosar-variable-iref17'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref17'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData'
     global_elements['target-data-prototype-ref17'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DSP_PPort_SR_DataElement():
     global_elements['data-send-points2'] = ET.SubElement(global_elements['runnable-entity15'], 'data-send-points')
     global_elements['variable-access20'] = ET.SubElement(global_elements['data-send-points2'], 'variable-access')
     global_elements['variable-access20'].attrib = {'UUID': '2fc872c8-d598-4d11-8502-1a70e9104bc9'}
@@ -2456,6 +2649,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref18'] = ET.SubElement(global_elements['autosar-variable-iref18'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref18'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement'
     global_elements['target-data-prototype-ref18'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DSP_PPort_SR_DataElement1():
     global_elements['variable-access21'] = ET.SubElement(global_elements['data-send-points2'], 'variable-access')
     global_elements['variable-access21'].attrib = {'UUID': 'a2f22836-4cd0-4c2e-8040-1abdf8935ac0'}
     global_elements['short-name198'] = ET.SubElement(global_elements['variable-access21'], 'short-name')
@@ -2468,6 +2663,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref19'] = ET.SubElement(global_elements['autosar-variable-iref19'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref19'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1'
     global_elements['target-data-prototype-ref19'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DSP_PPort_nvd_NvData():
     global_elements['variable-access22'] = ET.SubElement(global_elements['data-send-points2'], 'variable-access')
     global_elements['variable-access22'].attrib = {'UUID': 'c0c41eb1-b5bf-4e30-9569-24d7316b64c8'}
     global_elements['short-name199'] = ET.SubElement(global_elements['variable-access22'], 'short-name')
@@ -2480,6 +2677,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref20'] = ET.SubElement(global_elements['autosar-variable-iref20'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref20'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData'
     global_elements['target-data-prototype-ref20'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DSP_PPort_nvd_NvData1():
     global_elements['variable-access23'] = ET.SubElement(global_elements['data-send-points2'], 'variable-access')
     global_elements['variable-access23'].attrib = {'UUID': '96f66382-5f86-4a47-bd5b-9f95f81fc3c9'}
     global_elements['short-name200'] = ET.SubElement(global_elements['variable-access23'], 'short-name')
@@ -2492,6 +2691,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref21'] = ET.SubElement(global_elements['autosar-variable-iref21'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref21'].text = '/SharedElements/PortInterfaces/NvData/NvDataInterface/NvData1'
     global_elements['target-data-prototype-ref21'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_DWA_PPort_SR_DataElement1():
     global_elements['data-write-accesss3'] = ET.SubElement(global_elements['runnable-entity15'], 'data-write-accesss')
     global_elements['variable-access24'] = ET.SubElement(global_elements['data-write-accesss3'], 'variable-access')
     global_elements['variable-access24'].attrib = {'UUID': 'd40a6e94-d8e5-48e5-8a1a-c7debe02592f'}
@@ -2505,6 +2706,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref22'] = ET.SubElement(global_elements['autosar-variable-iref22'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref22'].text = '/SharedElements/PortInterfaces/SenderReceiver/SenderReceiverInterface/DataElement1'
     global_elements['target-data-prototype-ref22'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_MSP_PPort_msi_ModeGroup():
     global_elements['mode-switch-points2'] = ET.SubElement(global_elements['runnable-entity15'], 'mode-switch-points')
     global_elements['mode-switch-point2'] = ET.SubElement(global_elements['mode-switch-points2'], 'mode-switch-point')
     global_elements['mode-switch-point2'].attrib = {'UUID': '8f7d9801-a32d-4e5f-85cd-fbcf669d921a'}
@@ -2517,6 +2720,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-mode-group-ref2'] = ET.SubElement(global_elements['mode-group-iref2'], 'target-mode-group-ref')
     global_elements['target-mode-group-ref2'].text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup'
     global_elements['target-mode-group-ref2'].attrib = {'DEST': 'MODE-DECLARATION-GROUP-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_ParameterAccess():
     global_elements['parameter-accesss'] = ET.SubElement(global_elements['runnable-entity15'], 'parameter-accesss')
     global_elements['parameter-access'] = ET.SubElement(global_elements['parameter-accesss'], 'parameter-access')
     global_elements['parameter-access'].attrib = {'UUID': '92d672aa-34ea-4fcb-a0a2-ab2431d59c0a'}
@@ -2526,6 +2731,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['local-parameter-ref'] = ET.SubElement(global_elements['accessed-parameter'], 'local-parameter-ref')
     global_elements['local-parameter-ref'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ConstantMemory'
     global_elements['local-parameter-ref'].attrib = {'DEST': 'PARAMETER-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_PICPVA_PerInstanceParameter():
     global_elements['parameter-access2'] = ET.SubElement(global_elements['parameter-accesss'], 'parameter-access')
     global_elements['parameter-access2'].attrib = {'UUID': '391726ca-20e2-4c02-b063-65244a9e523a'}
     global_elements['short-name204'] = ET.SubElement(global_elements['parameter-access2'], 'short-name')
@@ -2534,6 +2741,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['local-parameter-ref2'] = ET.SubElement(global_elements['accessed-parameter2'], 'local-parameter-ref')
     global_elements['local-parameter-ref2'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/PerInstanceParameter'
     global_elements['local-parameter-ref2'].attrib = {'DEST': 'PARAMETER-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_CPA_RPort_prm_Parameter():
     global_elements['parameter-access3'] = ET.SubElement(global_elements['parameter-accesss'], 'parameter-access')
     global_elements['parameter-access3'].attrib = {'UUID': '19d7aee6-82b8-4233-a787-b84bdb562167'}
     global_elements['short-name205'] = ET.SubElement(global_elements['parameter-access3'], 'short-name')
@@ -2546,6 +2755,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref23'] = ET.SubElement(global_elements['autosar-parameter-iref'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref23'].text = '/SharedElements/PortInterfaces/Parameter/ParameterInterface/Parameter'
     global_elements['target-data-prototype-ref23'].attrib = {'DEST': 'PARAMETER-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_CPA_RPort_prm_Parameter1():
     global_elements['parameter-access4'] = ET.SubElement(global_elements['parameter-accesss'], 'parameter-access')
     global_elements['parameter-access4'].attrib = {'UUID': 'ab7c5c59-47f3-4fee-a310-f64cb2c00c48'}
     global_elements['short-name206'] = ET.SubElement(global_elements['parameter-access4'], 'short-name')
@@ -2558,6 +2769,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['target-data-prototype-ref24'] = ET.SubElement(global_elements['autosar-parameter-iref2'], 'target-data-prototype-ref')
     global_elements['target-data-prototype-ref24'].text = '/SharedElements/PortInterfaces/Parameter/ParameterInterface/Parameter1'
     global_elements['target-data-prototype-ref24'].attrib = {'DEST': 'PARAMETER-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_SCPVA_SharedParameter():
     global_elements['parameter-access5'] = ET.SubElement(global_elements['parameter-accesss'], 'parameter-access')
     global_elements['parameter-access5'].attrib = {'UUID': 'f7d2bfa9-92c5-4627-b238-86aadd05585b'}
     global_elements['short-name207'] = ET.SubElement(global_elements['parameter-access5'], 'short-name')
@@ -2566,6 +2779,8 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['local-parameter-ref3'] = ET.SubElement(global_elements['accessed-parameter5'], 'local-parameter-ref')
     global_elements['local-parameter-ref3'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/SharedParameter'
     global_elements['local-parameter-ref3'].attrib = {'DEST': 'PARAMETER-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_SSCP_RPort_CS_Operation1():
     global_elements['server-call-points2'] = ET.SubElement(global_elements['runnable-entity15'], 'server-call-points')
     global_elements['synchronous-server-call-point'] = ET.SubElement(global_elements['server-call-points2'], 'synchronous-server-call-point')
     global_elements['synchronous-server-call-point'].attrib = {'UUID': 'd6a93f51-be57-4a77-bd8f-e25d3e0ba149'}
@@ -2583,7 +2798,7 @@ def ApplicationSwComponentType_Runnable15():
     global_elements['symbol23'] = ET.SubElement(global_elements['runnable-entity15'], 'symbol')
     global_elements['symbol23'].text = 'ApplicationSwComponentType_Runnable15'
 
-def IRVWA_ExplicitInterRunnableVariable():
+def ApplicationSwComponentType_Runnable15_IRVWA_ExplicitInterRunnableVariable():
     global_elements['written-local-variables'] = ET.SubElement(global_elements['runnable-entity15'], 'written-local-variables')
     global_elements['variable-access25'] = ET.SubElement(global_elements['written-local-variables'], 'variable-access')
     global_elements['variable-access25'].attrib = {'UUID': '7e246e9c-b78a-47be-8798-02887c881e6e'}
@@ -2593,6 +2808,8 @@ def IRVWA_ExplicitInterRunnableVariable():
     global_elements['local-variable-ref3'] = ET.SubElement(global_elements['accessed-variable25'], 'local-variable-ref')
     global_elements['local-variable-ref3'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ExplicitInterRunnableVariable'
     global_elements['local-variable-ref3'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'}
+
+def ApplicationSwComponentType_Runnable15_IRVWA_ImplicitInterRunnableVariable():
     global_elements['variable-access26'] = ET.SubElement(global_elements['written-local-variables'], 'variable-access')
     global_elements['variable-access26'].attrib = {'UUID': 'd976bba9-3132-4e15-ac45-88b85facf508'}
     global_elements['short-name210'] = ET.SubElement(global_elements['variable-access26'], 'short-name')
@@ -2602,7 +2819,7 @@ def IRVWA_ExplicitInterRunnableVariable():
     global_elements['local-variable-ref4'].text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/ImplicitInterRunnableVariable'
     global_elements['local-variable-ref4'].attrib = {'DEST': 'VARIABLE-DATA-PROTOTYPE'} 
   
-def SharedParameter():
+def ApplicationSwComponentType_SharedParameter():
     global_elements['shared-parameters'] = ET.SubElement(global_elements['swc-internal-behavior'], 'shared-parameters')
     global_elements['parameter-data-prototype5'] = ET.SubElement(global_elements['shared-parameters'], 'parameter-data-prototype')
     global_elements['parameter-data-prototype5'].attrib = {'UUID': 'edf877b4-19ea-4e47-8180-a74099cfff0f'}
@@ -2633,22 +2850,22 @@ def SharedParameter():
     global_elements['short-name212'] = ET.SubElement(global_elements['ar-package23'], 'short-name')
     global_elements['short-name212'].text = 'ConstantSpecifications'
 
-def CddSWC():
-    global_elements['ar-package24'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package24'].attrib = {'UUID': '7f0b665f-81ab-462f-aeab-1777b0f9dfd8'}
-    global_elements['short-name213'] = ET.SubElement(global_elements['ar-package24'], 'short-name')
-    global_elements['short-name213'].text = 'CddSWC'
+def ComplexDeviceDriverSwComponentType():
+    # global_elements['ar-package24'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package24'].attrib = {'UUID': '7f0b665f-81ab-462f-aeab-1777b0f9dfd8'}
+    # global_elements['short-name213'] = ET.SubElement(global_elements['ar-package24'], 'short-name')
+    # global_elements['short-name213'].text = 'CddSWC'
     global_elements['elements20'] = ET.SubElement(global_elements['ar-package24'], 'elements')
     global_elements['complex-device-driver-sw-component-type'] = ET.SubElement(global_elements['elements20'], 'complex-device-driver-sw-component-type')
     global_elements['complex-device-driver-sw-component-type'].attrib = {'UUID': '27755bdf-1bfe-447f-bfdf-54402e4f4db3'}
     global_elements['short-name214'] = ET.SubElement(global_elements['complex-device-driver-sw-component-type'], 'short-name')
     global_elements['short-name214'].text = 'ComplexDeviceDriverSwComponentType'
     
-def CompSWC():
-    global_elements['ar-package25'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package25'].attrib = {'UUID': 'a9d129de-eda4-4cda-9025-70a56f38fb59'}
-    global_elements['short-name215'] = ET.SubElement(global_elements['ar-package25'], 'short-name')
-    global_elements['short-name215'].text = 'CompSWC'
+def CompositionSwComponentType():
+    # global_elements['ar-package25'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package25'].attrib = {'UUID': 'a9d129de-eda4-4cda-9025-70a56f38fb59'}
+    # global_elements['short-name215'] = ET.SubElement(global_elements['ar-package25'], 'short-name')
+    # global_elements['short-name215'].text = 'CompSWC'
     global_elements['elements21'] = ET.SubElement(global_elements['ar-package25'], 'elements')
     global_elements['composition-sw-component-type'] = ET.SubElement(global_elements['elements21'], 'composition-sw-component-type')
     global_elements['composition-sw-component-type'].attrib = {'UUID': '9e886193-6d1b-454f-98b2-d0347db57ace'}
@@ -2656,66 +2873,66 @@ def CompSWC():
     global_elements['short-name216'].text = 'CompositionSwComponentType'
  
  
-def EcuAbSWC():
-    global_elements['ar-package26'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package26'].attrib = {'UUID': '28aa9cf2-4118-4878-8504-271a3ed4600b'}
-    global_elements['short-name217'] = ET.SubElement(global_elements['ar-package26'], 'short-name')
-    global_elements['short-name217'].text = 'EcuAbSWC'
+def EcuAbstractionSwComponentType():
+    # global_elements['ar-package26'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package26'].attrib = {'UUID': '28aa9cf2-4118-4878-8504-271a3ed4600b'}
+    # global_elements['short-name217'] = ET.SubElement(global_elements['ar-package26'], 'short-name')
+    # global_elements['short-name217'].text = 'EcuAbSWC'
     global_elements['elements22'] = ET.SubElement(global_elements['ar-package26'], 'elements')
     global_elements['ecu-abstraction-sw-component-type'] = ET.SubElement(global_elements['elements22'], 'ecu-abstraction-sw-component-type')
     global_elements['ecu-abstraction-sw-component-type'].attrib = {'UUID': '0dc33c67-8b23-4896-b6a3-8a537f1cd166'}
     global_elements['short-name218'] = ET.SubElement(global_elements['ecu-abstraction-sw-component-type'], 'short-name')
     global_elements['short-name218'].text = 'EcuAbstractionSwComponentType'
 
-def NvDataSWC():
-    global_elements['ar-package27'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package27'].attrib = {'UUID': '8562405a-26a1-4c3d-861f-eb0745310572'}
-    global_elements['short-name219'] = ET.SubElement(global_elements['ar-package27'], 'short-name')
-    global_elements['short-name219'].text = 'NvDataSWC'
+def NvBlockSwComponentType():
+    # global_elements['ar-package27'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package27'].attrib = {'UUID': '8562405a-26a1-4c3d-861f-eb0745310572'}
+    # global_elements['short-name219'] = ET.SubElement(global_elements['ar-package27'], 'short-name')
+    # global_elements['short-name219'].text = 'NvDataSWC'
     global_elements['elements23'] = ET.SubElement(global_elements['ar-package27'], 'elements')
     global_elements['nv-block-sw-component-type'] = ET.SubElement(global_elements['elements23'], 'nv-block-sw-component-type')
     global_elements['nv-block-sw-component-type'].attrib = {'UUID': '9a2c1578-3f64-4af0-b953-7b81f28434cf'}
     global_elements['short-name220'] = ET.SubElement(global_elements['nv-block-sw-component-type'], 'short-name')
     global_elements['short-name220'].text = 'NvBlockSwComponentType'
 
-def PrmSWC():
-    global_elements['ar-package28'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package28'].attrib = {'UUID': '0a54c44d-f71e-4ec3-bbf1-410c0b885915'}
-    global_elements['short-name221'] = ET.SubElement(global_elements['ar-package28'], 'short-name')
-    global_elements['short-name221'].text = 'PrmSWC'
+def ParameterSwComponentType():
+    # global_elements['ar-package28'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package28'].attrib = {'UUID': '0a54c44d-f71e-4ec3-bbf1-410c0b885915'}
+    # global_elements['short-name221'] = ET.SubElement(global_elements['ar-package28'], 'short-name')
+    # global_elements['short-name221'].text = 'PrmSWC'
     global_elements['elements24'] = ET.SubElement(global_elements['ar-package28'], 'elements')
     global_elements['parameter-sw-component-type'] = ET.SubElement(global_elements['elements24'], 'parameter-sw-component-type')
     global_elements['parameter-sw-component-type'].attrib = {'UUID': 'c21a6d07-19ae-40ac-affe-f4aa3b5acb25'}
     global_elements['short-name222'] = ET.SubElement(global_elements['parameter-sw-component-type'], 'short-name')
     global_elements['short-name222'].text = 'ParameterSwComponentType'
 
-def SnsrActSWC():
-    global_elements['ar-package29'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package29'].attrib = {'UUID': 'f142ef66-4dce-4750-8568-a7e836f462da'}
-    global_elements['short-name223'] = ET.SubElement(global_elements['ar-package29'], 'short-name')
-    global_elements['short-name223'].text = 'SnsrActSWC'
+def SensorActuatorSwComponentType():
+    # global_elements['ar-package29'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package29'].attrib = {'UUID': 'f142ef66-4dce-4750-8568-a7e836f462da'}
+    # global_elements['short-name223'] = ET.SubElement(global_elements['ar-package29'], 'short-name')
+    # global_elements['short-name223'].text = 'SnsrActSWC'
     global_elements['elements25'] = ET.SubElement(global_elements['ar-package29'], 'elements')
     global_elements['sensor-actuator-sw-component-type'] = ET.SubElement(global_elements['elements25'], 'sensor-actuator-sw-component-type')
     global_elements['sensor-actuator-sw-component-type'].attrib = {'UUID': 'e631e3e3-9a52-4bbe-a762-4311d8f45934'}
     global_elements['short-name224'] = ET.SubElement(global_elements['sensor-actuator-sw-component-type'], 'short-name')
     global_elements['short-name224'].text = 'SensorActuatorSwComponentType'
 
-def SrvcPrxySWC():
-    global_elements['ar-package30'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package30'].attrib = {'UUID': '60bb3f96-0a5c-4e30-bdda-5205f3a1cdb6'}
-    global_elements['short-name225'] = ET.SubElement(global_elements['ar-package30'], 'short-name')
-    global_elements['short-name225'].text = 'SrvcPrxySWC'
+def ServiceProxySwComponentType():
+    # global_elements['ar-package30'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package30'].attrib = {'UUID': '60bb3f96-0a5c-4e30-bdda-5205f3a1cdb6'}
+    # global_elements['short-name225'] = ET.SubElement(global_elements['ar-package30'], 'short-name')
+    # global_elements['short-name225'].text = 'SrvcPrxySWC'
     global_elements['elements26'] = ET.SubElement(global_elements['ar-package30'], 'elements')
     global_elements['service-proxy-sw-component-type'] = ET.SubElement(global_elements['elements26'], 'service-proxy-sw-component-type')
     global_elements['service-proxy-sw-component-type'].attrib = {'UUID': '7e09780f-aad2-4f70-8c22-e5e19f1a82e8'}
     global_elements['short-name226'] = ET.SubElement(global_elements['service-proxy-sw-component-type'], 'short-name')
     global_elements['short-name226'].text = 'ServiceProxySwComponentType'
 
-def SrvcSWC():
-    global_elements['ar-package31'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
-    global_elements['ar-package31'].attrib = {'UUID': '2ed6bb1a-c9d6-46c0-ae8b-0743080405b6'}
-    global_elements['short-name227'] = ET.SubElement(global_elements['ar-package31'], 'short-name')
-    global_elements['short-name227'].text = 'SrvcSWC'
+def ServiceSwComponentType():
+    # global_elements['ar-package31'] = ET.SubElement(global_elements['ar-packages5'], 'ar-package')
+    # global_elements['ar-package31'].attrib = {'UUID': '2ed6bb1a-c9d6-46c0-ae8b-0743080405b6'}
+    # global_elements['short-name227'] = ET.SubElement(global_elements['ar-package31'], 'short-name')
+    # global_elements['short-name227'].text = 'SrvcSWC'
     global_elements['elements27'] = ET.SubElement(global_elements['ar-package31'], 'elements')
     global_elements['service-sw-component-type'] = ET.SubElement(global_elements['elements27'], 'service-sw-component-type')
     global_elements['service-sw-component-type'].attrib = {'UUID': '1da8de22-a6ec-4cab-829a-56300097c5ac'}

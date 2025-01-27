@@ -115,9 +115,9 @@ def _generate_children(parent, f, level, var_counts, parent_var_name):
 
 if __name__ == '__main__':
     # Update paths with actual file names
-    input_arxml = 'D:\\MyProjects\\Saarconn\\4.1.1\\All_In_One_4_1_1.arxml'  # ARXML file path
-    output_python = 'D:\\MyProjects\\Saarconn\\4.1.1\\4.1.1.py'  # Generated Python script
-    sample_script = 'D:\\MyProjects\\Saarconn\\4.1.1\\ArElements_Def_v4.1.1.py'  # Sample script path
+    input_arxml = 'C:\\Users\\hss930284\\Tata Technologies\\MBSE Team - SAARCONN - SAARCONN\\Eliminating_SystemDesk\\trash\\harshit\\Saarconn\\22.11\\All_In_One_22_11_onlyElements.arxml'  # ARXML file path
+    output_python = 'C:\\Users\\hss930284\\Tata Technologies\\MBSE Team - SAARCONN - SAARCONN\\Eliminating_SystemDesk\\trash\\harshit\\Saarconn\\22.11\\global_ele_22_11.py'  # Generated Python script
+    sample_script = 'C:\\Users\\hss930284\\Tata Technologies\\MBSE Team - SAARCONN - SAARCONN\\Eliminating_SystemDesk\\trash\\harshit\\Saarconn\\4.1.1\\ArElements_Def_v4_0_3.py'  # Sample script path
 
     # Ensure files exist
     if not os.path.exists(input_arxml):
