@@ -816,7 +816,11 @@ def Struct_Array_ImplementationDataType():
     global_elements['short-name46'].text = 'Struct_Array_ImplementationDataType'
     global_elements['category27'] = ET.SubElement(global_elements['implementation-data-type5'], 'category')
     global_elements['category27'].text = 'STRUCTURE'
+    dynamic_array_size_profile2 = ET.SubElement(implementation_data_type5, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+    dynamic_array_size_profile2.text = 'VSA_LINEAR'     
     global_elements['sub-elements4'] = ET.SubElement(global_elements['implementation-data-type5'], 'sub-elements')
+
+def Struct_Array_ImplementationDataType_SubElement1():
     global_elements['implementation-data-type-element5'] = ET.SubElement(global_elements['sub-elements4'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element5'].attrib = {'UUID': '3f61bc0d-d829-4ab0-9e22-7de6a25972e3'}
     global_elements['short-name47'] = ET.SubElement(global_elements['implementation-data-type-element5'], 'short-name')
@@ -829,6 +833,8 @@ def Struct_Array_ImplementationDataType():
     global_elements['implementation-data-type-ref9'] = ET.SubElement(global_elements['sw-data-def-props-conditional11'], 'implementation-data-type-ref')
     global_elements['implementation-data-type-ref9'].text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8'
     global_elements['implementation-data-type-ref9'].attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+def Struct_Array_ImplementationDataType_SubElement():
     global_elements['implementation-data-type-element6'] = ET.SubElement(global_elements['sub-elements4'], 'implementation-data-type-element')
     global_elements['implementation-data-type-element6'].attrib = {'UUID': 'dc530c9c-3b65-4707-99c3-842e2d2b7788'}
     global_elements['short-name48'] = ET.SubElement(global_elements['implementation-data-type-element6'], 'short-name')
@@ -844,6 +850,8 @@ def Struct_Array_ImplementationDataType():
     global_elements['category30'].text = 'TYPE_REFERENCE'
     global_elements['array-size3'] = ET.SubElement(global_elements['implementation-data-type-element7'], 'array-size')
     global_elements['array-size3'].text = '15'
+    array_size_handling2 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE-HANDLING')
+    array_size_handling2.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
     global_elements['array-size-semantics6'] = ET.SubElement(global_elements['implementation-data-type-element7'], 'array-size-semantics')
     global_elements['array-size-semantics6'].text = 'VARIABLE-SIZE'
     global_elements['sw-data-def-props12'] = ET.SubElement(global_elements['implementation-data-type-element7'], 'sw-data-def-props')
