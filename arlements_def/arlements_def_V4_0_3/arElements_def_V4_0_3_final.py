@@ -433,20 +433,19 @@ def CompuMethod_Scale_linear_text(CompuMethods_shared_folder_elements, compu_met
 	compu_internal_to_phys=ET.SubElement(compu_method,'COMPU-INTERNAL-TO-PHYS')
 	compu_scales=ET.SubElement(compu_internal_to_phys,'COMPU-SCALES')
 
-def Scale_linear_text_compu_scale(ll,ul,num_a,num_b,den_a):#completed
+def Scale_linear_text_compu_scale(ll,ul,num_a,num_b,den_a, symbol_str):#completed
 	a=processor.value_to_str(ll)
 	b=processor.value_to_str(ul)
 	c=processor.value_to_str(num_a)
 	d=processor.value_to_str(num_b)
 	e=processor.value_to_str(den_a)
-	# symbol = processor.value_to_str(symbol_str)
+	symbol = processor.value_to_str(symbol_str)
 	
 	compu_scale=ET.SubElement(compu_scales,'COMPU-SCALE')
 
-	''' #fetch
+	#fetch
 	symbol = ET.SubElement(compu_scale, 'SYMBOL')
-    symbol.text = symbol
-	'''
+	symbol.text = symbol
 
 	lower_limit=ET.SubElement(compu_scale,'LOWER-LIMIT')
 	lower_limit.text=a
@@ -522,15 +521,16 @@ def CompuMethod_text(CompuMethods_shared_folder_elements, compu_method_shortname
 	compu_internal_to_phys=ET.SubElement(compu_method,'COMPU-INTERNAL-TO-PHYS')
 	compu_scales=ET.SubElement(compu_internal_to_phys,'COMPU-SCALES')
 
-def text_compu_Scale(value,enum):#completed
+def text_compu_Scale(value,enum, symbol_str):#completed
 	a=processor.value_to_str(value)
 	b=processor.value_to_str(enum)
+	symbol = processor.value_to_str(symbol_str)
 	
 	compu_scale=ET.SubElement(compu_scales,'COMPU-SCALE')
-	''' #fetch
-	symbol5 = ET.SubElement(compu_scale17, 'SYMBOL')
-    symbol5.text = 'text1'
-	'''
+ 	#fetch
+	symbol = ET.SubElement(compu_scale, 'SYMBOL')
+	symbol.text = symbol
+
 	lower_limit=ET.SubElement(compu_scale,'LOWER-LIMIT')
 	lower_limit.text=a
 	upper_limit=ET.SubElement(compu_scale,'UPPER-LIMIT')
@@ -561,9 +561,11 @@ def ConstantSpecification(ConstantSpecifications_folder_elements,constant_spec_s
 	value=ET.SubElement(numerical_value_specification,'VALUE')
 	value.text=a
 
-def DataConstr(DataConstr_folder_elements, DataConstr_shortname,ll,ul):#completed
+def DataConstr(DataConstr_folder_elements, DataConstr_shortname,ll,ul, constr_level_str):#completed
 	a=processor.value_to_str(ll)
 	b=processor.value_to_str(ul)
+	conslevel_str = processor.value_to_str(constr_level_str)
+
 	data_constr=ET.SubElement(DataConstr_folder_elements,'DATA-CONSTR')
 	data_constr.attrib={'UUID':rng.generate_uuid()}
 	short_name=ET.SubElement(data_constr,'SHORT-NAME')
@@ -572,10 +574,9 @@ def DataConstr(DataConstr_folder_elements, DataConstr_shortname,ll,ul):#complete
 	data_constr_rule=ET.SubElement(data_constr_rules,'DATA-CONSTR-RULE')
 
 	    #fetch
-	'''
 	constr_level = ET.SubElement(data_constr_rule, 'CONSTR-LEVEL')
-    constr_level.text = '0'
-	'''
+	constr_level.text = conslevel_str
+
 
 	phys_constrs=ET.SubElement(data_constr_rule,'PHYS-CONSTRS')
 	lower_limit=ET.SubElement(phys_constrs,'LOWER-LIMIT')
@@ -945,7 +946,7 @@ def ClientServerInterface_Arg(Argument_shortname, type_tref_adt):#completed
     server_argument_impl_policy.text='USE-ARGUMENT-TYPE'
 
 
-def ModeDeclarationGroup(ModeSwitch_folder_elements, ModeDeclarationGroup_shortname, mode_Category,Init_Mode):#completed
+def ModeDeclarationGroup(ModeSwitch_folder_elements, ModeDeclarationGroup_shortname, mode_Category,Init_Mode, on_trans_value):#completed
 	global mode_declarations
 	mode_declaration_group=ET.SubElement(ModeSwitch_folder_elements,'MODE-DECLARATION-GROUP')
 	mode_declaration_group.attrib={'UUID':rng.generate_uuid()}
@@ -958,22 +959,20 @@ def ModeDeclarationGroup(ModeSwitch_folder_elements, ModeDeclarationGroup_shortn
 	initial_mode_ref.attrib={'DEST':'MODE-DECLARATION'}
 	mode_declarations=ET.SubElement(mode_declaration_group,'MODE-DECLARATIONS')
 
-	''' #fetch
-		on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
-    	on_transition_value.text = '3'
-	'''
+	#fetch
+	on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
+	on_transition_value.text = on_trans_value
+	
     
-def ModeDeclarationGroup_Exp(ModeDeclaration_shortname):#completed
+def ModeDeclarationGroup_Exp(ModeDeclaration_shortname, mode_declaration_value):#completed
 
-    mode_declaration=ET.SubElement(mode_declarations,'MODE-DECLARATION')
-    mode_declaration.attrib={'UUID':rng.generate_uuid()}
-    short_name=ET.SubElement(mode_declaration,'SHORT-NAME')
-    short_name.text=ModeDeclaration_shortname
-
-	# ''' #fetch
-	# value = ET.SubElement(mode_declaration, 'VALUE')
-    # value.text = '0'
-	# '''
+	mode_declaration=ET.SubElement(mode_declarations,'MODE-DECLARATION')
+	mode_declaration.attrib={'UUID':rng.generate_uuid()}
+	short_name=ET.SubElement(mode_declaration,'SHORT-NAME')
+	short_name.text=ModeDeclaration_shortname
+	#fetch
+	value = ET.SubElement(mode_declaration, 'VALUE')
+	value.text = mode_declaration_value
 
 
 
@@ -1130,10 +1129,11 @@ def TriggerInterface_trig(trigger_shortname, cse_code, cse_code_factor):#complet
 	trigger.attrib={'UUID':rng.generate_uuid()}
 	short_name=ET.SubElement(trigger,'SHORT-NAME')
 	short_name.text=trigger_shortname
-	''' #fetch
-		condition=ET.SubElement(trigger,'CONDITION')sw_impl_policy27 = ET.SubElement(trigger, 'SW-IMPL-POLICY')
-		sw_impl_policy27.text = 'STANDARD'
-	'''
+ 	#fetch
+	# condition=ET.SubElement(trigger,'CONDITION')
+	sw_impl_policy = ET.SubElement(trigger, 'SW-IMPL-POLICY')
+	sw_impl_policy.text = 'STANDARD'
+
 	trigger_period=ET.SubElement(trigger,'TRIGGER-PERIOD')
 	cse_code=ET.SubElement(trigger_period,'CSE-CODE')
 	cse_code.text=a
