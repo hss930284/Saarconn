@@ -1,0 +1,1074 @@
+Differences between files:
+--- Eliminating_SystemDesk\trash\harshit\arlements_def\arElements_def_V4_2_1\arElements_def_V4_2_1.py
++++ Eliminating_SystemDesk\trash\harshit\arlements_def\arlements_def_V4_0_2\arlements_def_V4_0_2.py
+@@ -27,7 +27,7 @@
+ root = ET.Element('AUTOSAR', attrib={
+
+     'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance",
+
+     'xmlns': "http://autosar.org/schema/r4.0",
+
+[91m-    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd"
+[0m
+[92m+    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-0-2.xsd"
+[0m
+ })
+
+ 
+
+ global_elements = {
+
+@@ -72,16 +72,14 @@
+     array_size_semantics.text = 'FIXED-SIZE'
+
+     max_number_of_elements = ET.SubElement(element, 'MAX-NUMBER-OF-ELEMENTS')
+
+     max_number_of_elements.text = '15'
+
+[91m-    
+[0m
+[92m+
+[0m
+ def ApplicationArrayDataType_Variable():
+
+[91m-    application_array_data_type2 = ET.SubElement(elements1, 'APPLICATION-ARRAY-DATA-TYPE')
+[0m
+[92m+    application_array_data_type2 = ET.SubElement(elements, 'APPLICATION-ARRAY-DATA-TYPE')
+[0m
+     application_array_data_type2.attrib = {'UUID': 'd5f3c7e9-dd94-4d37-888e-b6e44b01cc5a'}
+
+     short_name6 = ET.SubElement(application_array_data_type2, 'SHORT-NAME')
+
+     short_name6.text = 'ApplicationArrayDataType_Variable'
+
+     category3 = ET.SubElement(application_array_data_type2, 'CATEGORY')
+
+     category3.text = 'ARRAY'
+
+[91m-    dynamic_array_size_profile1 = ET.SubElement(application_array_data_type2, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+[0m
+[91m-    dynamic_array_size_profile1.text = 'VSA_LINEAR'
+[0m
+     element2 = ET.SubElement(application_array_data_type2, 'ELEMENT')
+
+     element2.attrib = {'UUID': 'fef3f4b8-d9bd-4cb1-94b8-4403e665c4fa'}
+
+     short_name7 = ET.SubElement(element2, 'SHORT-NAME')
+
+@@ -91,12 +89,10 @@
+     type_tref2 = ET.SubElement(element2, 'TYPE-TREF')
+
+     type_tref2.text = '/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType'
+
+     type_tref2.attrib = {'DEST': 'APPLICATION-PRIMITIVE-DATA-TYPE'}
+
+[91m-    array_size_handling1 = ET.SubElement(element2, 'ARRAY-SIZE-HANDLING')
+[0m
+[91m-    array_size_handling1.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
+[0m
+     array_size_semantics2 = ET.SubElement(element2, 'ARRAY-SIZE-SEMANTICS')
+
+     array_size_semantics2.text = 'VARIABLE-SIZE'
+
+     max_number_of_elements2 = ET.SubElement(element2, 'MAX-NUMBER-OF-ELEMENTS')
+
+[91m-    max_number_of_elements2.text = '15'  
+[0m
+[92m+    max_number_of_elements2.text = '15'   
+[0m
+ 
+
+ def ApplicationPrimitiveDataType():
+
+     global global_elements
+
+@@ -405,8 +401,6 @@
+     v16 = ET.SubElement(compu_denominator3, 'V')
+
+     v16.text = '0'
+
+     compu_scale9 = ET.SubElement(compu_scales4, 'COMPU-SCALE')
+
+[91m-    symbol = ET.SubElement(compu_scale9, 'SYMBOL')
+[0m
+[91m-    symbol.text = 'sdcd'
+[0m
+     lower_limit7 = ET.SubElement(compu_scale9, 'LOWER-LIMIT')
+
+     lower_limit7.text = '16'
+
+     upper_limit7 = ET.SubElement(compu_scale9, 'UPPER-LIMIT')
+
+@@ -415,8 +409,6 @@
+     vt6 = ET.SubElement(compu_const6, 'VT')
+
+     vt6.text = 'sdcd'
+
+     compu_scale10 = ET.SubElement(compu_scales4, 'COMPU-SCALE')
+
+[91m-    symbol2 = ET.SubElement(compu_scale10, 'SYMBOL')
+[0m
+[91m-    symbol2.text = 'sdcd1'
+[0m
+     lower_limit8 = ET.SubElement(compu_scale10, 'LOWER-LIMIT')
+
+     lower_limit8.text = '17'
+
+     upper_limit8 = ET.SubElement(compu_scale10, 'UPPER-LIMIT')
+
+@@ -459,8 +451,6 @@
+     v20 = ET.SubElement(compu_denominator4, 'V')
+
+     v20.text = '1'
+
+     compu_scale12 = ET.SubElement(compu_scales5, 'COMPU-SCALE')
+
+[91m-    symbol3 = ET.SubElement(compu_scale12, 'SYMBOL')
+[0m
+[91m-    symbol3.text = 'abcd'
+[0m
+     lower_limit10 = ET.SubElement(compu_scale12, 'LOWER-LIMIT')
+
+     lower_limit10.text = '8'
+
+     upper_limit10 = ET.SubElement(compu_scale12, 'UPPER-LIMIT')
+
+@@ -469,8 +459,6 @@
+     vt8 = ET.SubElement(compu_const8, 'VT')
+
+     vt8.text = 'abcd'
+
+     compu_scale13 = ET.SubElement(compu_scales5, 'COMPU-SCALE')
+
+[91m-    symbol4 = ET.SubElement(compu_scale13, 'SYMBOL')
+[0m
+[91m-    symbol4.text = 'abcd1'
+[0m
+     lower_limit11 = ET.SubElement(compu_scale13, 'LOWER-LIMIT')
+
+     lower_limit11.text = '9'
+
+     upper_limit11 = ET.SubElement(compu_scale13, 'UPPER-LIMIT')
+
+@@ -540,8 +528,6 @@
+     compu_internal_to_phys7 = ET.SubElement(compu_method8, 'COMPU-INTERNAL-TO-PHYS')
+
+     compu_scales7 = ET.SubElement(compu_internal_to_phys7, 'COMPU-SCALES')
+
+     compu_scale17 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol5 = ET.SubElement(compu_scale17, 'SYMBOL')
+[0m
+[91m-    symbol5.text = 'text1'
+[0m
+     lower_limit15 = ET.SubElement(compu_scale17, 'LOWER-LIMIT')
+
+     lower_limit15.text = '0'
+
+     upper_limit15 = ET.SubElement(compu_scale17, 'UPPER-LIMIT')
+
+@@ -550,8 +536,6 @@
+     vt10 = ET.SubElement(compu_const13, 'VT')
+
+     vt10.text = 'text1'
+
+     compu_scale18 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol6 = ET.SubElement(compu_scale18, 'SYMBOL')
+[0m
+[91m-    symbol6.text = 'text2'
+[0m
+     lower_limit16 = ET.SubElement(compu_scale18, 'LOWER-LIMIT')
+
+     lower_limit16.text = '1'
+
+     upper_limit16 = ET.SubElement(compu_scale18, 'UPPER-LIMIT')
+
+@@ -560,8 +544,6 @@
+     vt11 = ET.SubElement(compu_const14, 'VT')
+
+     vt11.text = 'text2'
+
+     compu_scale19 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol7 = ET.SubElement(compu_scale19, 'SYMBOL')
+[0m
+[91m-    symbol7.text = 'text3'
+[0m
+     lower_limit17 = ET.SubElement(compu_scale19, 'LOWER-LIMIT')
+
+     lower_limit17.text = '2'
+
+     upper_limit17 = ET.SubElement(compu_scale19, 'UPPER-LIMIT')
+
+@@ -570,8 +552,6 @@
+     vt12 = ET.SubElement(compu_const15, 'VT')
+
+     vt12.text = 'text3'
+
+     compu_scale20 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol8 = ET.SubElement(compu_scale20, 'SYMBOL')
+[0m
+[91m-    symbol8.text = 'text4'
+[0m
+     lower_limit18 = ET.SubElement(compu_scale20, 'LOWER-LIMIT')
+
+     lower_limit18.text = '3'
+
+     upper_limit18 = ET.SubElement(compu_scale20, 'UPPER-LIMIT')
+
+@@ -656,8 +636,6 @@
+     short_name34.text = 'DataConstr'
+
+     data_constr_rules = ET.SubElement(data_constr, 'DATA-CONSTR-RULES')
+
+     data_constr_rule = ET.SubElement(data_constr_rules, 'DATA-CONSTR-RULE')
+
+[91m-    constr_level = ET.SubElement(data_constr_rule, 'CONSTR-LEVEL')
+[0m
+[91m-    constr_level.text = '0'
+[0m
+     phys_constrs = ET.SubElement(data_constr_rule, 'PHYS-CONSTRS')
+
+     lower_limit19 = ET.SubElement(phys_constrs, 'LOWER-LIMIT')
+
+     lower_limit19.text = '0'
+
+@@ -784,10 +762,10 @@
+     category24 = ET.SubElement(implementation_data_type4, 'CATEGORY')
+
+     category24.text = 'STRUCTURE'
+
+     sub_elements3 = ET.SubElement(implementation_data_type4, 'SUB-ELEMENTS')
+
+[91m-
+[0m
+[91m-def STRUCTURE_ImplementationDataType1_SubElement():
+[0m
+     implementation_data_type_element3 = ET.SubElement(sub_elements3, 'IMPLEMENTATION-DATA-TYPE-ELEMENT')
+
+     implementation_data_type_element3.attrib = {'UUID': '31f01782-3ce8-4dbe-81d1-0d5fb89bef99'}
+
+[92m+
+[0m
+[92m+def STRUCTURE_ImplementationDataType1_SubElement():
+[0m
+     short_name44 = ET.SubElement(implementation_data_type_element3, 'SHORT-NAME')
+
+     short_name44.text = 'SubElement'
+
+     category25 = ET.SubElement(implementation_data_type_element3, 'CATEGORY')
+
+@@ -798,10 +776,10 @@
+     implementation_data_type_ref7 = ET.SubElement(sw_data_def_props_conditional9, 'IMPLEMENTATION-DATA-TYPE-REF')
+
+     implementation_data_type_ref7.text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16'
+
+     implementation_data_type_ref7.attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+[91m-
+[0m
+[91m-def STRUCTURE_ImplementationDataType1_SubElement1():
+[0m
+     implementation_data_type_element4 = ET.SubElement(sub_elements3, 'IMPLEMENTATION-DATA-TYPE-ELEMENT')
+
+     implementation_data_type_element4.attrib = {'UUID': '83bd06cb-a4ff-4d55-bd3d-1a691b582d46'}
+
+[92m+
+[0m
+[92m+def STRUCTURE_ImplementationDataType1_SubElement1():
+[0m
+     short_name45 = ET.SubElement(implementation_data_type_element4, 'SHORT-NAME')
+
+     short_name45.text = 'SubElement1'
+
+     category26 = ET.SubElement(implementation_data_type_element4, 'CATEGORY')
+
+@@ -820,8 +798,6 @@
+     short_name46.text = 'Struct_Array_ImplementationDataType'
+
+     category27 = ET.SubElement(implementation_data_type5, 'CATEGORY')
+
+     category27.text = 'STRUCTURE'
+
+[91m-    dynamic_array_size_profile2 = ET.SubElement(implementation_data_type5, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+[0m
+[91m-    dynamic_array_size_profile2.text = 'VSA_LINEAR'     
+[0m
+     sub_elements4 = ET.SubElement(implementation_data_type5, 'SUB-ELEMENTS')
+
+ 
+
+ def Struct_Array_ImplementationDataType_SubElement1():
+
+@@ -838,7 +814,7 @@
+     implementation_data_type_ref9.text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8'
+
+     implementation_data_type_ref9.attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+ 
+
+[91m-def Struct_Array_ImplementationDataType_SubElement():
+[0m
+[92m+def Struct_Array_ImplementationDataType_SubElement_Array():
+[0m
+     implementation_data_type_element6 = ET.SubElement(sub_elements4, 'IMPLEMENTATION-DATA-TYPE-ELEMENT')
+
+     implementation_data_type_element6.attrib = {'UUID': 'dc530c9c-3b65-4707-99c3-842e2d2b7788'}
+
+     short_name48 = ET.SubElement(implementation_data_type_element6, 'SHORT-NAME')
+
+@@ -856,8 +832,6 @@
+     category30.text = 'TYPE_REFERENCE'
+
+     array_size3 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE')
+
+     array_size3.text = '15'
+
+[91m-    array_size_handling2 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE-HANDLING')
+[0m
+[91m-    array_size_handling2.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
+[0m
+     array_size_semantics6 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE-SEMANTICS')
+
+     array_size_semantics6.text = 'VARIABLE-SIZE'
+
+     sw_data_def_props12 = ET.SubElement(implementation_data_type_element7, 'SW-DATA-DEF-PROPS')
+
+@@ -893,7 +867,8 @@
+ 
+
+ # def ClientServer():
+
+ #     ar_package13.attrib = {'UUID': 'a0d0a13a-15e8-47a3-8169-5f11ad6c7d3f'}
+
+[91m-#     short_name52 = ET.SubElement(ar_package13, 'SHORT-NAME')#     short_name52.text = 'ClientServer'
+[0m
+[92m+#     short_name52 = ET.SubElement(ar_package13, 'SHORT-NAME')
+[0m
+[92m+#     short_name52.text = 'ClientServer'
+[0m
+ #     elements11 = ET.SubElement(ar_package13, 'ELEMENTS')
+
+ 
+
+ def ClientServerInterface():  
+
+@@ -1194,26 +1169,18 @@
+     mode_declaration.attrib = {'UUID': '2608f59c-87b0-47b2-8cee-8e9c3ba94cac'}
+
+     short_name80 = ET.SubElement(mode_declaration, 'SHORT-NAME')
+
+     short_name80.text = 'ModeDeclaration'
+
+[91m-    value4 = ET.SubElement(mode_declaration, 'VALUE')
+[0m
+[91m-    value4.text = '0'
+[0m
+ 
+
+ def Copy_ModeDeclarationGroup_ModeDeclaration1():
+
+     mode_declaration2 = ET.SubElement(mode_declarations, 'MODE-DECLARATION')
+
+     mode_declaration2.attrib = {'UUID': '7cc2e588-342f-40a3-ad77-b3d49457e996'}
+
+     short_name81 = ET.SubElement(mode_declaration2, 'SHORT-NAME')
+
+     short_name81.text = 'ModeDeclaration1'
+
+[91m-    value5 = ET.SubElement(mode_declaration2, 'VALUE')
+[0m
+[91m-    value5.text = '1'
+[0m
+ 
+
+ def Copy_ModeDeclarationGroup_ModeDeclaration2():
+
+     mode_declaration3 = ET.SubElement(mode_declarations, 'MODE-DECLARATION')
+
+     mode_declaration3.attrib = {'UUID': '278335ee-b40e-4f50-9fc3-164297dafbfd'}
+
+     short_name82 = ET.SubElement(mode_declaration3, 'SHORT-NAME')
+
+     short_name82.text = 'ModeDeclaration2'
+
+[91m-    value6 = ET.SubElement(mode_declaration3, 'VALUE')
+[0m
+[91m-    value6.text = '2'
+[0m
+[91m-    on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
+[0m
+[91m-    on_transition_value.text = '3'
+[0m
+ 
+
+ def Copy_ModeSwitchInterface():
+
+     mode_switch_interface = ET.SubElement(elements12, 'MODE-SWITCH-INTERFACE')
+
+@@ -1632,8 +1599,6 @@
+     trigger.attrib = {'UUID': '06d545dc-664d-45fb-be23-8a076bded4b5'}
+
+     short_name120 = ET.SubElement(trigger, 'SHORT-NAME')
+
+     short_name120.text = 'Trigger'
+
+[91m-    sw_impl_policy27 = ET.SubElement(trigger, 'SW-IMPL-POLICY')
+[0m
+[91m-    sw_impl_policy27.text = 'STANDARD'
+[0m
+     trigger_period = ET.SubElement(trigger, 'TRIGGER-PERIOD')
+
+     cse_code = ET.SubElement(trigger_period, 'CSE-CODE')
+
+     cse_code.text = '6'
+
+@@ -1983,15 +1948,6 @@
+     target_trigger_ref.text = '/SharedElements/PortInterfaces/Trigger/TriggerInterface/Trigger'
+
+     target_trigger_ref.attrib = {'DEST': 'TRIGGER'}
+
+ 
+
+[91m-def InitEvent():
+[0m
+[91m-    init_event = ET.SubElement(events, 'INIT-EVENT')
+[0m
+[91m-    init_event.attrib = {'UUID': '6febdb10-eefc-44b9-adad-fdef91bbef72'}
+[0m
+[91m-    short_name498 = ET.SubElement(init_event, 'SHORT-NAME')
+[0m
+[91m-    short_name498.text = 'InitEvent'
+[0m
+[91m-    start_on_event_ref8 = ET.SubElement(init_event, 'START-ON-EVENT-REF')
+[0m
+[91m-    start_on_event_ref8.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable7'
+[0m
+[91m-    start_on_event_ref8.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+[0m
+[91m-
+[0m
+ def ModeSwitchedAckEvent():
+
+     mode_switched_ack_event = ET.SubElement(events, 'MODE-SWITCHED-ACK-EVENT')
+
+     mode_switched_ack_event.attrib = {'UUID': '2f5c24be-60cf-4249-bfde-ceabef6d00d4'}
+
+@@ -2019,22 +1975,6 @@
+     target_provided_operation_ref = ET.SubElement(operation_iref, 'TARGET-PROVIDED-OPERATION-REF')
+
+     target_provided_operation_ref.text = '/SharedElements/PortInterfaces/ClientServer/ClientServerInterface/Operation1'
+
+     target_provided_operation_ref.attrib = {'DEST': 'CLIENT-SERVER-OPERATION'}
+
+[91m-
+[0m
+[91m-def SwcModeManagerErrorEvent():
+[0m
+[91m-    swc_mode_manager_error_event = ET.SubElement(events, 'SWC-MODE-MANAGER-ERROR-EVENT')
+[0m
+[91m-    swc_mode_manager_error_event.attrib = {'UUID': '2e3337be-0df8-4dce-a65a-ca8bb234754a'}
+[0m
+[91m-    short_name501 = ET.SubElement(swc_mode_manager_error_event, 'SHORT-NAME')
+[0m
+[91m-    short_name501.text = 'SwcModeManagerErrorEvent'
+[0m
+[91m-    start_on_event_ref11 = ET.SubElement(swc_mode_manager_error_event, 'START-ON-EVENT-REF')
+[0m
+[91m-    start_on_event_ref11.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable11'
+[0m
+[91m-    start_on_event_ref11.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+[0m
+[91m-    mode_group_iref = ET.SubElement(swc_mode_manager_error_event, 'MODE-GROUP-IREF')
+[0m
+[91m-    context_p_port_ref2 = ET.SubElement(mode_group_iref, 'CONTEXT-P-PORT-REF')
+[0m
+[91m-    context_p_port_ref2.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_msi'
+[0m
+[91m-    context_p_port_ref2.attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+[0m
+[91m-    target_mode_group_ref = ET.SubElement(mode_group_iref, 'TARGET-MODE-GROUP-REF')
+[0m
+[91m-    target_mode_group_ref.text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup'
+[0m
+[91m-    target_mode_group_ref.attrib = {'DEST': 'MODE-DECLARATION-GROUP-PROTOTYPE'}
+[0m
+ 
+
+ def SwcModeSwitchEvent():
+
+     swc_mode_switch_event = ET.SubElement(events, 'SWC-MODE-SWITCH-EVENT')
+
+@@ -2078,15 +2018,6 @@
+     start_on_event_ref11.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+
+     period = ET.SubElement(timing_event, 'PERIOD')
+
+     period.text = '0.01'
+
+[91m-
+[0m
+[91m-def TransformerHardErrorEvent():
+[0m
+[91m-    transformer_hard_error_event1 = ET.SubElement(events1, 'TRANSFORMER-HARD-ERROR-EVENT')
+[0m
+[91m-    transformer_hard_error_event1.attrib = {'UUID': '0cb20425-8704-4215-9df9-3cc6aa1d60c1'}
+[0m
+[91m-    short_name158 = ET.SubElement(transformer_hard_error_event1, 'SHORT-NAME')
+[0m
+[91m-    short_name158.text = 'TransformerHardErrorEvent'
+[0m
+[91m-    start_on_event_ref14 = ET.SubElement(transformer_hard_error_event1, 'START-ON-EVENT-REF')
+[0m
+[91m-    start_on_event_ref14.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable14'
+[0m
+[91m-    start_on_event_ref14.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+[0m
+ 
+
+ def TimingEvent1():
+
+     timing_event2 = ET.SubElement(events, 'TIMING-EVENT')
+
+
+[Done] exited with code=0 in 0.213 seconds
+
+[Running] python -u "c:\Users\hss930284\Tata Technologies\MBSE Team - SAARCONN - SAARCONN\Eliminating_SystemDesk\trash\harshit\Saarconn\remove_GE_ARELE\CHATGPT_MessedUp_Logic.py"
+
+Differences between files:
+--- Eliminating_SystemDesk\trash\harshit\arlements_def\arElements_def_V4_2_1\arElements_def_V4_2_1.py
++++ Eliminating_SystemDesk\trash\harshit\arlements_def\arlements_def_V4_0_2\arlements_def_V4_0_2.py
+@@ -27,7 +27,7 @@
+ root = ET.Element('AUTOSAR', attrib={
+
+     'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance",
+
+     'xmlns': "http://autosar.org/schema/r4.0",
+
+[91m-    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd"
+[0m
+[92m+    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-0-2.xsd"
+[0m
+ })
+
+ 
+
+ global_elements = {
+
+@@ -72,16 +72,14 @@
+     array_size_semantics.text = 'FIXED-SIZE'
+
+     max_number_of_elements = ET.SubElement(element, 'MAX-NUMBER-OF-ELEMENTS')
+
+     max_number_of_elements.text = '15'
+
+[91m-    
+[0m
+[92m+
+[0m
+ def ApplicationArrayDataType_Variable():
+
+[91m-    application_array_data_type2 = ET.SubElement(elements1, 'APPLICATION-ARRAY-DATA-TYPE')
+[0m
+[92m+    application_array_data_type2 = ET.SubElement(elements, 'APPLICATION-ARRAY-DATA-TYPE')
+[0m
+     application_array_data_type2.attrib = {'UUID': 'd5f3c7e9-dd94-4d37-888e-b6e44b01cc5a'}
+
+     short_name6 = ET.SubElement(application_array_data_type2, 'SHORT-NAME')
+
+     short_name6.text = 'ApplicationArrayDataType_Variable'
+
+     category3 = ET.SubElement(application_array_data_type2, 'CATEGORY')
+
+     category3.text = 'ARRAY'
+
+[91m-    dynamic_array_size_profile1 = ET.SubElement(application_array_data_type2, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+[0m
+[91m-    dynamic_array_size_profile1.text = 'VSA_LINEAR'
+[0m
+     element2 = ET.SubElement(application_array_data_type2, 'ELEMENT')
+
+     element2.attrib = {'UUID': 'fef3f4b8-d9bd-4cb1-94b8-4403e665c4fa'}
+
+     short_name7 = ET.SubElement(element2, 'SHORT-NAME')
+
+@@ -91,12 +89,10 @@
+     type_tref2 = ET.SubElement(element2, 'TYPE-TREF')
+
+     type_tref2.text = '/SharedElements/ApplicationDataTypes/Primitive/ApplicationPrimitiveDataType'
+
+     type_tref2.attrib = {'DEST': 'APPLICATION-PRIMITIVE-DATA-TYPE'}
+
+[91m-    array_size_handling1 = ET.SubElement(element2, 'ARRAY-SIZE-HANDLING')
+[0m
+[91m-    array_size_handling1.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
+[0m
+     array_size_semantics2 = ET.SubElement(element2, 'ARRAY-SIZE-SEMANTICS')
+
+     array_size_semantics2.text = 'VARIABLE-SIZE'
+
+     max_number_of_elements2 = ET.SubElement(element2, 'MAX-NUMBER-OF-ELEMENTS')
+
+[91m-    max_number_of_elements2.text = '15'  
+[0m
+[92m+    max_number_of_elements2.text = '15'   
+[0m
+ 
+
+ def ApplicationPrimitiveDataType():
+
+     global global_elements
+
+@@ -405,8 +401,6 @@
+     v16 = ET.SubElement(compu_denominator3, 'V')
+
+     v16.text = '0'
+
+     compu_scale9 = ET.SubElement(compu_scales4, 'COMPU-SCALE')
+
+[91m-    symbol = ET.SubElement(compu_scale9, 'SYMBOL')
+[0m
+[91m-    symbol.text = 'sdcd'
+[0m
+     lower_limit7 = ET.SubElement(compu_scale9, 'LOWER-LIMIT')
+
+     lower_limit7.text = '16'
+
+     upper_limit7 = ET.SubElement(compu_scale9, 'UPPER-LIMIT')
+
+@@ -415,8 +409,6 @@
+     vt6 = ET.SubElement(compu_const6, 'VT')
+
+     vt6.text = 'sdcd'
+
+     compu_scale10 = ET.SubElement(compu_scales4, 'COMPU-SCALE')
+
+[91m-    symbol2 = ET.SubElement(compu_scale10, 'SYMBOL')
+[0m
+[91m-    symbol2.text = 'sdcd1'
+[0m
+     lower_limit8 = ET.SubElement(compu_scale10, 'LOWER-LIMIT')
+
+     lower_limit8.text = '17'
+
+     upper_limit8 = ET.SubElement(compu_scale10, 'UPPER-LIMIT')
+
+@@ -459,8 +451,6 @@
+     v20 = ET.SubElement(compu_denominator4, 'V')
+
+     v20.text = '1'
+
+     compu_scale12 = ET.SubElement(compu_scales5, 'COMPU-SCALE')
+
+[91m-    symbol3 = ET.SubElement(compu_scale12, 'SYMBOL')
+[0m
+[91m-    symbol3.text = 'abcd'
+[0m
+     lower_limit10 = ET.SubElement(compu_scale12, 'LOWER-LIMIT')
+
+     lower_limit10.text = '8'
+
+     upper_limit10 = ET.SubElement(compu_scale12, 'UPPER-LIMIT')
+
+@@ -469,8 +459,6 @@
+     vt8 = ET.SubElement(compu_const8, 'VT')
+
+     vt8.text = 'abcd'
+
+     compu_scale13 = ET.SubElement(compu_scales5, 'COMPU-SCALE')
+
+[91m-    symbol4 = ET.SubElement(compu_scale13, 'SYMBOL')
+[0m
+[91m-    symbol4.text = 'abcd1'
+[0m
+     lower_limit11 = ET.SubElement(compu_scale13, 'LOWER-LIMIT')
+
+     lower_limit11.text = '9'
+
+     upper_limit11 = ET.SubElement(compu_scale13, 'UPPER-LIMIT')
+
+@@ -540,8 +528,6 @@
+     compu_internal_to_phys7 = ET.SubElement(compu_method8, 'COMPU-INTERNAL-TO-PHYS')
+
+     compu_scales7 = ET.SubElement(compu_internal_to_phys7, 'COMPU-SCALES')
+
+     compu_scale17 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol5 = ET.SubElement(compu_scale17, 'SYMBOL')
+[0m
+[91m-    symbol5.text = 'text1'
+[0m
+     lower_limit15 = ET.SubElement(compu_scale17, 'LOWER-LIMIT')
+
+     lower_limit15.text = '0'
+
+     upper_limit15 = ET.SubElement(compu_scale17, 'UPPER-LIMIT')
+
+@@ -550,8 +536,6 @@
+     vt10 = ET.SubElement(compu_const13, 'VT')
+
+     vt10.text = 'text1'
+
+     compu_scale18 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol6 = ET.SubElement(compu_scale18, 'SYMBOL')
+[0m
+[91m-    symbol6.text = 'text2'
+[0m
+     lower_limit16 = ET.SubElement(compu_scale18, 'LOWER-LIMIT')
+
+     lower_limit16.text = '1'
+
+     upper_limit16 = ET.SubElement(compu_scale18, 'UPPER-LIMIT')
+
+@@ -560,8 +544,6 @@
+     vt11 = ET.SubElement(compu_const14, 'VT')
+
+     vt11.text = 'text2'
+
+     compu_scale19 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol7 = ET.SubElement(compu_scale19, 'SYMBOL')
+[0m
+[91m-    symbol7.text = 'text3'
+[0m
+     lower_limit17 = ET.SubElement(compu_scale19, 'LOWER-LIMIT')
+
+     lower_limit17.text = '2'
+
+     upper_limit17 = ET.SubElement(compu_scale19, 'UPPER-LIMIT')
+
+@@ -570,8 +552,6 @@
+     vt12 = ET.SubElement(compu_const15, 'VT')
+
+     vt12.text = 'text3'
+
+     compu_scale20 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol8 = ET.SubElement(compu_scale20, 'SYMBOL')
+[0m
+[91m-    symbol8.text = 'text4'
+[0m
+     lower_limit18 = ET.SubElement(compu_scale20, 'LOWER-LIMIT')
+
+     lower_limit18.text = '3'
+
+     upper_limit18 = ET.SubElement(compu_scale20, 'UPPER-LIMIT')
+
+@@ -656,8 +636,6 @@
+     short_name34.text = 'DataConstr'
+
+     data_constr_rules = ET.SubElement(data_constr, 'DATA-CONSTR-RULES')
+
+     data_constr_rule = ET.SubElement(data_constr_rules, 'DATA-CONSTR-RULE')
+
+[91m-    constr_level = ET.SubElement(data_constr_rule, 'CONSTR-LEVEL')
+[0m
+[91m-    constr_level.text = '0'
+[0m
+     phys_constrs = ET.SubElement(data_constr_rule, 'PHYS-CONSTRS')
+
+     lower_limit19 = ET.SubElement(phys_constrs, 'LOWER-LIMIT')
+
+     lower_limit19.text = '0'
+
+@@ -784,10 +762,10 @@
+     category24 = ET.SubElement(implementation_data_type4, 'CATEGORY')
+
+     category24.text = 'STRUCTURE'
+
+     sub_elements3 = ET.SubElement(implementation_data_type4, 'SUB-ELEMENTS')
+
+[91m-
+[0m
+[91m-def STRUCTURE_ImplementationDataType1_SubElement():
+[0m
+     implementation_data_type_element3 = ET.SubElement(sub_elements3, 'IMPLEMENTATION-DATA-TYPE-ELEMENT')
+
+     implementation_data_type_element3.attrib = {'UUID': '31f01782-3ce8-4dbe-81d1-0d5fb89bef99'}
+
+[92m+
+[0m
+[92m+def STRUCTURE_ImplementationDataType1_SubElement():
+[0m
+     short_name44 = ET.SubElement(implementation_data_type_element3, 'SHORT-NAME')
+
+     short_name44.text = 'SubElement'
+
+     category25 = ET.SubElement(implementation_data_type_element3, 'CATEGORY')
+
+@@ -798,10 +776,10 @@
+     implementation_data_type_ref7 = ET.SubElement(sw_data_def_props_conditional9, 'IMPLEMENTATION-DATA-TYPE-REF')
+
+     implementation_data_type_ref7.text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint16'
+
+     implementation_data_type_ref7.attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+[91m-
+[0m
+[91m-def STRUCTURE_ImplementationDataType1_SubElement1():
+[0m
+     implementation_data_type_element4 = ET.SubElement(sub_elements3, 'IMPLEMENTATION-DATA-TYPE-ELEMENT')
+
+     implementation_data_type_element4.attrib = {'UUID': '83bd06cb-a4ff-4d55-bd3d-1a691b582d46'}
+
+[92m+
+[0m
+[92m+def STRUCTURE_ImplementationDataType1_SubElement1():
+[0m
+     short_name45 = ET.SubElement(implementation_data_type_element4, 'SHORT-NAME')
+
+     short_name45.text = 'SubElement1'
+
+     category26 = ET.SubElement(implementation_data_type_element4, 'CATEGORY')
+
+@@ -820,8 +798,6 @@
+     short_name46.text = 'Struct_Array_ImplementationDataType'
+
+     category27 = ET.SubElement(implementation_data_type5, 'CATEGORY')
+
+     category27.text = 'STRUCTURE'
+
+[91m-    dynamic_array_size_profile2 = ET.SubElement(implementation_data_type5, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+[0m
+[91m-    dynamic_array_size_profile2.text = 'VSA_LINEAR'     
+[0m
+     sub_elements4 = ET.SubElement(implementation_data_type5, 'SUB-ELEMENTS')
+
+ 
+
+ def Struct_Array_ImplementationDataType_SubElement1():
+
+@@ -838,7 +814,7 @@
+     implementation_data_type_ref9.text = '/AUTOSAR/AUTOSAR_Platform/ImplementationDataTypes/uint8'
+
+     implementation_data_type_ref9.attrib = {'DEST': 'IMPLEMENTATION-DATA-TYPE'}
+
+ 
+
+[91m-def Struct_Array_ImplementationDataType_SubElement():
+[0m
+[92m+def Struct_Array_ImplementationDataType_SubElement_Array():
+[0m
+     implementation_data_type_element6 = ET.SubElement(sub_elements4, 'IMPLEMENTATION-DATA-TYPE-ELEMENT')
+
+     implementation_data_type_element6.attrib = {'UUID': 'dc530c9c-3b65-4707-99c3-842e2d2b7788'}
+
+     short_name48 = ET.SubElement(implementation_data_type_element6, 'SHORT-NAME')
+
+@@ -856,8 +832,6 @@
+     category30.text = 'TYPE_REFERENCE'
+
+     array_size3 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE')
+
+     array_size3.text = '15'
+
+[91m-    array_size_handling2 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE-HANDLING')
+[0m
+[91m-    array_size_handling2.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
+[0m
+     array_size_semantics6 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE-SEMANTICS')
+
+     array_size_semantics6.text = 'VARIABLE-SIZE'
+
+     sw_data_def_props12 = ET.SubElement(implementation_data_type_element7, 'SW-DATA-DEF-PROPS')
+
+@@ -893,7 +867,8 @@
+ 
+
+ # def ClientServer():
+
+ #     ar_package13.attrib = {'UUID': 'a0d0a13a-15e8-47a3-8169-5f11ad6c7d3f'}
+
+[91m-#     short_name52 = ET.SubElement(ar_package13, 'SHORT-NAME')#     short_name52.text = 'ClientServer'
+[0m
+[92m+#     short_name52 = ET.SubElement(ar_package13, 'SHORT-NAME')
+[0m
+[92m+#     short_name52.text = 'ClientServer'
+[0m
+ #     elements11 = ET.SubElement(ar_package13, 'ELEMENTS')
+
+ 
+
+ def ClientServerInterface():  
+
+@@ -1194,26 +1169,18 @@
+     mode_declaration.attrib = {'UUID': '2608f59c-87b0-47b2-8cee-8e9c3ba94cac'}
+
+     short_name80 = ET.SubElement(mode_declaration, 'SHORT-NAME')
+
+     short_name80.text = 'ModeDeclaration'
+
+[91m-    value4 = ET.SubElement(mode_declaration, 'VALUE')
+[0m
+[91m-    value4.text = '0'
+[0m
+ 
+
+ def Copy_ModeDeclarationGroup_ModeDeclaration1():
+
+     mode_declaration2 = ET.SubElement(mode_declarations, 'MODE-DECLARATION')
+
+     mode_declaration2.attrib = {'UUID': '7cc2e588-342f-40a3-ad77-b3d49457e996'}
+
+     short_name81 = ET.SubElement(mode_declaration2, 'SHORT-NAME')
+
+     short_name81.text = 'ModeDeclaration1'
+
+[91m-    value5 = ET.SubElement(mode_declaration2, 'VALUE')
+[0m
+[91m-    value5.text = '1'
+[0m
+ 
+
+ def Copy_ModeDeclarationGroup_ModeDeclaration2():
+
+     mode_declaration3 = ET.SubElement(mode_declarations, 'MODE-DECLARATION')
+
+     mode_declaration3.attrib = {'UUID': '278335ee-b40e-4f50-9fc3-164297dafbfd'}
+
+     short_name82 = ET.SubElement(mode_declaration3, 'SHORT-NAME')
+
+     short_name82.text = 'ModeDeclaration2'
+
+[91m-    value6 = ET.SubElement(mode_declaration3, 'VALUE')
+[0m
+[91m-    value6.text = '2'
+[0m
+[91m-    on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
+[0m
+[91m-    on_transition_value.text = '3'
+[0m
+ 
+
+ def Copy_ModeSwitchInterface():
+
+     mode_switch_interface = ET.SubElement(elements12, 'MODE-SWITCH-INTERFACE')
+
+@@ -1632,8 +1599,6 @@
+     trigger.attrib = {'UUID': '06d545dc-664d-45fb-be23-8a076bded4b5'}
+
+     short_name120 = ET.SubElement(trigger, 'SHORT-NAME')
+
+     short_name120.text = 'Trigger'
+
+[91m-    sw_impl_policy27 = ET.SubElement(trigger, 'SW-IMPL-POLICY')
+[0m
+[91m-    sw_impl_policy27.text = 'STANDARD'
+[0m
+     trigger_period = ET.SubElement(trigger, 'TRIGGER-PERIOD')
+
+     cse_code = ET.SubElement(trigger_period, 'CSE-CODE')
+
+     cse_code.text = '6'
+
+@@ -1983,15 +1948,6 @@
+     target_trigger_ref.text = '/SharedElements/PortInterfaces/Trigger/TriggerInterface/Trigger'
+
+     target_trigger_ref.attrib = {'DEST': 'TRIGGER'}
+
+ 
+
+[91m-def InitEvent():
+[0m
+[91m-    init_event = ET.SubElement(events, 'INIT-EVENT')
+[0m
+[91m-    init_event.attrib = {'UUID': '6febdb10-eefc-44b9-adad-fdef91bbef72'}
+[0m
+[91m-    short_name498 = ET.SubElement(init_event, 'SHORT-NAME')
+[0m
+[91m-    short_name498.text = 'InitEvent'
+[0m
+[91m-    start_on_event_ref8 = ET.SubElement(init_event, 'START-ON-EVENT-REF')
+[0m
+[91m-    start_on_event_ref8.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable7'
+[0m
+[91m-    start_on_event_ref8.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+[0m
+[91m-
+[0m
+ def ModeSwitchedAckEvent():
+
+     mode_switched_ack_event = ET.SubElement(events, 'MODE-SWITCHED-ACK-EVENT')
+
+     mode_switched_ack_event.attrib = {'UUID': '2f5c24be-60cf-4249-bfde-ceabef6d00d4'}
+
+@@ -2019,22 +1975,6 @@
+     target_provided_operation_ref = ET.SubElement(operation_iref, 'TARGET-PROVIDED-OPERATION-REF')
+
+     target_provided_operation_ref.text = '/SharedElements/PortInterfaces/ClientServer/ClientServerInterface/Operation1'
+
+     target_provided_operation_ref.attrib = {'DEST': 'CLIENT-SERVER-OPERATION'}
+
+[91m-
+[0m
+[91m-def SwcModeManagerErrorEvent():
+[0m
+[91m-    swc_mode_manager_error_event = ET.SubElement(events, 'SWC-MODE-MANAGER-ERROR-EVENT')
+[0m
+[91m-    swc_mode_manager_error_event.attrib = {'UUID': '2e3337be-0df8-4dce-a65a-ca8bb234754a'}
+[0m
+[91m-    short_name501 = ET.SubElement(swc_mode_manager_error_event, 'SHORT-NAME')
+[0m
+[91m-    short_name501.text = 'SwcModeManagerErrorEvent'
+[0m
+[91m-    start_on_event_ref11 = ET.SubElement(swc_mode_manager_error_event, 'START-ON-EVENT-REF')
+[0m
+[91m-    start_on_event_ref11.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable11'
+[0m
+[91m-    start_on_event_ref11.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+[0m
+[91m-    mode_group_iref = ET.SubElement(swc_mode_manager_error_event, 'MODE-GROUP-IREF')
+[0m
+[91m-    context_p_port_ref2 = ET.SubElement(mode_group_iref, 'CONTEXT-P-PORT-REF')
+[0m
+[91m-    context_p_port_ref2.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_msi'
+[0m
+[91m-    context_p_port_ref2.attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+[0m
+[91m-    target_mode_group_ref = ET.SubElement(mode_group_iref, 'TARGET-MODE-GROUP-REF')
+[0m
+[91m-    target_mode_group_ref.text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup'
+[0m
+[91m-    target_mode_group_ref.attrib = {'DEST': 'MODE-DECLARATION-GROUP-PROTOTYPE'}
+[0m
+ 
+
+ def SwcModeSwitchEvent():
+
+     swc_mode_switch_event = ET.SubElement(events, 'SWC-MODE-SWITCH-EVENT')
+
+@@ -2078,15 +2018,6 @@
+     start_on_event_ref11.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+
+     period = ET.SubElement(timing_event, 'PERIOD')
+
+     period.text = '0.01'
+
+[91m-
+[0m
+[91m-def TransformerHardErrorEvent():
+[0m
+[91m-    transformer_hard_error_event1 = ET.SubElement(events1, 'TRANSFORMER-HARD-ERROR-EVENT')
+[0m
+[91m-    transformer_hard_error_event1.attrib = {'UUID': '0cb20425-8704-4215-9df9-3cc6aa1d60c1'}
+[0m
+[91m-    short_name158 = ET.SubElement(transformer_hard_error_event1, 'SHORT-NAME')
+[0m
+[91m-    short_name158.text = 'TransformerHardErrorEvent'
+[0m
+[91m-    start_on_event_ref14 = ET.SubElement(transformer_hard_error_event1, 'START-ON-EVENT-REF')
+[0m
+[91m-    start_on_event_ref14.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable14'
+[0m
+[91m-    start_on_event_ref14.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+[0m
+ 
+
+ def TimingEvent1():
+
+     timing_event2 = ET.SubElement(events, 'TIMING-EVENT')
+
+

@@ -1,0 +1,248 @@
+[Running] python -u "c:\Users\hss930284\Tata Technologies\MBSE Team - SAARCONN - SAARCONN\Eliminating_SystemDesk\trash\harshit\Saarconn\remove_GE_ARELE\CHATGPT_MessedUp_Logic.py"
+
+Differences between files:
+--- Eliminating_SystemDesk\trash\harshit\arlements_def\arlements_def_V4_0_3\arElements_def_V4_0_3.py
++++ Eliminating_SystemDesk\trash\harshit\arlements_def\arlements_def_V4_0_2\arlements_def_V4_0_2.py
+@@ -27,7 +27,7 @@
+ root = ET.Element('AUTOSAR', attrib={
+
+     'xmlns:xsi': "http://www.w3.org/2001/XMLSchema-instance",
+
+     'xmlns': "http://autosar.org/schema/r4.0",
+
+[91m-    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd"
+[0m
+[92m+    'xsi:schemaLocation': "http://autosar.org/schema/r4.0 AUTOSAR_4-0-2.xsd"
+[0m
+ })
+
+ 
+
+ global_elements = {
+
+@@ -401,8 +401,6 @@
+     v16 = ET.SubElement(compu_denominator3, 'V')
+
+     v16.text = '0'
+
+     compu_scale9 = ET.SubElement(compu_scales4, 'COMPU-SCALE')
+
+[91m-    symbol = ET.SubElement(compu_scale9, 'SYMBOL')
+[0m
+[91m-    symbol.text = 'sdcd'
+[0m
+     lower_limit7 = ET.SubElement(compu_scale9, 'LOWER-LIMIT')
+
+     lower_limit7.text = '16'
+
+     upper_limit7 = ET.SubElement(compu_scale9, 'UPPER-LIMIT')
+
+@@ -411,8 +409,6 @@
+     vt6 = ET.SubElement(compu_const6, 'VT')
+
+     vt6.text = 'sdcd'
+
+     compu_scale10 = ET.SubElement(compu_scales4, 'COMPU-SCALE')
+
+[91m-    symbol2 = ET.SubElement(compu_scale10, 'SYMBOL')
+[0m
+[91m-    symbol2.text = 'sdcd1'
+[0m
+     lower_limit8 = ET.SubElement(compu_scale10, 'LOWER-LIMIT')
+
+     lower_limit8.text = '17'
+
+     upper_limit8 = ET.SubElement(compu_scale10, 'UPPER-LIMIT')
+
+@@ -455,8 +451,6 @@
+     v20 = ET.SubElement(compu_denominator4, 'V')
+
+     v20.text = '1'
+
+     compu_scale12 = ET.SubElement(compu_scales5, 'COMPU-SCALE')
+
+[91m-    symbol3 = ET.SubElement(compu_scale12, 'SYMBOL')
+[0m
+[91m-    symbol3.text = 'abcd'
+[0m
+     lower_limit10 = ET.SubElement(compu_scale12, 'LOWER-LIMIT')
+
+     lower_limit10.text = '8'
+
+     upper_limit10 = ET.SubElement(compu_scale12, 'UPPER-LIMIT')
+
+@@ -465,8 +459,6 @@
+     vt8 = ET.SubElement(compu_const8, 'VT')
+
+     vt8.text = 'abcd'
+
+     compu_scale13 = ET.SubElement(compu_scales5, 'COMPU-SCALE')
+
+[91m-    symbol4 = ET.SubElement(compu_scale13, 'SYMBOL')
+[0m
+[91m-    symbol4.text = 'abcd1'
+[0m
+     lower_limit11 = ET.SubElement(compu_scale13, 'LOWER-LIMIT')
+
+     lower_limit11.text = '9'
+
+     upper_limit11 = ET.SubElement(compu_scale13, 'UPPER-LIMIT')
+
+@@ -536,8 +528,6 @@
+     compu_internal_to_phys7 = ET.SubElement(compu_method8, 'COMPU-INTERNAL-TO-PHYS')
+
+     compu_scales7 = ET.SubElement(compu_internal_to_phys7, 'COMPU-SCALES')
+
+     compu_scale17 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol5 = ET.SubElement(compu_scale17, 'SYMBOL')
+[0m
+[91m-    symbol5.text = 'text1'
+[0m
+     lower_limit15 = ET.SubElement(compu_scale17, 'LOWER-LIMIT')
+
+     lower_limit15.text = '0'
+
+     upper_limit15 = ET.SubElement(compu_scale17, 'UPPER-LIMIT')
+
+@@ -546,8 +536,6 @@
+     vt10 = ET.SubElement(compu_const13, 'VT')
+
+     vt10.text = 'text1'
+
+     compu_scale18 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol6 = ET.SubElement(compu_scale18, 'SYMBOL')
+[0m
+[91m-    symbol6.text = 'text2'
+[0m
+     lower_limit16 = ET.SubElement(compu_scale18, 'LOWER-LIMIT')
+
+     lower_limit16.text = '1'
+
+     upper_limit16 = ET.SubElement(compu_scale18, 'UPPER-LIMIT')
+
+@@ -556,8 +544,6 @@
+     vt11 = ET.SubElement(compu_const14, 'VT')
+
+     vt11.text = 'text2'
+
+     compu_scale19 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol7 = ET.SubElement(compu_scale19, 'SYMBOL')
+[0m
+[91m-    symbol7.text = 'text3'
+[0m
+     lower_limit17 = ET.SubElement(compu_scale19, 'LOWER-LIMIT')
+
+     lower_limit17.text = '2'
+
+     upper_limit17 = ET.SubElement(compu_scale19, 'UPPER-LIMIT')
+
+@@ -566,8 +552,6 @@
+     vt12 = ET.SubElement(compu_const15, 'VT')
+
+     vt12.text = 'text3'
+
+     compu_scale20 = ET.SubElement(compu_scales7, 'COMPU-SCALE')
+
+[91m-    symbol8 = ET.SubElement(compu_scale20, 'SYMBOL')
+[0m
+[91m-    symbol8.text = 'text4'
+[0m
+     lower_limit18 = ET.SubElement(compu_scale20, 'LOWER-LIMIT')
+
+     lower_limit18.text = '3'
+
+     upper_limit18 = ET.SubElement(compu_scale20, 'UPPER-LIMIT')
+
+@@ -652,8 +636,6 @@
+     short_name34.text = 'DataConstr'
+
+     data_constr_rules = ET.SubElement(data_constr, 'DATA-CONSTR-RULES')
+
+     data_constr_rule = ET.SubElement(data_constr_rules, 'DATA-CONSTR-RULE')
+
+[91m-    constr_level = ET.SubElement(data_constr_rule, 'CONSTR-LEVEL')
+[0m
+[91m-    constr_level.text = '0'
+[0m
+     phys_constrs = ET.SubElement(data_constr_rule, 'PHYS-CONSTRS')
+
+     lower_limit19 = ET.SubElement(phys_constrs, 'LOWER-LIMIT')
+
+     lower_limit19.text = '0'
+
+@@ -1187,26 +1169,18 @@
+     mode_declaration.attrib = {'UUID': '2608f59c-87b0-47b2-8cee-8e9c3ba94cac'}
+
+     short_name80 = ET.SubElement(mode_declaration, 'SHORT-NAME')
+
+     short_name80.text = 'ModeDeclaration'
+
+[91m-    value4 = ET.SubElement(mode_declaration, 'VALUE')
+[0m
+[91m-    value4.text = '0'
+[0m
+ 
+
+ def Copy_ModeDeclarationGroup_ModeDeclaration1():
+
+     mode_declaration2 = ET.SubElement(mode_declarations, 'MODE-DECLARATION')
+
+     mode_declaration2.attrib = {'UUID': '7cc2e588-342f-40a3-ad77-b3d49457e996'}
+
+     short_name81 = ET.SubElement(mode_declaration2, 'SHORT-NAME')
+
+     short_name81.text = 'ModeDeclaration1'
+
+[91m-    value5 = ET.SubElement(mode_declaration2, 'VALUE')
+[0m
+[91m-    value5.text = '1'
+[0m
+ 
+
+ def Copy_ModeDeclarationGroup_ModeDeclaration2():
+
+     mode_declaration3 = ET.SubElement(mode_declarations, 'MODE-DECLARATION')
+
+     mode_declaration3.attrib = {'UUID': '278335ee-b40e-4f50-9fc3-164297dafbfd'}
+
+     short_name82 = ET.SubElement(mode_declaration3, 'SHORT-NAME')
+
+     short_name82.text = 'ModeDeclaration2'
+
+[91m-    value6 = ET.SubElement(mode_declaration3, 'VALUE')
+[0m
+[91m-    value6.text = '2'
+[0m
+[91m-    on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
+[0m
+[91m-    on_transition_value.text = '3'
+[0m
+ 
+
+ def Copy_ModeSwitchInterface():
+
+     mode_switch_interface = ET.SubElement(elements12, 'MODE-SWITCH-INTERFACE')
+
+@@ -1625,8 +1599,6 @@
+     trigger.attrib = {'UUID': '06d545dc-664d-45fb-be23-8a076bded4b5'}
+
+     short_name120 = ET.SubElement(trigger, 'SHORT-NAME')
+
+     short_name120.text = 'Trigger'
+
+[91m-    sw_impl_policy27 = ET.SubElement(trigger, 'SW-IMPL-POLICY')
+[0m
+[91m-    sw_impl_policy27.text = 'STANDARD'
+[0m
+     trigger_period = ET.SubElement(trigger, 'TRIGGER-PERIOD')
+
+     cse_code = ET.SubElement(trigger_period, 'CSE-CODE')
+
+     cse_code.text = '6'
+
+
+[Done] exited with code=0 in 0.209 seconds
+

@@ -1,34 +1,29 @@
-import re
+import difflib
+import sys
 
-def convert_to_uppercase_in_subelement(line):
-    """Finds and converts ONLY the string inside single quotes in ET.SubElement() to uppercase."""
-    return re.sub(
-        r"(ET\.SubElement\([^,]+, ')([^']*)('\))",  # Captures only the string inside single quotes
-        lambda match: f"{match.group(1)}{match.group(2).upper()}{match.group(3)}",
-        line
-    )
+def compare_files(file1, file2):
+    """Compare two Python files and highlight differences."""
+    try:
+        with open(file1, 'r', encoding='utf-8') as f1, open(file2, 'r', encoding='utf-8') as f2:
+            lines1 = f1.readlines()
+            lines2 = f2.readlines()
 
-def process_file_for_uppercase_in_subelement(file_path):
-    """Reads a Python file, processes ET.SubElement(), and writes the modified content."""
-    with open(file_path, 'r') as file:
-        code_lines = file.readlines()  # Read file as list of lines
+        diff = difflib.unified_diff(lines1, lines2, fromfile=file1, tofile=file2, lineterm='')
+        
+        print("\nDifferences between files:")
+        for line in diff:
+            if line.startswith("-") and not line.startswith("---"):
+                print(f"\033[91m{line}\033[0m")  # Red for removed lines
+            elif line.startswith("+") and not line.startswith("+++"):
+                print(f"\033[92m{line}\033[0m")  # Green for added lines
+            else:
+                print(line)
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
 
-    # Process each line
-    processed_lines = [convert_to_uppercase_in_subelement(line) for line in code_lines]
-
-    # Return modified code as a string
-    return ''.join(processed_lines)
-
-# Provide the path to your Python file
-file_path = 'Eliminating_SystemDesk\\trash\\harshit\\Saarconn\\Updated_ARELE_Versions\\22_11.py'  # Change this to your actual file path
-output_file = 'Eliminating_SystemDesk\\trash\\harshit\\Saarconn\\Enhanced_arele\\22_11.py'  # Output file path
-
-# Process the Python file
-processed_code = process_file_for_uppercase_in_subelement(file_path)
-
-# Write the final processed code to the output file
-with open(output_file, 'w') as file:
-    file.write(processed_code)
-
-# Print output for verification
-# print(processed_code)
+if __name__ == "__main__":
+    file1 = 'Eliminating_SystemDesk\\trash\\harshit\\arlements_def\\arElements_def_V4_1_3\\arElements_def_V4_1_3.py'
+    file2 = 'Eliminating_SystemDesk\\trash\\harshit\\arlements_def\\arlements_def_V4_0_2\\arlements_def_V4_0_2.py'
+    compare_files(file1, file2)
