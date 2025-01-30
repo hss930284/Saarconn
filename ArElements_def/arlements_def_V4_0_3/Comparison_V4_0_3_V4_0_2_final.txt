@@ -1,0 +1,39 @@
+	# symbol = ET.SubElement(compu_scale9, 'SYMBOL')
+    # symbol.text = 'sdcd'
+	# symbol2 = ET.SubElement(compu_scale10, 'SYMBOL')
+    # symbol2.text = 'sdcd1'
+	# symbol = processor.value_to_str(symbol_str)
+
+	''' #fetch
+	symbol = ET.SubElement(compu_scale, 'SYMBOL')
+    symbol.text = symbol
+	'''
+
+	''' #fetch
+	symbol5 = ET.SubElement(compu_scale17, 'SYMBOL')
+    symbol5.text = 'text1'
+	'''
+
+	    #fetch
+	'''
+	constr_level = ET.SubElement(data_constr_rule, 'CONSTR-LEVEL')
+    constr_level.text = '0'
+	'''
+
+
+	''' #fetch
+		on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
+    	on_transition_value.text = '3'
+	'''
+
+	# ''' #fetch
+	# value = ET.SubElement(mode_declaration, 'VALUE')
+    # value.text = '0'
+	# '''
+
+
+	
+	''' #fetch
+		condition=ET.SubElement(trigger,'CONDITION')sw_impl_policy27 = ET.SubElement(trigger, 'SW-IMPL-POLICY')
+		sw_impl_policy27.text = 'STANDARD'
+	'''

@@ -1,0 +1,90 @@
+                         "xsi:schemaLocation": "http://autosar.org/schema/r4.0 AUTOSAR_4-2-1.xsd"
+	dynamic_array_size_profile1 = ET.SubElement(application_array_data_type2, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+	dynamic_array_size_profile1.text = 'VSA_LINEAR'
+
+	array_size_handling1 = ET.SubElement(element2, 'ARRAY-SIZE-HANDLING')
+	array_size_handling1.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
+	# symbol = ET.SubElement(compu_scale9, 'SYMBOL')
+    # symbol.text = 'sdcd'
+	# symbol2 = ET.SubElement(compu_scale10, 'SYMBOL')
+    # symbol2.text = 'sdcd1'
+
+	''' #fetch
+	symbol = ET.SubElement(compu_scale12, 'SYMBOL')
+    symbol.text = 'abcd'
+	'''
+
+	''' #fetch
+	symbol5 = ET.SubElement(compu_scale17, 'SYMBOL')
+    symbol5.text = 'text1'
+	'''
+
+	    #fetch
+	'''
+	constr_level = ET.SubElement(data_constr_rule, 'CONSTR-LEVEL')
+    constr_level.text = '0'
+	'''
+
+
+		#fetch
+		# 	dynamic_array_size_profile2 = ET.SubElement(implementation_data_type5, 'DYNAMIC-ARRAY-SIZE-PROFILE')
+		# 	dynamic_array_size_profile2.text = 'VSA_LINEAR'  
+
+
+		#fetch
+		# 	array_size_handling2 = ET.SubElement(implementation_data_type_element7, 'ARRAY-SIZE-HANDLING')
+		# 	array_size_handling2.text = 'ALL-INDICES-SAME-ARRAY-SIZE'
+
+
+	''' #fetch
+		on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
+    	on_transition_value.text = '3'
+	'''
+
+	# ''' #fetch
+	# value = ET.SubElement(mode_declaration, 'VALUE')
+    # value.text = '0'
+	# '''
+	
+	''' #fetch
+		condition=ET.SubElement(trigger,'CONDITION')sw_impl_policy27 = ET.SubElement(trigger, 'SW-IMPL-POLICY')
+		sw_impl_policy27.text = 'STANDARD'
+	'''
+#fetch
+def InitEvent(): #remained
+    init_event = ET.SubElement(events, 'INIT-EVENT')
+    init_event.attrib = {'UUID':rng.generate_uuid()} # : '6febdb10-eefc-44b9-adad-fdef91bbef72'
+    short_name498 = ET.SubElement(init_event, 'SHORT-NAME')
+    short_name498.text = 'InitEvent'
+    start_on_event_ref8 = ET.SubElement(init_event, 'START-ON-EVENT-REF')
+    start_on_event_ref8.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable7'
+    start_on_event_ref8.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+
+
+#fetch
+def SwcModeManagerErrorEvent():
+    swc_mode_manager_error_event = ET.SubElement(events, 'SWC-MODE-MANAGER-ERROR-EVENT')
+    swc_mode_manager_error_event.attrib = {'UUID':rng.generate_uuid()} #: '2e3337be-0df8-4dce-a65a-ca8bb234754a'
+    short_name501 = ET.SubElement(swc_mode_manager_error_event, 'SHORT-NAME')
+    short_name501.text = 'SwcModeManagerErrorEvent'
+    start_on_event_ref11 = ET.SubElement(swc_mode_manager_error_event, 'START-ON-EVENT-REF')
+    start_on_event_ref11.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable11'
+    start_on_event_ref11.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+    mode_group_iref = ET.SubElement(swc_mode_manager_error_event, 'MODE-GROUP-IREF')
+    context_p_port_ref2 = ET.SubElement(mode_group_iref, 'CONTEXT-P-PORT-REF')
+    context_p_port_ref2.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_msi'
+    context_p_port_ref2.attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+    target_mode_group_ref = ET.SubElement(mode_group_iref, 'TARGET-MODE-GROUP-REF')
+    target_mode_group_ref.text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup'
+    target_mode_group_ref.attrib = {'DEST': 'MODE-DECLARATION-GROUP-PROTOTYPE'}
+
+#fetch
+def TransformerHardErrorEvent():
+    transformer_hard_error_event1 = ET.SubElement(events1, 'TRANSFORMER-HARD-ERROR-EVENT')
+    transformer_hard_error_event1.attrib = {'UUID': '0cb20425-8704-4215-9df9-3cc6aa1d60c1'}
+    short_name158 = ET.SubElement(transformer_hard_error_event1, 'SHORT-NAME')
+    short_name158.text = 'TransformerHardErrorEvent'
+    start_on_event_ref14 = ET.SubElement(transformer_hard_error_event1, 'START-ON-EVENT-REF')
+    start_on_event_ref14.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable14'
+    start_on_event_ref14.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+

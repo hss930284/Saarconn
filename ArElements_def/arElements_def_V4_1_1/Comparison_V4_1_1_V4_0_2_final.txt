@@ -1,0 +1,66 @@
+                         "xsi:schemaLocation": "http://autosar.org/schema/r4.0 AUTOSAR_4-1-1.xsd"
+	# symbol = ET.SubElement(compu_scale9, 'SYMBOL')
+    # symbol.text = 'sdcd'
+	# symbol2 = ET.SubElement(compu_scale10, 'SYMBOL')
+    # symbol2.text = 'sdcd1'
+
+	''' #fetch
+	symbol = ET.SubElement(compu_scale12, 'SYMBOL')
+    symbol.text = 'abcd'
+	'''
+
+	''' #fetch
+	symbol5 = ET.SubElement(compu_scale17, 'SYMBOL')
+    symbol5.text = 'text1'
+	'''
+
+	    #fetch
+	'''
+	constr_level = ET.SubElement(data_constr_rule, 'CONSTR-LEVEL')
+    constr_level.text = '0'
+	'''
+
+
+	''' #fetch
+		on_transition_value = ET.SubElement(mode_declaration_group, 'ON-TRANSITION-VALUE')
+    	on_transition_value.text = '3'
+	'''
+
+	# ''' #fetch
+	# value = ET.SubElement(mode_declaration, 'VALUE')
+    # value.text = '0'
+	# '''
+	
+	''' #fetch
+		condition=ET.SubElement(trigger,'CONDITION')sw_impl_policy27 = ET.SubElement(trigger, 'SW-IMPL-POLICY')
+		sw_impl_policy27.text = 'STANDARD'
+	'''
+#fetch
+def InitEvent(): #remained
+    init_event = ET.SubElement(events, 'INIT-EVENT')
+    init_event.attrib = {'UUID':rng.generate_uuid()} # : '6febdb10-eefc-44b9-adad-fdef91bbef72'
+    short_name498 = ET.SubElement(init_event, 'SHORT-NAME')
+    short_name498.text = 'InitEvent'
+    start_on_event_ref8 = ET.SubElement(init_event, 'START-ON-EVENT-REF')
+    start_on_event_ref8.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable7'
+    start_on_event_ref8.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+
+
+def ModeSwitchedAckEvent(RTE_Event_name,Rnbl_shortname,currentfolder, currentswc, pport, modegroup): #remained
+#fetch
+def SwcModeManagerErrorEvent():
+    swc_mode_manager_error_event = ET.SubElement(events, 'SWC-MODE-MANAGER-ERROR-EVENT')
+    swc_mode_manager_error_event.attrib = {'UUID':rng.generate_uuid()} #: '2e3337be-0df8-4dce-a65a-ca8bb234754a'
+    short_name501 = ET.SubElement(swc_mode_manager_error_event, 'SHORT-NAME')
+    short_name501.text = 'SwcModeManagerErrorEvent'
+    start_on_event_ref11 = ET.SubElement(swc_mode_manager_error_event, 'START-ON-EVENT-REF')
+    start_on_event_ref11.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/IB_Appl/Runnable11'
+    start_on_event_ref11.attrib = {'DEST': 'RUNNABLE-ENTITY'}
+    mode_group_iref = ET.SubElement(swc_mode_manager_error_event, 'MODE-GROUP-IREF')
+    context_p_port_ref2 = ET.SubElement(mode_group_iref, 'CONTEXT-P-PORT-REF')
+    context_p_port_ref2.text = '/SwComponentTypes/ApplSWC/ApplicationSwComponentType/PPort_msi'
+    context_p_port_ref2.attrib = {'DEST': 'P-PORT-PROTOTYPE'}
+    target_mode_group_ref = ET.SubElement(mode_group_iref, 'TARGET-MODE-GROUP-REF')
+    target_mode_group_ref.text = '/SharedElements/PortInterfaces/ModeSwitch/ModeSwitchInterface/ModeGroup'
+    target_mode_group_ref.attrib = {'DEST': 'MODE-DECLARATION-GROUP-PROTOTYPE'}
+
